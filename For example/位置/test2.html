@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.input-wrap{
+			width: 400px;
+			height: 30px;
+			position: relative;
+		}
+		#address{
+			display: block;
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+		}
+		.hide-wrap{
+			display: none;
+			width: 600px;
+			position: absolute;
+			left: 0;
+			top: 32px;
+			border: 1px solid #ddd;
+		}
+		.titles_j_j{
+			display: flex;
+			list-style: none;
+			margin: 0;
+			padding: 10px 0 10px 20px;
+		}
+		#provice-wrap li{
+			float: left;
+			padding: 5px 10px;
+		}
+		#city-wrap li{
+			float: left;
+			padding: 5px 10px;
+		}
+		#county-wrap li{
+			float: left;
+			padding: 5px 10px;
+		}
+	</style>
+	<body>
+		<div class="input-wrap">
+			<input type="text" name="address" id="address" placeholder="请输入地址" value="" />
+			<div class="hide-wrap">
+				<ul class="titles_j_j">
+					<li style="margin-right: 20px;" class="provice">省份</li>
+					<li style="margin-right: 20px;" class="city">城市</li>
+					<li class="county">区县</li>
+				</ul>
+				<div id="wrap">
+					
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+//		var arr=[
+//			{ "name": "北京", "city":[{"name":"北京", "area":["东城区","西城区","崇文区","宣武区","朝阳区","丰台区","石景山区","海淀区","门头沟区","房山区","通州区","顺义区","昌平区","大兴区","平谷区","怀柔区","密云县","延庆县"]}]},
+//          { "name": "天津", "city":[{"name":"天津", "area":["和平区","河东区","河西区","南开区","河北区","红桥区","塘沽区","汉沽区","大港区","东丽区","西青区","津南区","北辰区","武清区","宝坻区","宁河县","静海县","蓟 县"]},
+//          {"name":"石家庄", "area":["和平区","河东区","河西区","南开区","河北区","红桥区","塘沽区","汉沽区","大港区","东丽区","西青区","津南区","北辰区","武清区","宝坻区","宁河县","静海县","蓟 县"]}
+//          ]},
+//		];
+		
+		
+		var arr=[{"name":"BEI_JING","chineseName":"北京市","prefectures":[{"name":"BEI_JING","chineseName":"北京市","counties":[{"name":"MI_YUN","chineseName":"密云县"},{"name":"YAN_QING","chineseName":"延庆县"},{"name":"TONG_ZHOU","chineseName":"通州区"},{"name":"SHUN_YI","chineseName":"顺义区"},{"name":"CHANG_PING","chineseName":"昌平区"},{"name":"DA_XING","chineseName":"大兴区"},{"name":"HUAI_ROU","chineseName":"怀柔区"},{"name":"PING_GU","chineseName":"平谷区"},{"name":"SHI_JING_SHAN","chineseName":"石景山区"},{"name":"HAI_DIAN","chineseName":"海淀区"},{"name":"MEN_TOU_GOU","chineseName":"门头沟区"},{"name":"FANG_SHAN","chineseName":"房山区"},{"name":"DONG_CHENG","chineseName":"东城区"},{"name":"XI_CHENG","chineseName":"西城区"},{"name":"CHAO_YAGN","chineseName":"朝阳区"},{"name":"FENG_TAI","chineseName":"丰台区"}]}]},
+{"name":"TIAN_JIN","chineseName":"天津市","prefectures":[{"name":"TIAN_JIN","chineseName":"天津市","counties":[{"name":"TIAN_JIN_HE_PING","chineseName":"和平区"},{"name":"TIAN_JIN_HE_DONG","chineseName":"河东区"},{"name":"HE_XI","chineseName":"河西区"},{"name":"NAN_KAI","chineseName":"南开区"},{"name":"HE_BEI","chineseName":"河北区"},{"name":"HONG_QIAO_QU","chineseName":"红桥区"},{"name":"DONG_LI","chineseName":"东丽区"},{"name":"XI_QING","chineseName":"西青区"},{"name":"JIN_NAN","chineseName":"津南区"},{"name":"BEI_CHEN","chineseName":"北辰区"},{"name":"WU_QING","chineseName":"武清区"},{"name":"BAO_DI","chineseName":"宝坻区"},{"name":"BIN_HAI_XIN_QU","chineseName":"滨海新区"},{"name":"NING_HE","chineseName":"宁河区"},{"name":"JING_HAI","chineseName":"静海区"},{"name":"JI_XIAN","chineseName":"蓟县"}]},{"name":"SHI_JING_SHAN","chineseName":"石家庄市","counties":[{"name":"TIAN_JIN_HE_PING","chineseName":"和平区"},{"name":"TIAN_JIN_HE_DONG","chineseName":"河东区"},{"name":"HE_XI","chineseName":"河西区"},{"name":"NAN_KAI","chineseName":"南开区"},{"name":"HE_BEI","chineseName":"河北区"},{"name":"HONG_QIAO_QU","chineseName":"红桥区"},{"name":"DONG_LI","chineseName":"东丽区"},{"name":"XI_QING","chineseName":"西青区"},{"name":"JIN_NAN","chineseName":"津南区"},{"name":"BEI_CHEN","chineseName":"北辰区"},{"name":"WU_QING","chineseName":"武清区"},{"name":"BAO_DI","chineseName":"宝坻区"},{"name":"BIN_HAI_XIN_QU","chineseName":"滨海新区"},{"name":"NING_HE","chineseName":"宁河区"},{"name":"JING_HAI","chineseName":"静海区"},{"name":"JI_XIAN","chineseName":"蓟县"}]}]}]
+
+			
+		function service(){
+			
+		}
+		service.prototype.addProvice =function(){
+			$('#wrap').append("<ul id='provice-wrap'></ul>");
+			for (var i = 0; i < arr.length; i++) {
+				$('#provice-wrap').append("<li>"+arr[i].chineseName+"</li>");
+			}
+		}
+		service.prototype.removeProvice=function(){
+			$("#provice-wrap").remove();
+		}
+		service.prototype.addCity=function(index){
+			$('#wrap').append("<ul id='city-wrap'></ul>");
+			for (var i = 0; i < arr[index].prefectures.length; i++) {
+				$('#city-wrap').append("<li>"+arr[index].prefectures[i].chineseName+"</li>");
+			}
+		}
+		service.prototype.removeCity=function(){
+			$("#city-wrap").remove();
+		}
+		service.prototype.addCounty=function(p,c){
+			$('#wrap').append("<ul id='county-wrap'></ul>");
+			for (var i = 0; i < arr[p].prefectures[c].counties.length; i++) {
+				$('#county-wrap').append("<li name='"+arr[p].prefectures[c].counties[i].name+"'>"+arr[p].prefectures[c].counties[i].chineseName+"</li>");
+			}
+		}
+		service.prototype.removeCounty=function(){
+			$("#county-wrap").remove();
+		}
+		
+		function showClass(flag){
+			switch (flag){
+				case 1:
+					$('.titles_j_j li').css({"color":"#000"});
+					$('.provice').css({"color":"red"});
+					break;
+				case 2:
+				$('.titles_j_j li').css({"color":"#000"});
+					$('.city').css({"color":"red"});
+					break;
+				case 3:
+					$('.titles_j_j li').css({"color":"#000"});
+					$('.county').css({"color":"red"});
+					break;
+			}
+		}
+		
+		var nowFlag=false;//1省，2市，3县
+		var indexP=0;
+		var indexC=0;
+		var inputVal='';
+		var server = new service();
+		$("#address").focus(function(){
+			$('.hide-wrap').show();
+			if(nowFlag!==1){
+				nowFlag = 1;
+				showClass(nowFlag);
+				server.addProvice();
+			}
+		})
+		$(document).on('click','#provice-wrap li',function(){
+			var val=$(this).text();
+			indexP=$(this).index();
+			inputVal = val+"/";
+			$('#address').val(inputVal);
+			server.removeProvice();
+			//console.log(indexP)
+			server.addCity(indexP);
+			nowFlag = 2;
+			showClass(nowFlag);
+		})
+		$(document).on('click','#city-wrap li',function(){
+			var val=$(this).text();
+			indexC=$(this).index();
+			inputVal = inputVal+val+"/";
+			$('#address').val(inputVal);
+			server.removeCity();
+			//console.log(indexP)
+			server.addCounty(indexP,indexC);
+			nowFlag = 3;
+			showClass(nowFlag);
+		})
+		$(document).on('click','#county-wrap li',function(){
+			var val=$(this).text();
+			inputVal = inputVal+val;
+			$('.hide-wrap').hide();
+			server.removeCounty();
+			//console.log(indexP)
+			nowFlag=false;
+			$('#address').val(inputVal);
+			//console.log(inputVal)
+		})
+		$('.provice').click(function(){
+			if(nowFlag === 1){
+				return;
+			}
+			$('#address').val('');
+			if(nowFlag===3){
+				server.removeCounty();
+			}
+			if(nowFlag==2){
+				server.removeCity();
+			}
+			server.addProvice();
+			nowFlag = 1;
+			showClass(nowFlag);
+		})//回退省份
+		$('.city').click(function(){
+			if(nowFlag !== 3){
+				return;
+			}
+			var val=arr[indexP].name;
+			inputVal = val;
+			$('#address').val(inputVal);
+			server.removeCounty();
+			server.addCity(indexP);
+			nowFlag = 2;
+			showClass(nowFlag);
+		})//回退城市
+//		$("#address").blur(function(){
+//			$('.hide-wrap').hide();
+//			console.log(nowFlag)
+//			switch (nowFlag)
+//			{
+//				case false:
+//					return;
+//					break;
+//				case 1:
+//				console.log(1)
+//					server.removeProvice();
+//					nowFlag = false;
+//					break;
+//				case 2:
+//					server.removeCity();
+//					nowFlag = false;
+//					break;
+//				case 3:
+//					server.removeCounty();
+//					nowFlag = false;
+//					break;
+//			}
+//		})
+	</script>
+</html>

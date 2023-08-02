@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#ball{
+			width: 30px;
+			height: 30px;
+			background: red;
+			position: absolute;
+			left: 500px;
+			top: 100px;
+			border-radius: 50%;
+		}
+	</style>
+	<body>
+		<div id="ball"></div>
+	</body>
+</html>
+<script>
+	var ball = document.getElementById("ball");
+	var b = 200; // 短轴
+	var a = 400; //长轴
+	var deg = 90; //初始角度
+	//圆心坐标
+	var centerPoint = {
+		x : ball.offsetLeft + ball.offsetWidth/2,
+		y : b + ball.offsetHeight + ball.offsetTop
+	}
+	var timer = null;
+	timer = setInterval(function(){
+		ball.style.left = centerPoint.x + a*Math.cos( deg*Math.PI/180 ) + "px";
+		ball.style.top = centerPoint.y - b*Math.sin( deg*Math.PI/180 ) + "px";
+		deg -= 2;
+	},30)
+</script>

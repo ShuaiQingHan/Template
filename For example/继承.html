@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<input type="button" id="btn"  name="" value="点击输出">
+    <script type="text/javascript">
+        var students=function(){
+            var student=function(){
+                this.sId="01";
+            }
+        }
+        // var student=function(){
+        //     this.sId="01";
+        //     this.techang="学习";
+        //     this.time=0;
+//如果设置的
+        // }
+        // student.prototype=new Person();
+//对象
+     //     var obj=
+     //     {
+     //        name:'tom',
+     //        age:12,
+     //     }
+     //     // var name='tom';
+     //     // var oge=12;
+     //     setName:function(name){
+     //        this.name=name;
+     //     },
+     //     setAge:function(age){
+     //        this.age=age;
+     //     }
+     // }
+     // p.name(setName="tom");
+     // console.log(obj.name);
+
+
+
+     //变量名不确定
+     /*var p={};
+     var propName="myAge";
+     var value=18;
+     p[propName]=value;
+     console.log(p[propName])*/
+
+
+     //函数是一个对象
+     //实现特定功能的n条语句的封装体
+        // function showInfo(age){
+        //     if(age<18){
+        //         console.log("小孩儿");
+
+        //     }else if(age<60){
+        //         console.log("你吓到我了");
+        //     }else{
+        //         console.log("nono");
+        //     }
+        // }
+        // showInfo(70);
+        // //函数声明
+        // function fn1(){
+        //     console.log('fn1()');
+        // }
+        // var fn2=function(){
+        //     console.log('fn2()');
+        // }
+        // fn1();
+        // fn2();
+
+
+//  函数的调用
+        // var obj={}
+        // function test2(){
+        //     this.XXX='好困，好困'
+        // }
+        // test2.call(obj);
+        // console.log(obj.XXX);
+//回调函数
+        document.getElementById('btn');   //dom回调函数
+         btn.onclick = function () {
+            alert(this.innerHTML)
+          }
+
+       setInterval(function(){//定时器回调函数
+            alert('时间到');
+        },1000)
+    </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>导菜单</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /*一级菜单*/
+        .navMenu {
+            width: 570px;
+            margin: 120px auto;
+        }
+
+        /*      .navMenu ul li{
+            float: left;
+            position: relative;
+        }*/
+        li {
+            list-style: none;
+            background-color: #eee;
+            width: 140px;
+            height: 40px;
+            text-align: center;
+            margin-right: 2px;
+            margin-bottom: 2px;
+        }
+
+        ul li a {
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+            color: #000;
+            text-decoration: none;
+            display: block;
+            padding: 0 10px;
+        }
+
+        /*二级菜单*/
+        .navMenu ul li ul {
+            display: none;
+            position: absolute;
+            left: 540px;
+            top: 140px;
+
+        }
+
+        .navMenu ul li ul li {
+            float: none;
+        }
+
+        /*三级菜单*/
+        .navMenu ul li ul li ul {
+            display: none;
+            left: 140px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div class="navMenu">
+            <ul>
+                <li><a href="#">首页</a>
+                    <ul>
+                        <li><a href="#">JavaScript+</a>
+                            <ul>
+                                <li><a href="#">三角函数</a></li>
+                                <li><a href="#">矩形</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">语文</a>
+                            <ul>
+                                <li><a href="#">唐诗</a></li>
+                                <li><a href="#">宋词</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">英语</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">课程大厅</a></li>
+                <li><a href="#">学习中心+</a>
+                    <ul>
+                        <li><a href="#">JavaScript+</a>
+                            <ul>
+                                <li><a href="#">三角函数</a></li>
+                                <li><a href="#">矩形</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">语文</a>
+                            <ul>
+                                <li><a href="#">三角函数</a></li>
+                                <li><a href="#">矩形</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">英语</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">帮助</a></li>
+            </ul>
+        </div>
+    </body>
+
+    <script src="jquery-1.11.1.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        $("li").has("ul").mouseenter(function () {
+            $(this).children("ul").css("display", "block");
+            $(this).css("backgroundColor", "#0066FF");
+        }).mouseleave(function () {
+            $(this).children("ul").css("display", "none");
+            $(this).css("backgroundColor", "#eee");
+        })
+    })
+    </script>
+    </script>
+</body>
+
+</html>

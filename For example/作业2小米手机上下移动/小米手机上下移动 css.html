@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+	
+    <style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.xiaomi{
+			width:512px;
+			height:400px;
+			overflow:hidden;
+			position:relative;
+			margin:100px auto;
+		}
+		img{
+			position:absolute;
+			top:0;			
+		}
+		.xiaomi span{
+			width:100%;
+			height:200px;
+			display:block;
+			position:absolute;
+			cursor:pointer;
+		}
+		.up{
+			top:0;		 
+		}
+		.down{
+			bottom:0;			 
+		}
+    </style>
+</head>
+<body>
+<div class="xiaomi" id="xiaomi">
+    <img src="images/mi.png" alt="" id="pic"/>
+    <span class="up" id="picUp"></span>
+    <span class="down" id="picDown"></span>
+</div>
+</body>
+</html>
+<script>
+	function $(id){
+		return document.getElementById(id);
+	}
+ 
+	//上半部分  
+	$("picUp").onmouseover = function(){
+		timer1 = setInterval(function(){
+			if( $("pic").offsetTop <= -(1470-400) ){
+				clearInterval(timer1);
+			}else{
+				$("pic").style.top = $("pic").offsetTop - 2 + "px";
+			}
+		},10)
+	}
+	$("picUp").onmouseout = function(){
+		clearInterval(timer1);
+	}
+	//下半部分
+	$("picDown").onmouseover = function(){
+		timer2 = setInterval(function(){
+			if( $("pic").offsetTop >=0 ){
+				clearInterval(timer2);
+			}else{
+				$("pic").style.top = $("pic").offsetTop + 1 + "px";
+			}
+		},10)
+	}
+	$("picDown").onmouseout = function(){
+		clearInterval(timer2);
+	}
+</script>
+
+
+
+

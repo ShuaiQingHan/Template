@@ -1,0 +1,138 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+  
+<body>
+<form action=""  >
+	<table width="449" height="530" border="1" align='center'>
+	  <tr>
+		<td colspan="2" align="center">用户名注册</td>
+		</tr>
+	  <tr>
+		<td width="116" align="right">姓名：</td>
+		<td width="323"><label>
+		  <input type="text" name="" id="name" />
+		</label></td>
+	  </tr>
+	  <tr>
+		<td width="116" align="right">性别：</td>
+		<td width="323"><label>
+		  <input type="radio" name="sex" id="" />男
+		   <input type="radio" name="sex" id="" />女
+		</label></td>
+	  </tr>
+	  <tr>
+		<td align="right">年龄：</td>
+		<td><label>
+		  <input type="text" name="" id="age" />
+		</label></td>
+	  </tr>
+	  <tr>
+		<td align="right">密码：</td>
+		<td><label>
+		  <input type="password" name="" id="pwd" />
+		</label></td>
+	  </tr>
+	  <tr>
+		<td align="right">确认密码：</td>
+		<td><label>
+		  <input type="password" name="" id="qpwd" />
+		</label></td>
+	  </tr>
+	  <tr>
+		<td align="right">手机：</td>
+		<td><label>
+		  <input type="text" name="" id="tel" />
+		</label></td>
+	  </tr>
+	  <tr>
+		<td align="right">QQ:</td>
+		<td><label>
+		  <input type="text" name="" id="qq" />
+		</label></td>
+	  </tr>
+	  <tr>
+		<td align="right">邮箱：</td>
+		<td><label>
+		  <input type="text" name="" id="email" />
+		</label></td>
+	  </tr>
+	  <tr>
+		<td align="right">邮编：</td>
+		<td><label>
+		  <input type="text" name="" id="eml" />
+		</label></td>
+	  </tr>
+	  <tr>
+		<td align="right">身份证：</td>
+		<td><label>
+		  <input type="text" name="" id="sname" />
+		</label></td>
+	  </tr>
+	  <tr>
+		<td align="right">验证码：</td>
+		<td><label>
+		  <input type="text"  />
+		  <span id="yz" style=" background:url(1.png) -10px -15px;width:80px;font-style: italic; height: 20px;border: 1px solid black;display: inline-block;"></span>
+		  <a href="javascript:;" id='btn'>看不清</a>
+		</label></td>
+	  </tr>
+		<tr>
+		<td align="right">爱好：</td>
+		<td><label>
+		<input type="checkbox" name="a" id="c1">
+		足球
+		<input type="checkbox" name="a" id="c2">
+		篮球
+		<input type="checkbox" name="a" id="c3">
+		排球
+		<input type="checkbox" name="a" id="c4">
+		网球
+		</label></td>
+	  </tr>
+	  <tr>
+		<td height="36" colspan="2" align="center"><label>
+		  <input type="submit" value="注册"  />
+		</label></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
+<script type="text/javascript">
+	//验证码 ：大写字母  小写字母  数字组成 
+	// 思路 ： 从 编码区间  48--122之间随机抽取一个编码 
+	//     如果编码范围在  58--64  或 91--96 之间 不满足验证码字符，就重新抽取
+	//   如果满足条件 就将该编码转成字符 存入到数组中
+	function rand(min,max){
+		return Math.round( Math.random()*(max-min) + min);
+	}
+	function $id(id){
+		return document.getElementById(id);
+	}
+	function getCode(){
+		var arrStr = [];//存6个满足条件的字符
+		for( var i = 0 ; i < 6 ; i++ ){
+			var code = rand(48,122);
+			if( code>=58&&code<=64 || code>=91&&code<=96 ){
+				//重抽  i恢复原来的值
+				i--;
+			}else{
+				arrStr[i] = String.fromCharCode(code);
+			}
+		}
+		return arrStr.join("");
+	}
+	//alert( getCode() );
+	//页面打开后 就获取六位验证码 显示到页面的span标签中
+	$id("yz").innerHTML = getCode();
+	$id("btn").onclick = function(){
+		$id("yz").innerHTML = getCode();
+	}
+</script>

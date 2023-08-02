@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>按钮切换</title>
+	<style type="text/css">
+		#outer{width:500px;height:360px;margin:50px auto;background:#BEFA4F;padding:10px;}
+		table{margin:4px auto;}
+		td{width:10px;height:10px;border:1px solid #030707;border-radius:50%;background:white;margin-left:20px;}
+		td:nth-child(1){background:yellow;}
+	</style>
+</head>
+<body>
+
+	<div id="outer">
+		<img id="tdimg" src="img/1.jpg">
+	<table>
+		<tr>
+			<td index=1></td>
+			<td index=2></td>
+			<td index=3></td>
+			<td index=4></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		window.onload=function(){
+			var tdlist=document.getElementsByTagName("td");
+			for(var i=0;i<tdlist.length;i++){
+				var td=tdlist[i];
+				td.myindex=i;
+
+
+				//点击某个按钮其他为白色；
+				td.onclick=function(){
+					for(var j=0;j<tdlist.length;j++){
+						 tdlist[j].style.background='#FFFFFF';
+					}
+					this.style.background="yellow";
+
+
+					var img=document.getElementById("tdimg");
+
+					var temp=this.myindex;
+					img.src="img/"+(this.myindex+1)+".jpg";
+
+				}
+			}
+
+
+
+		}
+	</script>
+	</div>
+</body>
+</html>

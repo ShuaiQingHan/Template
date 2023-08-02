@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function FiveNumber(){
+			var arr=[];
+			var iRandomOne =parseInt(Math.random()*100000);
+			//产生五位的随机数，生成的五位数位Number；
+			var sRandomOne=String(iRandomOne);
+			for(var i=0;i<sRandomOne.length;i++){
+				arr.push(sRandomOne[i]);
+			}
+			document.write('生成随机数：'+iRandomOne+"<br>");
+			document.write('位数：'+sRandomOne.length+"<br>");
+			for(var i=0;i<arr.length;i++){
+			document.write('第'+ (i + 1) + '个' + arr[i]+"<br>");
+			}
+		}
+		FiveNumber();
+	</script>
+</body>
+</html>

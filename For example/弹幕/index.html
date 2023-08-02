@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>弹幕</title>
+	<style type="text/css">
+		   *{ margin: 0; padding: 0;}
+		#box{
+			width: 542px; height: 330px;
+			border: 3px solid goldenrod;
+			margin-left:300px;
+
+			}
+		.wrap{
+			margin-top:40px ;
+		}
+	   #btm{
+	   		margin: 0;
+	   		padding: 0;
+	   		height: 30px;
+	   		background: goldenrod;
+	        display: flex;
+	        z-index: 999;
+	        position: relative;
+	    	}
+	   #btm span{
+		   	flex: 1;
+		   	flex-direction: colu
+		   	font: 16px/30px "微软雅黑";
+		    color: #fff;
+			line-height:33px;
+		    text-align: center;
+		    cursor: pointer;
+	         }
+	   #btm span:nth-child(1){ flex: 3;}
+	   #btm span input{
+		   	width:100% ;
+		   	height: 30px;
+		   	font: 16px/30px "微软雅黑";
+		    border: none;
+		    outline: none;
+			}
+	   #content{
+		   	height: 300px;
+		   	position: relative;
+		   	z-index: 999;
+		   background:rgba(0,0,0,0.7)
+			}
+	   #content span{
+		   	color:#fff;
+		   	height: 30px;
+		   	font: 14px/30px "微软雅黑";
+		   	position: absolute;
+		   	left:542px;
+			top:10px;
+
+		   white-space: nowrap;
+
+			}
+	   #v{
+	   	position: absolute;
+	    left: 303px;
+	    top:42px;
+	    width: 542px;
+	    height: 331px;
+	    background: url(img/bg.png);
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<div id="box">
+		<div id="content"></div>
+		<p id="btm">
+			<span><input type="text" id="text" /></span>
+			<span id="sendCon">发送</span>
+			<span id="hideCon">隐藏</span>
+			<span id="showCon">显示</span>
+		</p>
+	</div>
+	<div id="v">
+
+	</div>
+</div>
+</body>
+</html>
+
+<script src="js/startMove.js"></script>
+<script src="js/public.js"></script>
+<script type="text/javascript">
+	$id("sendCon").onclick = function(){
+		var oSpan = createEle("span");
+		oSpan.innerHTML = $id("text").value;
+		$id("content").appendChild( oSpan );
+		oSpan.style.top = rand(0,270) + "px";
+		var w = oSpan.offsetWidth;
+
+		startMove( oSpan , { "left" : -w } ,function(){
+			oSpan.remove();
+		});
+	}
+	$id("hideCon").onclick  = function(){
+		$id("content").style.opacity = 0;
+	}
+	$id("showCon").onclick  = function(){
+		$id("content").style.opacity = 1;
+	}
+</script>
+

@@ -1,0 +1,73 @@
+﻿<p><pre><xmp>
+							Set实例属性方法以及遍历操作
+  //Set 实例的属性和方法
+  //add(value)：添加某个值，返回 Set 结构本身。
+  //delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。
+  //has(value)：返回一个布尔值，表示该值是否为Set的成员。
+  //clear()：清除所有成员，没有返回值。
+   let setAdd =new Set();
+   let setVal=setAdd.add(1);
+   console.log(setAdd.size);//1
+   console.log(setVal);//Set(1) {1}
+   console.log(setVal.has(1)) // true);
+   console.log(setVal.delete(1));
+   console.log(setVal);//Set(0) {}
+   //Array.from方法可以将 Set 结构转为数组。
+   //这就提供了去除数组重复成员的另一种方法。
+   const items = new Set([1, 2, 3, 4, 5]);
+   const array = Array.from(items);
+   console.log(array);//[1, 2, 3, 4, 5]
+
+   function dedupe(array) {//这就提供了去除数组重复成员的另一种方法。
+     return Array.from(new Set(array));
+   }
+
+   console.log(dedupe([1, 1, 2, 3, 2, 5, 3]));//[1,2,3,5]
+
+
+   //Set遍历操作
+   //Set 结构的实例有四个遍历方法，可以用于遍历成员。
+   //keys()：返回键名的遍历器
+   //values()：返回键值的遍历器
+   //entries()：返回键值对的遍历器
+   //forEach()：使用回调函数遍历每个成员
+    const arr=['a','b','c'];
+    let setArr=new Set(arr);
+   for(let list of setArr.keys()){//keys()：返回键名的遍历器
+         console.log(list);
+         //a
+         //b
+         //c
+    }
+   for(let item of setArr.values()){//values()：返回键值的遍历器
+         console.log(item);
+         //a
+         //b
+         //c
+   }
+   for(let vs of setArr.entries()){//entries()：返回键值对的遍历器
+          console.log(vs);
+          //["a":"a"]
+          //["b":"b"]
+          //["c":"c"]
+   }
+   for(let item of setArr){//直接用for...of循环遍历 Set
+         console.log(item);
+         //a
+         //b
+         //c
+   }
+   //forEach()
+   //forEach方法的参数就是一个处理函数。该函数的
+   参数与数组的forEach一致，依次为键值、键名、集合
+   本身（上例省略了该参数）。这里需要注意，Set 结构
+   的键名就是键值（两者是同一个值），因此第一个参数
+   与第二个参数的值永远都是一样的。
+   setArr.forEach(function(value,key){
+     console.log(value+":"+key);
+     //a:a
+     //b:b
+     //c:c
+   })
+
+</xmp></p></pre>

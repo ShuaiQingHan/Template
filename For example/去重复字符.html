@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function charTimesAt(c,s){
+				var times = 0;
+				for(var i=0;i<s.length;i++){
+					if(c == s[i]){
+						times ++;
+					}
+				}
+				return times;
+			}
+		
+		var str = 'a,a,b,c,c,d';
+		var arr = str.split(',');
+		console.log(arr);
+		
+		function noRepeat(arr){
+			var res = [];
+			
+			for(var i=0;i<arr.length;i++){
+				if(res.indexOf(arr[i]) == -1){
+					res.push(arr[i])
+				}
+			}
+			
+			return res;
+		}
+		var newArr = noRepeat(arr);
+		document.write(newArr.join('')+"<br>")
+		// ["a", "a", "b", "c", "c", "d"]
+		for(var i=0;i<newArr.length;i++){
+
+			document.write(newArr[i]+charTimesAt(newArr[i],arr)+"&nbsp;")
+		}
+		</script>
+</body>
+</html>

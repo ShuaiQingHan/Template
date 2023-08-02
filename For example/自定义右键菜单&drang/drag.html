@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		div{
+			width:300px;
+			height:300px;
+			background: #C2F673;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="drag"></div>
+	<script type="text/javascript">
+		var oDrag=document.getElementById("drag");
+	
+			oDrag.onmousedown = function(e){
+				var evt = e || event;
+				var _left = evt.offsetX;
+				var _top = evt.offsetY;
+				
+				document.onmousemove = function(e){
+					var evt = e || event;
+					var x = evt.clientX - _left;
+					var y = evt.clientY - _top;
+			if(x>=document.documentElement.clientWidth - oDrag.offsetWidth){
+						x = document.documentElement.clientWidth - oDrag.offsetWidth;
+					}
+			if(y<=0){
+				y=0;
+			}
+			if(y>=document.documentElement.clientHeight - oDrag.offsetHeight){
+						y = document.documentElement.clientHeight - oDrag.offsetHeight;
+					}
+					
+
+			oDrag.style.left=x+"px";
+			oDrag.style.top=y+"px";
+		
+			
+			}
+			// 鼠标弹起的时候停止移动
+			document.onmouseup=function(){
+				document.onmousemove=null;
+			}
+		
+		}
+	</script>
+	
+</body>	
+</html>

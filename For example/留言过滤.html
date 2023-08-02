@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言过滤</title><style>
+			h1{
+				text-align: center;
+				font-weight:400;
+			}
+			.ly{
+				width: 520px;
+				height: 480px;
+				border: 1px solid #000000;
+				margin: 10px auto;
+				padding: 40px 100px;
+			}
+			#lyb{
+				width: 500px;
+				height: 400px;
+				background:#C1C1C1;
+				border: 1px solid #000000;
+				font-size: 16px;
+			}
+			.out{
+				width: 300px;
+				height: 50px;
+				background: #C4BAC9;
+				border: 1px solid #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>留言板过滤</h1>
+		<div class="ly">
+		<div  id="lyb">	
+		</div><br><br>
+		<input class="out" type="text" name="" id="ipt" value="" />
+		<input type="button" name="" id="btn" value="提交留言" />
+	  </div>
+		<script type="text/javascript">
+			
+		
+			btn.onclick = function(){
+				var str = ipt.value;
+				
+				for(var i=1;i<str.length;i++){
+					if(str.substr(i,3)=="你傻丫"){
+				str = str.replace('你傻丫','***');
+					}
+				}
+				lyb.innerHTML+="<p>"+str+"</p>"
+			}
+		</script>
+</body>
+</html>

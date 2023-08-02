@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		#ball{
+			width: 30px;
+			height: 30px;
+			background: skyblue;
+			position: absolute;
+			left: 0;
+			top: 100px;
+			border-radius:50% ;
+		}
+	</style>
+	<body>
+		<input type="button" value="飞起来" id="btn" />
+		<div id="ball"></div>
+	</body>
+</html>
+<script>
+	//反弹 ： 速度反向
+	var oBtn = document.getElementById("btn");
+	var oDiv = document.getElementById("ball");
+	var speedX = 5;
+	var speedY = -15;//初始方向如果是负数 向上运动      正数  向下运动
+	var timer = null;
+	oBtn.onclick = function(){
+		timer = setInterval(function(){
+			oDiv.style.left = oDiv.offsetLeft + speedX + "px";
+			oDiv.style.top = oDiv.offsetTop + speedY + "px";
+			if( oDiv.offsetLeft < 0 ){
+				oDiv.style.left = 0;
+				speedX *= -1;
+			}else if( oDiv.offsetLeft > (window.innerWidth-oDiv.offsetWidth) ){
+				oDiv.style.left = window.innerWidth-oDiv.offsetWidth + "px";
+				speedX *= -1;
+			}
+			
+			if( oDiv.offsetTop < 0 ){
+				oDiv.style.top = 0;
+				speedY *= -1;
+			}else if( oDiv.offsetTop > (window.innerHeight-oDiv.offsetHeight) ){
+				oDiv.style.top = window.innerHeight-oDiv.offsetHeight + "px";
+				speedY *= -1;
+			}
+		},30)
+	}
+</script>

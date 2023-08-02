@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				width:600px;
+				height:600px;
+			}
+			ul>li{
+				width:90px;
+				height:90px;
+				border-radius: 50%;
+				opacity:0;
+				list-style: none;
+			}
+			ul.red>#red,ul.green>#green,ul.yellow>#yellow{
+				opacity: 1.0;
+			}
+			#red{background: red;}
+			#green{background: green;}
+			#yellow{background: yellow;}
+			
+		</style>
+	</head>
+	<body>
+		<ul id="traffic">
+			<li id="red"></li>
+			<li id="yellow"></li>
+			<li id="green"></li>
+		</ul>
+		<script type="text/javascript">
+			function timeout(timer){ 
+				return function(){ 
+					return new Promise(function(resolve,reject){ 
+						setTimeout(resolve,timer) 
+					}) 
+				} 
+			} 
+			var red = timeout(2000);
+			var yellow = timeout(1000); 
+			var green = timeout(3000);
+			
+			var traffic = document.getElementById("traffic"); 
+			(function restart(){ 
+				'use strict' //严格模式 
+				traffic.className = 'red'; 
+				red() .then(function(){  
+					traffic.className = 'yellow'; 
+					return yellow(); }) .then(function(){ 
+					traffic.className = 'green'; 
+					return green(); 
+					}).then(function(){
+						restart() 
+					}) 
+			})();
+//						
+		</script>
+	</body>
+</html>

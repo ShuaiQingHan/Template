@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="cartList">
+			
+		</ul>
+		<script src="cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			/*var productData = [{
+				prodId: 10001,
+				title: "送素描纸画架画板套装",
+				price: 100,
+				imgSrc: "img/1.jpg"
+			},{
+				prodId: 10002,
+				title: "送素描纸画架k写生素描画板",
+				price: 100,
+				imgSrc: "img/2.jpg"
+			},{
+				prodId: 10003,
+				title: "送素描纸4k写生素描画板",
+				price: 100,
+				imgSrc: "img/3.jpg"
+			},{
+				prodId: 10004,
+				title: "送素描纸画架画板套素描画板",
+				price: 100,
+				imgSrc: "img/2.jpg"
+			},{
+				prodId: 10005,
+				title: "送素描纸画k写生素描画板",
+				price: 100,
+				imgSrc: "img/3.jpg"
+			}];*/
+			var productData = {
+				"10001": {
+					prodId: 10001,
+					title: "送素描纸画架画板套装",
+					price: 100,
+					imgSrc: "img/1.jpg"
+				},
+				"10002": {
+					prodId: 10002,
+					title: "送素描纸画架画板套装",
+					price: 100,
+					imgSrc: "img/1.jpg"
+				},
+				"10003": {
+					prodId: 10003,
+					title: "送素描纸画架画板套装",
+					price: 100,
+					imgSrc: "img/1.jpg"
+				},
+				"10004": {
+					prodId: 10004,
+					title: "送素描纸画架画板套装",
+					price: 100,
+					imgSrc: "img/1.jpg"
+				},
+				"10005": {
+					prodId: 10005,
+					title: "送素描纸画架画板套装",
+					price: 100,
+					imgSrc: "img/1.jpg"
+				}
+			}
+			
+			
+			if(getCookie("cart")){
+				var strToObj = JSON.parse(getCookie("cart"));
+			}
+			var oCartList = document.getElementById("cartList");
+			for(var i in strToObj){
+				/*for(var j = 0; j < productData.length; j++){
+					if(i==productData[j].prodId){
+						oCartList.innerHTML += "<li><img src='"+productData[j].imgSrc+"'><span>"+productData[j].title+"</span><span>"+productData[j].price+"</span><span>"+strToObj[i]+"</span></li>"
+					}
+				}*/
+				
+				oCartList.innerHTML += "<li><img src='"+productData[i].imgSrc+"'><span>"+productData[i].title+"</span><span>"+productData[i].price+"</span><span>"+strToObj[i]+"</span></li>"
+			}
+			
+		</script>
+	</body>
+</html>

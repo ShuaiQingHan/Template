@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Generator生成器生成菲比那齐数列</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function* fibo() {
+  let a = 0
+  let b = 1
+  yield a
+  yield b
+  while (true) {
+    let next = a + b
+    a = b
+    b = next
+    yield next
+  }
+}
+let generator = fibo()
+
+	for (var i = 0; i < 10; i++)
+  document.write(generator.next().value+"&nbsp;")
+	</script>
+</body>
+</html>

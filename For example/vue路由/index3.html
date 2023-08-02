@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul> 
+			<li><a href='#blue'>111</a></li> 
+			<li><a href='#yellow'>222</a></li> 
+			<li><a href='#red'>333</a></li> 
+			<li><a href='#green'>444</a></li> 
+		</ul>
+
+
+	</body>
+	<script type="text/javascript">
+		function FrontRouter() { 
+			this.routes = {}; 
+			window.addEventListener('load', this.resolve.bind(this), false); 
+			window.addEventListener('hashchange', this.resolve.bind(this), false); 
+		} 
+		FrontRouter.prototype.route = function(path, callback) { 
+			this.routes[path] = callback || function() {}; 
+		}; 
+		FrontRouter.prototype.resolve = function() { 
+			this.curHash = location.hash.slice(1) || '/'; 
+			typeof this.routes[this.curHash] === 'function' && this.routes[this.curHash](); 
+		};
+
+		var router = new FrontRouter(); 
+		router.route('blue', function() {
+			document.body.style.backgroundColor = 'blue'; 
+		}); 
+		router.route('yellow', function() { 
+			document.body.style.backgroundColor = 'yellow'; 
+		}); 
+		router.route('red', function() { 
+			document.body.style.backgroundColor = 'red'; 
+		});
+		router.route('green', function() { 
+			document.body.style.backgroundColor = 'green'; 
+		});
+
+	</script>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>旋转木马轮播图</title>
+    <link rel="stylesheet" href="css/css.css"/>
+</head>
+<body>
+<div class="wrap" id="wrap">
+   <div class="slide" id="slide">
+       <ul>
+           <li><a href="#"><img src="images/slidepic1.jpg" alt=""/></a></li>
+           <li><a href="#"><img src="images/slidepic2.jpg" alt=""/></a></li>
+           <li><a href="#"><img src="images/slidepic3.jpg" alt=""/></a></li>
+           <li><a href="#"><img src="images/slidepic4.jpg" alt=""/></a></li>
+           <li><a href="#"><img src="images/slidepic5.jpg" alt=""/></a></li>
+       </ul>
+       <div class="arrow" id="arrow">
+           <a href="javascript:;" class="prev" id="prev"></a>
+           <a href="javascript:void(0);" class="next" id="next"></a>
+       </div>
+   </div>
+</div>
+</body>
+</html>
+<script src="../../public.js"></script>
+<script src="sport6.js"></script>
+<script>
+   var json = [
+        {   //  1
+            "width":400,
+            "top":20,
+            "left":50,
+            "opacity":20,
+            "zIndex":2
+        },
+        {  // 2
+            "width":600,
+            "top":70,
+            "left":0,
+            "opacity":80,
+            "zIndex":3
+        },
+        {   // 3
+            "width":800,
+            "top":100,
+            "left":200,
+            "opacity":100,
+            "zIndex":4
+        },
+        {  // 4
+            "width":600,
+            "top":70,
+            "left":600,
+            "opacity":80,
+            "zIndex":3
+        },
+        {   //5
+            "width":400,
+            "top":20,
+            "left":750,
+            "opacity":20,
+            "zIndex":2
+        }
+	];
+	
+	// [4,5,1,2,3]    unshift(pop())   push   pop   shift  unshift 
+	
+	var list = document.getElementsByTagName("li");
+	myList();
+	function myList(){
+		
+		for(var i=0;i<list.length;i++){
+		startMove(list[i],json[i],function(){
+			f=true;
+		})
+	}
+	}
+	
+	$id("wrap").onmouseover=function(){
+		startMove($id("arrow"),{opacity:100})
+	}
+	
+	$id("wrap").onmouseout=function(){
+		startMove($id("arrow"),{opacity:0})
+	}
+	
+	$id("next").onclick=function(){
+		json.unshift(json.pop());
+		myList();
+	}
+	var f = true;
+	$id("prev").onclick=function(){
+		if(f){
+			json.push(json.shift());
+		myList();
+		f=false;
+	}
+		}
+		
+	
+	
+	
+	
+	
+	
+//	var list = document.getElementsByTagName("li");
+//	//页面加载   调用运动函数   将json中的数据对应到页面的每张图片上
+//	loadImg();
+//	function loadImg(){
+//		for( var i = 0 ; i < list.length ; i++ ){
+//			startMove( list[i],json[i] ,function(){
+//				f = true;//上一个动作完成后 开启开关 
+//			});
+//		}
+//	}
+//	
+//	$id("wrap").onmouseover = function(){
+//		startMove( $id("arrow") , { opacity : 100 });
+//	}
+//	$id("wrap").onmouseout = function(){
+//		startMove( $id("arrow") , { opacity :0 } );
+//	}
+//	
+//	//点击右侧按钮   操作数组 ：  删除数组中的最后一个数    放到第一位
+//	$id("next").onclick = function(){
+//		json.unshift(  json.pop() );
+//		loadImg();
+//	}	
+//	var f = true;//如果为真   可以点击
+//	//点击左侧按钮   删除数组中的第一个数放到数组最后面
+//	$id("prev").onclick = function(){
+//		if(f){
+//			json.push(  json.shift() );
+//			loadImg();
+//			f = false;
+//		}
+//	}
+</script>

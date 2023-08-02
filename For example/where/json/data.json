@@ -1,0 +1,132 @@
+{
+	"classify001":{
+		"name" : "国内自由行",
+		"list" : [
+			{
+				"id" : "shop01",
+				"name" : "丽江大理行",
+				"src" : "1.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop02",
+				"name" : "三亚浪漫之旅",
+				"src" : "2.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop03",
+				"name" : "盛夏海滨游 青岛|大连|威海",
+				"src" : "3.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop04",
+				"name" : "张家界+凤凰古城3日游",
+				"src" : "4.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop05",
+				"name" : "熊猫基地+都江堰",
+				"src" : "5.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop06",
+				"name" : "最美张家界三日豪华游",
+				"src" : "6.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop07",
+				"name" : "洱海豪华浪漫游",
+				"src" : "7.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop08",
+				"name" : "鼓浪屿自由行",
+				"src" : "8.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop09",
+				"name" : "鼓浪屿自由行",
+				"src" : "8.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop10",
+				"name" : "张家界+凤凰古城3日游",
+				"src" : "4.jpg",
+				"price" : "999"
+			}
+		]
+	},
+	"classify002":{
+		"name" : "海外自由行",
+		"list" : [
+			{
+				"id" : "shop11",
+				"name" : "泰国曼谷7天游",
+				"src" : "11.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop02",
+				"name" : "大阪自由行",
+				"src" : "12.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop13",
+				"name" : "普吉岛5日游",
+				"src" : "13.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop04",
+				"name" : "越南芽庄5日自助游",
+				"src" : "14.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop15",
+				"name" : "沙巴6-7天自由行",
+				"src" : "15.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop16",
+				"name" : "巴厘岛阿雅娜",
+				"src" : "16.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop17",
+				"name" : "新加坡6/7天往返含税机票",
+				"src" : "17.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop18",
+				"name" : "日本薰衣草欣赏之旅",
+				"src" : "18.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop19",
+				"name" : "澳门三日游",
+				"src" : "19.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop20",
+				"name" : "德法意瑞4国11-14天",
+				"src" : "20.jpg",
+				"price" : "999"
+			}
+		]
+	}
+}

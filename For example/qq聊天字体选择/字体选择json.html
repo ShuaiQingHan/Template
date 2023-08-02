@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义字体形状</title>
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		#wrap {
+			background: url(12-img/bg.jpg) 0 0 no-repeat;
+			width: 556px;
+			height: 535px;
+			margin: 10px auto;
+			position: relative;
+			display: block;
+		}
+		#showbox {
+			position: absolute;
+			top: 100px;
+			left: 10px;
+			height: 270px;
+			width: 385px;
+			display: block;
+			font-size: 16px;
+			overflow: auto;
+		}
+		textarea {
+			border: none;
+			position: absolute;
+			width: 385px;
+			height: 75px;
+			left: 10px;
+			top: 415px;
+			font-size: 16px;
+		}
+		select {
+			position: absolute;
+			top: 385px; 
+			left: 8px;
+		}
+		input {
+			position: absolute;
+			top: 509px;
+			left: 323px;
+			width: 80px;
+			cursor: pointer;
+		}
+		#showbox div {
+			width: 20px;
+			display: inline-block;
+			font-size: 16px;
+			margin: 2px 0;
+		}
+		div img {
+			width: 16px;
+			height: 16px;
+		}
+	</style>
+	<script>
+		 
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="showbox">
+			<!-- <div><img src="12-img/balloon.png" alt="" /><span>s</span></div> -->
+		</div>
+		<select name="fontStyle" id="fontStyle">
+			<option value="balloon">气球字体</option>
+			<option value="love">表白字体</option>
+			<option value="knife">砍刀字体</option>
+			<option value="jiong">囧人字体</option>
+			<option value="shuai">衰人字体</option>
+			<option value="default" selected>默认字体</option>
+		</select>
+		<textarea id="txt"></textarea>
+		<input type="button" value="发送" id="btn">
+	</div>
+</body>
+</html>
+<script src="../../../public.js"></script>
+<script>
+	var json =  {
+					'balloon': '12-img/balloon.png',
+					'love': '12-img/heart.gif',
+					'knife': '12-img/knife.gif',
+					'jiong': '12-img/jiong.gif',
+					'shuai': '12-img/shuai.gif'
+				};
+				/*
+				 如果是默认字体  将输入的内容添加到聊天div中
+				 如果不是默认字体   获取被选中的 下拉列表的value值     取出json中图片的路径  进行拼接
+				 	json["jiong"]
+				 * */
+	var oSel = $id("fontStyle");
+	var box = $id("showbox");
+	$id("btn").onclick = function(){
+		var str = $id("txt").value;
+		if( oSel.value == "default" ){//默认字体
+			box.innerHTML += str + "<br>";
+			$id("txt").value = "";
+			return;
+		}
+		
+		// 如果不是默认字体   
+		var arr = str.split("");
+		var html = "";
+		for( var i = 0 ; i < arr.length ; i++ ){
+			html += '<div><img src="'+json[oSel.value]+'" alt="" /><span>'+arr[i]+'</span></div>';
+		}
+		box.innerHTML += html + "<br>";
+		$id("txt").value = "";
+	}
+</script>

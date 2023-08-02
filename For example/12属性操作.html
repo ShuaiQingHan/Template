@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="star.gif" imgname="星星图片" alt="xingxing" />
+		<input type="checkbox" id="ck" />
+	</body>
+</html>
+<script>
+	//获取图片的路径 ： 
+	var oImg = document.querySelector("img");
+	oImg.setAttribute("id",1);
+	oImg.removeAttribute("id");
+	//oImg.index = 1;
+	//alert( oImg.getAttribute("src") );
+	var ck = document.querySelector("#ck");
+	ck.onclick = function(){
+		//点击复选框时  获取复选框的checked值
+		alert( this.getAttribute("checked") )
+	}
+</script>

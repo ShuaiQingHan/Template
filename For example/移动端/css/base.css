@@ -1,0 +1,342 @@
+body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend,nav,menu,input,figure,
+figcaption{margin:0; padding:0;}
+ul,li,ol{list-style:none;}
+img,fieldset{border:0; }
+img{display:block;}
+a{text-decoration:none; color:#333;}
+h1,h2,h3,h4,h5,h6{font-weight:100;}
+body{ font-family:"微软雅黑";}
+input,a{outline:none;}
+.flt{
+	float: left;
+}
+.frt{
+	float: right;
+}
+
+html,body{
+	height: 100%;
+}
+body{
+	font-size:16px;
+	width: 100%;
+	padding: 0.56rem 0 0.62rem 0;
+}
+
+@font-face{
+	font-family: zhang;
+	src:url(../fonts/iconfont.eot),
+		url(../fonts/iconfont.svg),
+		url(../fonts/iconfont.ttf),
+		url(../fonts/iconfont.woff);
+}
+
+/*-----header---*/
+header{
+	position: fixed;
+	height: 0.56rem;
+	background: #3281ed;
+	width: 100%;
+	top:0;
+	z-index: 2;
+	color: #fff;
+	
+}
+header p{
+	text-align: center;
+	line-height: 0.56rem;
+	font-size: 0.2rem;
+}
+header span{
+	position: absolute;
+	left: 0.12rem;
+	top:0.13rem;
+	font-size: 0.3rem;
+	font-family: zhang;
+	display:block;
+	cursor: pointer;
+}
+/*------aside-----*/
+#aside{
+	width: 2.3rem;
+	position: fixed;
+	height: 100%;
+	z-index: 3;
+	top:0;
+	left:-2.3rem;
+	background: #fff;
+	display:;
+}
+#aside div{
+	font-size: 0.18rem;
+	text-align: center;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	color: #fff;
+	background: #01c1ee;
+	width: 100%;
+}
+#aside p{
+	font-size: 0.18rem;
+	height: 0.58rem;
+	line-height: 0.58rem;
+	text-indent: 0.2rem;
+	border-bottom: 1px solid #ccc;
+}
+#aside span{
+	position: absolute;
+	left: 0;
+	font-size: 0.26rem;
+	top:0.12rem;
+	color:#fff;
+	font-family: zhang;
+	cursor: pointer;
+}
+
+
+
+
+
+/*------banner----*/
+#banner{
+	width: 100%;
+	height: 2.26rem;
+	overflow: hidden;
+	position: relative;
+}
+#banner #ul li{
+	width: 4.68rem;
+	height: 2.26rem;
+	text-align: center;
+	line-height: 2.26rem;
+	color:#fff;
+	font-size: 0.3rem;
+	float:left;
+}
+#banner #ul li:nth-of-type(1){
+	background: #19aefa;
+}
+#banner #ul li:nth-of-type(2){
+	background: #5187f5;
+}
+#banner #ul li:nth-of-type(3){
+	background:#f0ee5b;
+}
+#banner #ul li:nth-of-type(4){
+	background: #19aefa;
+}
+#banner #ul{
+	position: absolute;
+}
+#banner #list li{
+	list-style: none;
+	width: 0.2rem;
+	height: 0.2rem;
+	border-radius: 50%;
+	background: #000;
+	opacity: 0.3;
+	text-align: center;
+	line-height: 0.2rem;
+	font-size: 0.12rem;
+	color:#fff;
+	float: left;
+	margin:0 0.1rem;
+}
+#banner #list{
+	position: absolute;
+	bottom: 0.1rem;
+	left: 1.8rem;
+}
+#banner #list li.hover,#banner #list li:hover{
+	background: red;
+	opacity: 1;
+	cursor: pointer;
+}
+/*-----#content----*/
+#content div{
+	height: 0.58rem;
+	border-bottom: 1px solid #aaa;
+	line-height: 0.58rem;
+	padding-left: 0.2rem;
+	color:#666;
+	overflow: hidden;
+	font-size: 0.18rem;
+}
+#content div label{
+	width: 1.56rem;
+	float: left;
+}
+#content div input{
+	font-size: 0.18rem;
+	border:0;
+	float: left;
+	color:#444;
+	height: 0.58rem;
+	width: 2.8rem;
+}
+#content #dl,#content #zc{
+	width: 100%;
+	border:0;
+	border-radius: 0.02rem;
+	height: 0.58rem;
+	background: #00c3ef;
+	text-align: center;
+	line-height: 0.58rem;
+	color:#fff;
+	font-size: 0.18rem;
+	margin-top: 0.26rem;
+}
+#content #zc{
+	margin-top: 0.12rem;
+	background: #019ec1;
+}
+
+/*----section---*/
+#section{
+
+}
+#cart ul li,#section ul li{
+	border:1px solid #ccc;
+	overflow: hidden;
+	font-size: 0.20rem;
+}
+#section ul li a{
+	overflow: hidden;
+	display: block;
+}
+#cart ul li img,#section ul li img{
+	width: 0.9rem;
+	height: 0.9rem;
+	float: left;
+	margin:0.1rem;
+}
+#cart ul li p,#section ul li p{
+	margin:0.1rem;
+	line-height: 0.2rem;
+}
+#cart ul li span,#section ul li span{
+	font-size: 0.18rem;
+	color:#888;
+}
+#cart ul li span b,#section ul li span b{
+	font-weight: 100;
+}
+/*-----detail---*/
+#detail p{
+	font-size: 0.14rem;
+	padding:0.1rem 0.04rem;
+	margin:0.05rem;
+	border:1px solid #ccc;
+	border-radius: 0.02rem;
+}
+#detail #btn2{
+	border:1px solid #fff;
+	width: 0.8rem;
+	background: blue;
+	height: 0.3rem;
+	text-align: center;
+	color:#fff;
+	font-size: 0.14rem;
+	border-radius:0.04rem;
+	cursor: pointer;
+}
+#header #btn7{
+	
+}
+/*-----#cart-----*/
+#cart ul li strong{
+	font-weight: 100;
+	font-size: 0.18rem;
+	color:#666;
+	font-family: zhang;
+}
+#cart ul li p{
+	margin-bottom: 0.04rem;
+}
+#cart ul li i{
+	font-style: normal;
+}
+#cart ul li input{
+	border:0;
+	background: #00c2ec;
+	height: 0.3rem;
+	width: 0.4rem;
+	color:#fff;
+	font-size: 0.14rem;
+	border-radius: 0.02rem;
+	display: block;
+	margin-top: 0.06rem;
+}
+#cart ul li .xz{
+	width: 0.2rem;
+	height: 0.2rem;
+	color:#ccc;
+	float: left;
+	margin: 0.1rem;
+	margin-right: 0;
+}
+#cart ul li a{
+	margin:0.1rem;
+	border:1px solid #ccc;
+}
+#cart ul li .btn3{
+	cursor: pointer;
+}
+/*------pay------*/
+#pay{
+	position: fixed;
+	bottom: 0.62rem;
+	left:0;
+	width: 100%;
+	font-size: 0.18rem;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	background: #eee;
+}
+#pay #btn5{
+	border:0;
+	width: 0.8rem;
+	height: 0.6rem;
+	background: orange;
+	color:#fff;
+	cursor: pointer;
+}
+#pay .frt{
+	color: red;
+}
+
+/*---footer---*/
+footer{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	height: 0.62rem;
+	z-index: 2;
+	background: #3281ed;
+}
+footer a{
+	color:#fff;
+	height: 0.62rem;
+	padding-top: 0.06rem;
+	display: flex;
+	float: left;
+	flex-direction: column;
+	font-size: 0.16rem;
+	width: 0.8rem;
+	align-items: center;
+}
+footer a:first-child{
+	margin-left: 0.39rem;
+}
+footer a:nth-child(2){
+	margin:0 0.75rem;
+}
+footer a:last-child{
+	margin-right: 0.39rem;
+}
+footer a span{
+	font-family: zhang;
+	text-align: center;
+	font-size: 0.3rem;
+}
+

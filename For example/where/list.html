@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>旅游列表</title>
+		 <link href="img/logo.jpg" rel="shortcut icon" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="css/list.css"/>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cookie1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/list.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+			<div id="topnav">
+			<div class="topWrap">
+				<p>
+					<!--<span>欢迎来到去哪网</span>-->
+					<a href="login.html">请登录</a>
+					<a href="register.html">免费注册</a>
+				</p>
+				<ul>
+					<li><a href="cart.html" id="cartHref">我的购物车</a></li>
+					<li><a href="">消息</a> |</li>
+					<li><a href="">查看订单</a> |</li>
+					<li><a href="">积分商城</a> |</li>
+					<li><a href="">联系客服</a></li>
+				</ul>
+			</div>
+	</div>
+	<!--header-->
+	<div id="headWrap"></div>
+		
+			<!--<a class="wrap_btn" href="cart.html"><input type="button" name="" id="btn" value="我的购物车" /></a>-->
+			<!--侧边栏对联广告-->
+			<img src="img/left_ad.png" class="left">
+			<img src="img/right_ad.png" class="right">
+			<!--右下角弹窗广告-->
+			<div class="ad">
+			    <img src="img/ad-pic.jpg" alt=""style="width:420px;height:280px;">
+			    <span style="cursor: pointer;">关闭</span>
+			</div>
+			<span id="s1">
+
+			</span>
+		</div>
+		<!--列表分类标题-->
+		<div class="nav clearfix">
+			
+		</div>
+		<!--详细列表页-->
+		<ul class="shoplist clearfix">
+		 
+		 
+		</ul>
+		<!--footer-->
+		<div id="footWrap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	$("#headWrap").load("header.html #header_wrap")
+	$("#footWrap").load("header.html .qn_footer");
+</script>

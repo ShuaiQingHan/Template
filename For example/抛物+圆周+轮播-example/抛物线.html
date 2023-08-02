@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#prod{
+				position: absolute;
+				left: 50px;
+				bottom: 100px;
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			#cart{
+				position: fixed;
+				right: 5px;
+				top: 20px;
+				border: 1px solid red;
+				width: 100px;
+				height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="prod"></div>
+		<div id="cart"></div>
+		<input type="button" value="抛物线" id="btn">
+		<script type="text/javascript">
+			var oBtn = document.getElementById("btn");
+			var oProd = document.getElementById("prod");
+			var oCart = document.getElementById("cart");
+			var timer = null;
+			oBtn.onclick = function(){
+				var x1 = oProd.offsetLeft;
+				var y1 = oProd.offsetTop;
+				
+				var x2 = oCart.offsetLeft;
+				var y2 = oCart.offsetTop;
+				
+				//y = a*x*x + b*x + c;
+				//平移抛物线 经过原点  得到c为0
+				var c = 0;
+				//已知a
+				var a = 0.0003;
+				
+				//平移之后的抛物线经过一个点
+				
+				var x = x2 - x1;
+				var y = y2 - y1;
+				
+				var b = (y - a*x*x)/x;
+				
+				clearInterval(timer);
+				var count = 0;
+				timer = setInterval(function(){
+					count += 5;
+					var _left = count;
+					var _top = a*_left*_left + b*_left + c;
+					
+					oProd.style.left = x1 + _left + "px";
+					oProd.style.top = y1 + _top + "px";
+					
+					if(oProd.offsetLeft >= x2){
+						clearInterval(timer);
+					}
+					
+				},20)
+				
+				
+			}
+		</script>
+	</body>
+</html>

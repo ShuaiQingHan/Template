@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0;}
+        ul,ol{list-style:none;}
+        #box {
+			position:relative;
+			margin:100px auto;
+			 
+			width: 350px;
+			height:350px;
+        }
+        #box ul{
+            overflow: hidden;
+           
+			position:absolute;
+			top:350px;
+			left:0;
+			width:350px;
+        }
+        #box li {
+            float: left;	 
+			border-top:none;
+        }
+		.small{
+			width:350px;
+			height:350px;	
+			background: red; 
+		}
+		.small img{
+			position:absolute;
+			top:0;
+			left:0;
+		}
+	    #bottom li{
+	    	width:85px;
+	    	margin-top:5px;
+	    }
+	    #big{
+				width:400px;
+				height:400px;
+				border:1px solid #ccc;
+				overflow:hidden;
+				position:absolute;
+				top:0;
+				left:360px;
+				display:none;
+			}
+		#mask{
+				width:176px;
+				height:176px;
+				/*background:red;
+				opacity:0.1;*/
+				position:absolute;
+				top:0;
+				left:0;
+				display:none;
+			}
+		.bigImage{
+				position:absolute;
+				top:0;
+				left:0;
+			}
+		#small{
+				position:relative;
+				cursor:move;  
+			}
+		#layer{
+			position:absolute;
+			top:0;
+			left:0;
+			width: 350px;
+			height: 350px;
+			background: gray;
+			opacity:0.4 ;
+			display:none;	
+		}	 
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+<div id="box">
+	<div id="small" class="small">
+         <img src="images/1m.jpg" alt=""/> 
+         <img src="images/2m.jpg" alt=""/> 
+         <img src="images/3m.jpg" alt=""/> 
+         <img src="images/4m.jpg" alt=""/>
+         <div id="layer"></div>
+    	 <div id="mask"></div>   
+    </div>
+    <div id="big">
+		<img src="images/1b.jpg" class="bigImage"/>
+		<img src="images/2b.jpg" class="bigImage"/>
+		<img src="images/3b.jpg" class="bigImage"/>
+		<img src="images/4b.jpg" class="bigImage"/>
+	</div>
+	<ul id="bottom">
+        <li><img src="images/1s.jpg" alt=""/></li>
+        <li><img src="images/2s.jpg" alt=""/></li>
+        <li><img src="images/3s.jpg" alt=""/></li>
+        <li><img src="images/4s.jpg" alt=""/></li>
+    </ul>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+   	$("#bottom li").mouseenter(function(){
+   	    $("#mask").show();
+   		$("#big").show();
+   		$("#layer").show();
+   		var index = $(this).index();
+   		$("#small img").eq(index).show().siblings("img").hide();
+   		$(".bigImage").eq(index).show().siblings().hide();
+   		$("#mask").css("background","url(images/"+(index+1)+"m.jpg)")
+   	})
+   	
+   	$("#small").mousemove(function(e){
+   		var e = e || event;
+   		var x = e.pageX - $("#mask").outerWidth()/2 - $("#box").offset().left;
+   		var y = e.pageY - $("#mask").outerHeight()/2 - $("#box").offset().top;
+   		var maxL = $("#box").outerWidth()-$("#mask").outerWidth();
+   		var maxT = $("#box").outerHeight()-$("#mask").outerHeight();
+   		x = Math.min( maxL , Math.max(0,x) ) ;
+   		y = Math.min( maxT , Math.max(0,y) ) ;
+   		$("#mask").css({
+   			left : x,
+   			top : y,
+			backgroundPosition:-x+"px -"+ y + "px"
+   		})
+     	//	  大图left / mask.left = 大图宽度 / 小图宽度 = 大图可视区宽度 /mask的宽度
+   		$(".bigImage").css({
+   			left: - x * 800/350,
+   			top :- y * 800/350
+   		})
+   	})
+</script>
+

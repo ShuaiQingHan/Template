@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.active{
+			width:200px;
+			height:200px;
+			border:1px solid red;
+		}
+		.hide{
+			display:none;
+		}
+	</style>
+	<body>
+		<input type="button" value="隐藏" name="btn" />
+		<div></div>
+	</body>
+</html>
+<script>
+	var oDiv = document.querySelector("div");
+	oDiv.className = "active";
+	
+	var flag = true;//假设flag值为true时  按钮--显示  div隐藏
+	var oBtn = document.getElementsByName("btn")[0];
+	//点击按钮控制div的显示和隐藏效果
+	oBtn.onclick = function(){
+		if( flag ){
+			oBtn.value="显示";
+			oDiv.className = "active hide";
+			//flag = false;
+		}else{
+			oBtn.value="隐藏";
+			oDiv.className = "active";
+			//flag = true;
+		}
+		flag = !flag;
+	}
+</script>

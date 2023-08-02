@@ -1,0 +1,333 @@
+.updatePwd .input-group-addon {
+	cursor:pointer;
+}
+
+.layout-table {display:table; width:100%;}
+.layout-table>div {display:table-cell; min-height:300px; vertical-align:top;}
+.layout-table>.layout-tree {width:230px; background-color:#fff; border:#ddd 1px solid;}
+.layout-table>.layout-main {padding:0 0 0 15px;}
+.tree-title {background-color:#e6e6e6; text-align:center; height:40px; line-height:40px;}
+.tree-container {padding:10px 0;}
+.table-container {margin-top:15px;}
+.table-container .filter .form-control {width:100%;}
+.table-container .dataTable thead th {vertical-align:top;}
+
+
+
+/* ============================
+==================skin-blue======
+================================= */
+.btn-default {
+    background: none !important;
+
+}
+.main-sidebar,
+.left-side {
+    width: 210px;
+}
+.content-wrapper,
+.right-side,
+.main-footer {
+    margin-left: 210px;
+}
+.skin-blue .main-header .navbar {
+    background-color: #189cf0;
+}
+.skin-blue .main-header .logo {
+    background-color: #189cf0;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
+.skin-blue .sidebar-menu>li>.treeview-menu {
+    background: #2E3F52;
+}
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #3E536B;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 20px 0px 20px 0px;
+}
+.skin-blue .sidebar a,
+.skin-blue .treeview-menu>li>a {
+    color: #fff;
+}
+.skin-blue .sidebar a:hover, 
+.skin-blue .treeview-menu>li>a:hover {
+    color: #189cf0;
+    border-left-color: #3c8dbc;
+}
+.skin-blue .treeview-menu>li.active>a, .skin-blue .treeview-menu>li>a:hover {
+    color: #189CF0;
+}
+.skin-blue .main-header .navbar .sidebar-toggle:hover,
+.skin-blue .main-header .logo:hover {
+    background-color: #189CF0;
+}
+
+@media (max-width: 767px) {
+  .main-header .navbar {
+    margin: 0;
+}
+.content-wrapper,
+.right-side,
+.main-footer {
+    margin-left: 0px;
+}
+.main-header .logo {
+   width: 100%;
+}
+}
+/* =============================content====================== */
+
+h1.content-h1{
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;    
+    font-weight: bold;
+    border-left: 4px solid #189cf0;
+    padding-left: 8px;
+    margin-bottom: 15px; 
+}
+h1.content-h1 .text-right{
+   margin-top: -6px;
+}
+
+/* =====================
+
+====WMS================== */
+.employee_edit_j{
+    border-left: 2px solid #189CF0;
+    margin-bottom: 5px;
+    position: relative;
+}
+.employee_edit_j p{
+    margin-left: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    border-bottom: 1px solid gainsboro;
+}
+.employee_edit_j span{
+    height: 24px;
+    padding-left: 20px;
+    line-height: 24px;
+    background: url(/FUMED/images/xinjian.png) no-repeat;
+    background-position: left center;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+
+.btn.btn-xxl{
+    width: 100px;
+    height: 35px;
+    border-radius: 2px;
+    color: white;
+    background-color: #337ab7;
+    outline: none;
+    cursor: pointer
+}
+/**
+ * date:2017-10-11
+ * auther:wei.zhao
+ */
+ .row-detail input,
+ .row-detail textarea {
+    border: 0 !important;
+    background: none !important;
+}
+.row-detail lable{
+    font-weight: 500;
+}
+/**
+ * date:2017-10-16
+ * auther:wei.zhao
+ */
+ .form-horizontal .control-span {
+    display: inline-block;
+    padding-top: 10px;
+    margin-bottom: 0;
+    text-align: right;
+}
+.content-h1 .btn-span{
+    float: right;
+    padding:0 10px; 
+    font-size: 14px;
+    font-weight: normal;
+    color: #5b5b5b;
+}
+.fa-share{
+    color: #F4A6C6
+}
+.fa-paste{
+    color: #A587ED
+}
+.fa-times{
+    color: #db2029;
+}
+.fa-check{
+    color: #2FD52B
+}
+.fa-pencil-square-o{
+    color: #B69371
+}
+
+/**
+ * @date:2017-10-16
+ * @auther:wei.zhao
+ * @describe: 修改点击用户的下拉选项的样式
+ */
+.navbar-custom-menu > .navbar-nav > li > .dropdown-menu {
+    text-align: left;
+    width: 150px;
+    }
+/**
+ * @date:2017-10-16
+ * @auther:wei.zhao
+ * @describe: 修改icon与页面右边文字的右边距
+ */
+.content-page .fa {
+       margin-right: 0px !important;
+}
+/**
+ * @date:2017-10-16
+ * @auther:wei.zhao
+ * @describe: 选项卡包裹样式
+ */
+.content .widget-content.padding {
+    border: 1px solid #eee;
+    border-top: none;
+}
+/**
+ * @date:2017-10-30上午10.18
+ * @auther:wei.zhao
+ * @describe: 内容字体设为12px
+ */
+section.content{
+    font-size: 12px !important;
+}
+/**
+ * @date:2017-10-30上午11.58
+ * @auther:wei.zhao
+ * @describe: 确认框内文字右移
+ */
+.modal-body.modal-padding {
+    padding: 15px 50px;
+}
+/**
+ * @date:2017-10-30上午11.58
+ * @auther:wei.zhao
+ * @describe: 取消readonly的背景色
+ */
+form .form-control[readonly]{
+    background-color: #fff;
+    opacity: 1;
+    border: none;
+    font-size: 12px;
+}
+/**
+ * @date:2017-10-30上午11.58
+ * @auther:wei.zhao
+ * @describe: 弹出框的字体为12px,文字与右边对齐
+ */
+.modal .modal-body{
+    font-size: 12px;
+}
+.form-horizontal .control-label{
+    padding-top: 10px;
+}
+/**
+ * @date:2017-10-30上午16.48.58
+ * @auther:wei.zhao
+ * @describe: 修改table行的居中方式
+ */
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: middle;
+  border-top: 1px solid #ddd;
+}
+/**
+ * @date:2017-10-30下午16.36
+ * @auther:wei.zhao
+ * @describe: 修改bootstarp栅格系统默认值
+ */
+.content-wrapper .form-group .col-sm-1 {
+    width: 10% !important;
+}
+.content-wrapper .form-group .col-sm-3 {
+    width: 21.14% !important;
+}
+.content-wrapper .form-group .col-sm-7 {
+    width: 52.333333% !important
+}
+.content-wrapper .col-sm-11 {
+    width: 83.4%;
+}
+
+form .col-sm-1, 
+form .col-sm-10, 
+form .col-sm-11, 
+form .col-sm-12, 
+form .col-sm-2, 
+form .col-sm-3, 
+form .col-sm-4,
+form .col-sm-5, 
+form .col-sm-6, 
+form .col-sm-7, 
+form .col-sm-8, 
+form .col-sm-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+/**
+ * @date:2017-10-31上午10.07
+ * @auther:wei.zhao
+ * @describe: 修改bootstarp警示信息提示位置
+ */
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 5px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: top;
+    background-color:#ff5654;
+    border-radius: 10px;
+}
+/**
+ * @date:2017-11-1上午10.07
+ * @auther:wei.zhao
+ * @describe: 修改页面的ogo的字体大小
+ */
+.main-header .logo .logo-lg {
+    font-size: 16px !important;
+    text-align: left;
+}
+/**
+ * @date:2017-11-1上午10.07
+ * @auther:wei.zhao
+ * @describe: 解决同一排不是为必填项边框变红现象
+ */
+.form-control-this {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #d2d6de !important;
+}
+.control-label-this{
+    color: #333  !important;
+}

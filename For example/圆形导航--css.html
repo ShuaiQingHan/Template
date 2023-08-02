@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin:0;padding:0}
+			ul{list-style:none;position:relative;margin:50px;}
+			ul li{width:200px;height:200px;border-radius:50%;position:absolute;border:5px solid #ccc;text-align:center;line-height:200px;font-size:50px}
+			#li1{background:#0ff;}
+			#li2{background:#FF0000;left:150px;}
+			#li3{background:#f0f;left:300px;}
+			#li4{background:#ff3;left:450px;}
+			#li5{background:#0f0;left:600px;}
+		</style>
+	</head>
+	<body>
+			<ul>
+				<li id="li1">Home</li>
+				<li id="li2">WIFI</li>
+				<li id="li3">Phone</li>
+				<li id="li4">setting</li>
+				<li id="li5">Twiffer</li>
+			</ul>
+	</body>
+</html>
+<script src="sport5.js"></script>
+<script type="text/javascript">
+	 var list = document.getElementsByTagName("li");
+	 for (var i = 0 ; i < list.length ; i++) {
+	 	list[i].onmouseover = function(){
+	 		this.style.zIndex = 10;
+	 		startMove( this , { "width": 250 , "top" : -20} );
+	 	}
+	 	list[i].onmouseout = function(){
+	 		this.style.zIndex = 0;
+	 		startMove( this , { "width": 200 , "top" : 0} );
+	 	}
+	 }
+</script>

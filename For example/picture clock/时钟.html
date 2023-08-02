@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片时钟</title>
+</head>
+<body onload=start()>
+	<P align=center>
+		<img  name=hour1 src="img/0.png" >
+		<img  name=hour2 src="img/1.png"  >时
+		
+		<img  name=minute1 src="img/2.png" >
+		<img  name=minute2 src="img/3.png" >分
+		
+		<img  name=second1 src="img/4.png" >
+		<img  name=second2 src="img/5.png" >秒</P>
+
+		<script type="text/javascript">
+
+				function start(){
+
+					timer = new Array(10);
+					timer[1]= new Image(15, 19);
+					timer[1].src = "img/1.png";
+					timer[2] = new Image(15, 19);
+					timer[2].src = "img/2.png";
+					timer[3] = new Image(15, 19);
+					timer[3].src = "img/3.png";
+					timer[4] = new Image(15, 19);
+					timer[4].src = "img/4.png";
+					timer[5] = new Image(15, 19);
+					timer[5].src = "img/5.png";
+					timer[6] = new Image(15, 19);
+					timer[6].src = "img/6.png";
+					timer[7] = new Image(15, 19);
+					timer[7].src = "img/7.png";
+					timer[8] = new Image(15, 19);
+					timer[8].src = "img/8.png";
+					timer[9] = new Image(15, 19);
+					timer[9].src = "img/9.png";
+					timer[0] = new Image(15, 19);
+					timer[0].src = "img/0.png";
+					maj();
+					}
+				function change(nom, index){
+				    image = eval("timer[" + index + "].src");
+				    if (document [nom].src != image){
+				        document [nom].src = image
+				    }
+				}
+				function maj(){
+					hour = new Date();
+					h = hour.getHours();
+					m = hour.getMinutes();
+					s = hour.getSeconds();
+					h1 = Math.floor(h / 10);
+					h2 = h % 10;
+					m1 = Math.floor(m / 10);
+					m2 = m % 10;
+					s1 = Math.floor(s / 10);
+					s2 = s % 10;
+					change("hour1", h1);
+					change("hour2", h2);
+					change("minute1", m1);
+					change("minute2", m2);
+					change("second1", s1);
+					change("second2", s2);
+						setTimeout("maj()" ,1000)
+				}
+		</script>
+</body>
+</html>

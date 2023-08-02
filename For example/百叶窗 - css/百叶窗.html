@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>百叶窗</title>
+<style>
+	#box{
+		width:640px;
+		height:420px;
+		margin:0 auto;	
+		position:relative;
+		}
+	#box div{
+		width:100%;
+		height:10px;
+		position:absolute;
+		left:0;		
+		background:url("img/42.jpg");
+		border:1px solid black;
+		}	
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>
+<script type="text/javascript">
+	//页面加载创建10个div  每一div的背景图片是同一张  通过改变背景图片的位置  可以将10个div拼成一张图片
+	var oBox = document.getElementById("box");
+	window.onload = function(){
+		for( var i = 0 ; i < 10 ; i ++ ){
+			var oDiv = document.createElement("div");
+			oDiv.style.height = "42px";
+			oDiv.style.top = i*42 + "px";
+			oDiv.style.backgroundPosition = "0 " + (-i*42) + "px";
+			oBox.appendChild(oDiv);
+		}
+		move();
+	}
+	var timer = null;
+	var flag = true;//当开关值为true时   高度增加 
+	var h = 0;
+	function move(){
+		timer = setInterval(()=>{
+			//如果flag值为true h增加  否则就减少
+			if( flag ){
+				h += 1;
+			}else{
+				h -= 1;
+			}
+			
+			if( h > 42 ){
+				h = 42;
+				flag = false;
+			}else if( h < 0 ){
+				h = 0;
+				flag = true;
+			}
+						
+			//改变10个div的高度不断变化
+			for( var i = 0 ; i < oBox.children.length ; i++ ){
+				oBox.children[i].style.height = h +"px";
+			}
+		},100)
+	}
+</script>

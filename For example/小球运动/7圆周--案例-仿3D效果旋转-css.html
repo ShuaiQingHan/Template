@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding:0;
+		}
+		 html,body{
+		 	width: 100%;
+		 	height: 100%;
+		 	overflow: hidden;
+		 }
+	</style>
+	<body bgcolor="#000000">
+		<div class="ball" style="width: 30px;height: 30px;position: absolute;background: red;left: 610px;top:0;border-radius:50%;"></div>
+		<div class="ball" style="width: 30px;height: 30px;position: absolute;background: blue;left: 1245px;top:322px;border-radius:50%;"></div>
+		<div class="ball" style="width: 30px;height: 30px;position: absolute;background: yellow;left: 610px;top:615px;border-radius:50%;"></div>
+		<div class="ball" style="width: 30px;height: 30px;position: absolute;background: teal;left: 0;top:322px;border-radius:50%;"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var balls = document.getElementsByClassName("ball");
+	var b = 300;
+	var a = 600;
+	var centerPoint = {
+		x : balls[0].offsetLeft + balls[0].offsetWidth/2,
+		y : b + balls[0].offsetHeight
+	}
+	//为每一个小球添加一个角度属性
+	for( var i = 0 ; i < balls.length ; i++ ){
+		balls[i].deg = i*90;
+	}
+	
+	var timer = setInterval( ()=>{
+		for( var i = 0 ; i < balls.length ; i++ ){
+			
+			balls[i].style.left = centerPoint.x + a*Math.cos( balls[i].deg*Math.PI/180 ) + "px";
+			balls[i].style.top = centerPoint.y - b*Math.sin( balls[i].deg*Math.PI/180 ) + "px";
+			balls[i].deg += 2;
+			balls[i].style.width = balls[i].style.height = balls[i].offsetTop/8 + 30 + "px";
+		}
+	}, 30 )
+</script>

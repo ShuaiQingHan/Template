@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.bk{
+				width: 400px;
+				margin: 50px auto;
+			}
+
+			#tip{
+				width: 200px;
+				height: 100px;
+				background: #E5C2ED;
+				border: 1px solid #6DF9A8;
+				display: none;
+
+			}		
+		</style>			
+
+	</head>
+<body>
+		<div class="bk">
+		<h3>勾选提示</h3>
+		<label id="autoLogin"><input type="checkbox">自动登录</label>
+		<p id="tip">为了您的安全，请不要在公共场所勾选</p>
+		</div>
+		<script type="text/javascript">
+			var oBtn = document.getElementById("autoLogin");
+			var oDiv = document.getElementsByTagName("p")[0];
+			oBtn.onmousemove = function(){
+				oDiv.style.display = "block";
+			}
+			oBtn.onmouseout= function(){
+				oDiv.style.display = "none";
+			}
+		</script>
+</body>
+</html>

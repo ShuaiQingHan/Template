@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>苹果菜单</title>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+body {margin:0px;overflow:hidden;}
+#div1 {text-align:center; position:absolute; bottom:0px;  width:800px; margin:0 auto;}
+#div1 img {border:none;}
+#div1 .box {display:block; width:400px; margin:0 auto; border-bottom:dotted 1px black; text-decoration:none; color:#333;}
+#div1 .box:hover {border-bottom:solid 1px black;}
+
+</style>
+ 
+</head>
+
+<body>
+	<input type="text" />
+	<input type="text" />
+	<input type="text" />
+	<input type="text" />
+	<input type="text" />
+	<div id="div1">
+		<a href="#"><img src="images/1.png" width="64"  /></a>
+		<a href="#"><img src="images/2.png" width="64" /></a>
+		<a href="#"><img src="images/3.png" width="64"  /></a>
+		<a href="#"><img src="images/4.png" width="64" /></a>
+		<a href="#"><img src="images/5.png" width="64" /></a>
+	</div>
+</body>
+</html>
+<script>
+	var imgs = document.getElementsByTagName("img");
+	var oDiv = document.getElementById("div1");
+	var opts = document.getElementsByTagName("input");
+	document.onmousemove = function(e){
+		var e = e || event;
+		for( var i = 0 ; i < imgs.length ; i++  ){
+			//鼠标移动时   获取每张图片的圆心坐标
+			var  x = imgs[i].offsetLeft + imgs[i].offsetWidth/2;
+			var  y = imgs[i].offsetHeight/2 + oDiv.offsetTop;
+			//opts[i].value = x +"," + y;
+			//获取直角三角形的直角边
+			var a = e.pageX - x;
+			var b = e.pageY - y;
+			//得到斜边 c
+			var c = Math.sqrt( a*a + b*b );
+			//opts[i].value = c;
+			var scale = 1 -  c / 200;
+			//得到图片的宽和高是  中间大  两边小
+			//c / 200      0---1
+			
+			if( scale < 0.3 ){
+				scale = 0.3;
+			}
+			//鼠标移动改变图片的宽和高
+			imgs[i].style.width = imgs[i].style.height = scale * 200 + "px";
+		}
+		
+	}
+</script>

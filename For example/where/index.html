@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>【去哪儿网】机票查询预订,酒店预订，旅游团购，度假搜索，门票预订-去哪儿网Qunar.com</title>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		 <link href="img/logo.jpg" rel="shortcut icon" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cookie1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	
+		<script type="text/javascript" src="js/hhDrop.js"></script>
+		   <script>
+			  $(function(){
+			    $('#hhDrop00').hhDrop({});
+			    $('#hhDrop01').hhDrop({});
+			  })
+			</script> 		
+		
+	</head>
+	<body>
+		<!-- topnav -->
+		<div id="topnav">
+				<div class="topWrap">
+					<p>
+						<!--<span>欢迎来到去哪网</span>-->
+						<a href="login.html">请登录</a>
+						<a href="register.html">免费注册</a>
+					</p>
+					<ul>
+						
+						<li style="background:#8B8B8B;">
+							<a href="cart.html" id="cartHref"style="color:#FFFFFF;" >购物车列表</a>
+						</li>
+						<li style="background:pink;"><a href="list.html">旅游选择列表</a></li>
+						<li><a href="">消息</a> |</li>
+						<li><a href="">查看订单</a> |</li>
+						<li><a href="">积分商城</a> |</li>
+						<li><a href="">联系客服</a></li>
+					</ul>
+				</div>
+		</div>
+		<!--header-->
+	    <div id="headWrap"></div>
+	    <!--二级引导项内容-->
+	    <div id="index_top">
+	    	<div class="top_left">
+	    		<!--购票区侧边-->
+	    		<div class="pk_left">
+	    			<ul class="pk_nav">
+	    				<li><a href="#" style="background:white;color:#00afc7">火车票</a></li>
+	    				<li><a href="#">酒店</a></li>
+	    				<li><a href="#">机票</a></li>
+	    				<li><a href="#">团购</a></li>
+	    				<li><a href="#">门票</a></li>
+	    				<li><a href="#">团购</a></li>
+	    				<li><a href="#">车车</a></li>
+	    				<li><a href="#">自由行</a></li>  
+	    			</ul>
+	    			<!--火车票搜索-->
+	    			<div class="pk_content">
+	    				<div class="pk_search_tab">
+	    					<div class="rt_link">
+	    						<a href="#"class="pk_chaxun">出票状态查询</a> | 
+	    						<a href="#" class=""class="apply_pk">退票申请</a>
+	    					</div>
+	    					<div class="pk_tab" >
+	    						<div class="cur">
+	    							<b class="zz">站站搜索</b>
+	    						<div/>
+	    					</div>
+	    				</div>
+						</div>
+						<!--购票区内容-->
+						<div class="pk_con" id="pk_y">
+							<div class="lineSearch">
+								<ul>
+									<li class="thRelative" id="hhDrop00">
+										<div class="boxSearch">
+											<span class="key_word">
+							            <b class="size_14">北京</b>
+							            出发城市
+							          </span>
+											<em class="ico thLeft ico_shBlue"></em>
+											<a1 class="thRight ico btn_search" href="javascript:void(0)"></a1>
+										</div>
+										<div class="search_form_suggest" style="display:none;">
+											<h3><a1 class="ico btn_close thRight" item="close">关闭</a1>热门出发城市</h3>
+											<dl class="search_hotList">
+												<dd class="clr_after">
+													<a1 href="#">北京</a1>
+													<a1 href="#">上海</a1>
+													<a1 href="#">广州</a1>
+													<a1 href="#">成都</a1>
+													<a1 href="#">杭州</a1>
+													<a1 href="#">南京</a1>
+													<a1 href="#">深圳</a1>
+													<a1 href="#">济南</a1>
+													<a1 href="#">石家庄</a1>
+													<a1 href="#">武汉</a1>
+													<a1 href="#">郑州</a1>
+													<a1 href="#">重庆</a1>
+													<a1 href="#">福州</a1>
+													<a1 href="#">西安</a1>
+													<a1 href="#">长沙</a1>
+													<a1 href="#">沈阳</a1>
+													<a1 href="#">天津</a1>
+													<a1 href="#">哈尔滨</a1>
+													<a1 href="#">苏州</a1>
+													<a1 href="#">南宁</a1>
+												</dd>
+											</dl>
+							
+											<div class="clear"></div>
+											<div class="select_city_box" item="dep-search">
+												<span>输入出发城市</span>
+												<input type="text" class="input_city" item="key">
+												<button class="btn" type="button" item="commit"></button>
+												<div class="search_city_result" item="result" style="display:;">
+													<a1 href="javascript:void();">广州</a1> 没有匹配城市
+												</div>
+											</div>
+							
+											<div class="thLeft thPadT5 tab_select">
+												<dl class="clrfix">
+													<dt>A-G</dt>
+													<dd class="clr_after">
+														<a1>北京</a1>
+														<a1>长沙</a1>
+														<a1>成都</a1>
+														<a1>重庆</a1>
+														<a1>福州</a1>
+														<a1>广州</a1>
+														<a1>贵阳</a1>
+													</dd>
+												</dl>
+												<dl class="clrfix">
+													<dt>H-L</dt>
+													<dd class="clr_after">
+														<a1>哈尔滨</a1>
+														<a1>杭州</a1>
+														<a1>合肥</a1>
+														<a1>济南</a1>
+														<a1>昆明</a1>
+													</dd>
+												</dl>
+												<dl class="clrfix">
+													<dt>M-T</dt>
+													<dd class="clr_after">
+														<a1>南昌</a1>
+														<a1>南京</a1>
+														<a1>南宁</a1>
+														<a1>宁波</a1>
+														<a1>青岛</a1>
+														<a1>三亚</a1>
+														<a1>上海</a1>
+														<a1>沈阳</a1>
+														<a1>深圳</a1>
+														<a1>石家庄</a1>
+														<a1>苏州</a1>
+														<a1>太原</a1>
+														<a1>天津</a1>
+													</dd>
+												</dl>
+												<dl class="clrfix">
+													<dt>W-Z</dt>
+													<dd class="clr_after">
+														<a1 href="#">武汉</a1>
+														<a1 href="#">厦门</a1>
+														<a1 href="#">西安</a1>
+														<a1 href="#">郑州</a1>
+														<a1 href="#">中山</a1>
+													</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+							
+									<li class="thRelative" id="hhDrop01">
+										<div class="boxSearch">
+											<span class="key_word">
+							            <b class="size_14">广州</b>
+							            到达城市
+							          </span>
+											<em class="ico thLeft ico_shBlue"></em>
+											<a1 class="thRight ico btn_search" href="javascript:void(0)"></a1>
+										</div>
+										<div class="search_form_suggest" style="display:none; height:146px;">
+											<h3><a1 class="ico btn_close thRight" item="close">关闭</a1>热门出发城市</h3>
+											<dl class="search_hotList">
+												<dd class="clr_after">
+													<a1>北京</a1>
+													<a1>上海</a1>
+													<a1>广州</a1>
+													<a1>成都</a1>
+													<a1>杭州</a1>
+													<a1>南京</a1>
+													<a1>深圳</a1>
+													<a1>济南</a1>
+													<a1>石家庄</a1>
+													<a1>武汉</a1>
+													<a1>郑州</a1>
+													<a1>重庆</a1>
+													<a1>福州</a1>
+													<a1>西安</a1>
+													<a1>长沙</a1>
+													<a1>沈阳</a1>
+													<a1>天津</a1>
+													<a1>哈尔滨</a1>
+													<a1>苏州</a1>
+													<a1 >南宁</a1>
+												</dd>
+											</dl>		
+											<div class="clear"></div>
+											<div class="select_city_box" item="dep-search">
+												<span>输入出发城市</span>
+												<input type="text" class="input_city" item="key">
+												<button class="btn" type="button" item="commit"></button>
+												<div class="search_city_result" item="result" style="display:;">
+													<a1 href="javascript:void(0);">北京</a1> 没有匹配城市</div>
+											</div>
+							
+											<div class="thLeft thPadT5 tab_select">
+												<dl class="clrfix">
+													<dt>A-G</dt>
+													<dd class="clr_after">
+														<a1 >北京</a1>
+														<a1>长沙</a1>
+														<a1>成都</a1>
+														<a1>重庆</a1>
+														<a1>福州</a1>
+														<a1>广州</a1>
+														<a1>贵阳</a1>
+													</dd>
+												</dl>
+												<dl class="clrfix">
+													<dt>H-L</dt>
+													<dd class="clr_after">
+														<a1>哈尔滨</a1>
+														<a1>杭州</a1>
+														<a1>合肥</a1>
+														<a1>济南</a1>
+														<a1>昆明</a1>
+													</dd>
+												</dl>
+												<dl class="clrfix">
+													<dt>M-T</dt>
+													<dd class="clr_after">
+														<a1>南昌</a1>
+														<a1>南京</a1>
+														<a1>南宁</a1>
+														<a1>宁波</a1>
+														<a1>青岛</a1>
+														<a1>三亚</a1>
+														<a1>上海</a1>
+														<a1>沈阳</a1>
+														<a1>深圳</a1>
+														<a1>石家庄</a1>
+														<a1>苏州</a1>
+														<a1>太原</a1>
+														<a1 >天津</a1>
+													</dd>
+												</dl>
+												<dl class="clrfix">
+													<dt>W-Z</dt>
+													<dd class="clr_after">
+														<a1>武汉</a1>
+														<a1>厦门</a1>
+														<a1>西安</a1>
+														<a1>郑州</a1>
+														<a1>中山</a1>
+													</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+							
+									<li style="float:left;">
+										<div class="thRelative lineSearchbg">
+											<em class="thLeft ico ico_serGray"></em>
+											<input class="thLeft" name="textfield2" type="text" id="arriveSearchText" value="请输入目的地、主题或关键词" />
+											<button class="ico btn_close thLeft" item="close" style="margin:8px 8px 0 0;" id="btn_delete">删除</button><br>
+											<a1 class=" btn_search ico" item="commit" href="javascript:void(0)">搜&nbsp;&nbsp;索</a1>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="pk_footer">
+							
+						</div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<!--top右面图-->
+		    <div class="top_right">
+		    		<a href="#" ><img src="img/re_b.jpg" style="margin-bottom:10px;float:left;"/></a>
+		    </div>
+	    </div>
+	    <img style="padding-top:14px;" src="https://source.qunarzz.com/site/images/wns/20180925_pc_hp_tban_1200x90_11217.jpg"/>
+	    <!--content-->
+	    <div id="content_wrap">
+	    	<!--左侧的li栏-->
+	    		<!--列表1-->
+		    	<div class="content_left">
+		    		<div class="list_1">
+		    			<div class="list_head">
+		    				<div class="home-title">
+		    					<ul class="clrfix home-title-nav" beacon-first="true">
+		    						<li>
+		    							<a data-type="today" class="active">今日特惠</a>
+		    						</li>
+		    						<li>
+		    							<a data-type="piao" class="">特惠门票</a>
+		    						</li>
+		    						<li>
+		    							<a class="">特惠一日游</a>
+		    						</li>
+		    					</ul>
+		    					<span class="more" style="display: block;">
+		    			            <a  href="list.html" beacon-type="特价|更多|today">更多&nbsp;&gt;</a>
+		    			        </span>
+		    				</div>
+		    			</div>
+		    			<br />
+		    		</div>
+		    		<br />
+		    		<img src="img/19.jpg"style="padding:10px 10px;height:"/>
+		    		<br />
+		    			<div class="img_l">
+		    						<div class="mod-home-travel-item">
+                                            <p class="mod-home-travel-img">
+                                                <a  href="#">
+                                                    <img src="img/15.jpg"></a>
+                                            </p>
+                                            <a class="mod-home-travel-item-words"  href="#">
+                                            	<p class="mod-home-travel-item-title">新西兰南岛：拼了命接近你的秋天</p>
+                                             <div class="mod-home-travel-item-memo">
+                                            <span class="mod-home-travel-item-headImg"><img src="https://qcommons.qunar.com/headshot/headshotsById/120080024.png?s&amp;ssl=true"></span>
+                                            <div class="mod-home-travel-item-Info">
+                                            <p><span class="mod-home-travel-item-nickName">黄小坏</span><i>|</i><span>2017-04-21&nbsp;出发</span></p>
+                                            <p><span>共17天</span><i>|</i><span>272张照片</span></p>
+                                            </div>
+                                            </div>
+                                            </a>
+                                    </div>
+                                 <div class="mod-home-travel-item ">
+                                            <p class="mod-home-travel-img">
+                                                <a  href="#">
+                                                    <img src="img/1.jpg"></a>
+                                            </p>
+                                            <a class="mod-home-travel-item-words"  href="#" style="">
+                                            	<p class="mod-home-travel-item-title">新西兰南岛：拼了命接近你的秋天</p>
+                                             <div class="mod-home-travel-item-memo">
+                                            <span class="mod-home-travel-item-headImg"><img src="https://qcommons.qunar.com/headshot/headshotsById/120080024.png?s&amp;ssl=true"></span>
+                                            <div class="mod-home-travel-item-Info">
+                                            <p><span class="mod-home-travel-item-nickName">黄小坏</span><i>|</i><span>2017-04-21&nbsp;出发</span></p>
+                                            <p><span>共17天</span><i>|</i><span>272张照片</span></p>
+                                            </div>
+                                            </div>
+                                            </a>
+                                    </div>
+                                    <div class="mod-home-travel-item ">
+                                            <p class="mod-home-travel-img">
+                                                <a  href="#">
+                                                    <img src="img/20.jpg"></a>
+                                            </p>
+                                            <a class="mod-home-travel-item-words"  href="#" style="">
+                                            	<p class="mod-home-travel-item-title">新西兰南岛：拼了命接近你的秋天</p>
+                                             <div class="mod-home-travel-item-memo">
+                                            <span class="mod-home-travel-item-headImg"><img src="https://qcommons.qunar.com/headshot/headshotsById/120080024.png?s&amp;ssl=true"></span>
+                                            <div class="mod-home-travel-item-Info">
+                                            <p><span class="mod-home-travel-item-nickName">黄小坏</span><i>|</i><span>2017-04-21&nbsp;出发</span></p>
+                                            <p><span>共17天</span><i>|</i><span>272张照片</span></p>
+                                            </div>
+                                            </div>
+                                            </a>
+                                    </div>
+                                    	<div class="mod-home-travel-item ">
+                                            <p class="mod-home-travel-img">
+                                                <a  href="#">
+                                                    <img src="img/3.jpg"></a>
+                                            </p>
+                                            <a class="mod-home-travel-item-words"  href="#" style="">
+                                            	<p class="mod-home-travel-item-title">新西兰南岛：拼了命接近你的秋天</p>
+                                             <div class="mod-home-travel-item-memo">
+                                            <span class="mod-home-travel-item-headImg"><img src="https://qcommons.qunar.com/headshot/headshotsById/120080024.png?s&amp;ssl=true"></span>
+                                            <div class="mod-home-travel-item-Info">
+                                            <p><span class="mod-home-travel-item-nickName">黄小坏</span><i>|</i><span>2017-04-21&nbsp;出发</span></p>
+                                            <p><span>共17天</span><i>|</i><span>272张照片</span></p>
+                                            </div>
+                                            </div>
+                                            </a>
+                                    </div>
+		    			</div>
+		    			
+		    			<div class="line-2">
+		    				<div class="book-list left">
+		    					<div class="title">热门出境骆驼书</div>
+		    					<ul>
+		    						<li class="odd">
+		    							<a href="#"> <em>日本花见</em> ：烂漫春光，赏尽樱吹雪
+		    							</a>
+		    						</li>
+		    						<li class="even">
+		    							<a  href="#"> <em>素可泰</em> ：承载泰国寺庙文化的王朝古都
+		    							</a>
+		    						</li>
+		    						<li class="odd">
+		    							<a  href="#"> <em>芭提雅</em> ：风光旖旎的东方夏威夷
+		    							</a>
+		    						</li>
+		    						<li class="even">
+		    							<a href="#"> <em>胡志明市</em> ：湄公河上风情浪漫的明珠
+		    							</a>
+		    						</li>
+		    					</ul>
+		    				</div>
+		    				<div class="book-list left">
+		    					<div class="title">热门海岛骆驼书</div>
+		    					<ul>
+		    						<li class="odd">
+		    							<a  href="#"> <em>甲米</em> ：诗情画意、宛如天堂秘境的热带半岛
+		    							</a>
+		    						</li>
+		    						<li class="even">
+		    							<a  href="#"> <em>巴厘岛</em> ：极具人文&amp;热带风情的度假天堂
+		    							</a>
+		    						</li>
+		    						<li class="odd">
+		    							<a  href="#"> <em>苏梅岛</em> ：拒绝好莱坞选景荣耀的纯天然海岛
+		    							</a>
+		    						</li>
+		    						<li class="even">
+		    							<a  href="#"> <em>毛里求斯</em> ：印度洋的珍珠，欧洲的后花园
+		    							</a>
+		    						</li>
+		    					</ul>
+		    				</div>
+		    				<br />
+		    			</div>
+		    		<!--轮播图-->
+					
+		    		<div class="lbo">
+		    			<div class="banner" id="banner">
+		    				<ul class="img-list" id="img-list">
+		    					<li><img src="img/001.jpg"></li>
+		    					<li><img src="img/002.jpg"></li>
+		    					<li><img src="img/003.jpg"></li>
+		    					<li><img src="img/004.jpg"></li>
+		    					<li><img src="img/001.jpg"></li>
+		    				</ul>
+		    			
+		    				<ul class="banner-nav-list" id="banner-nav-list">
+		    					<li class="active"></li>
+		    					<li></li>
+		    					<li></li>
+		    					<li></li>
+		    				</ul>
+		    			</div>
+		    		</div>
+					<img src="//source.qunarzz.com/site/images/wns/20180608_qunar_fengchao_944x90_v1.jpg"/>
+		    		<div id=" ">
+		    			<br />
+		    			<br />
+		    			<br />
+		    		</div>
+		    	<div class="mod-home-guide-head">
+		    				<div class="home-title">
+		    					<h3>
+		    					 旅游攻略
+		    					 <span class="sbtit">你旅行的指南针</span>
+		    					</h3>
+		    			
+		    				</div>
+		    				<div class="home-tab clrfix">
+		    					<ul class="clrfix guide-title-nav">
+		    						<li>
+		    							<a class="active">最新精华游记</a>
+		    						</li>
+		    						<li>
+		    							<a href="javascript:;">一场短途旅行</a>
+		    						</li>
+		    						<li>
+		    							<a href="#">一场短途旅行</a>
+		    						</li>
+		    						
+		    					</ul>
+		    					<span class="more">
+		    					     <a  href="list.html">更多&nbsp;&gt;</a>
+		    					</span>
+		    				</div>
+		    			</div>
+		    			<br />
+		    			<br />
+		    			<img class="img1" src="https://img1.qunarzz.com/travel/poi/1809/a1/3b440c7f160ab837.jpg"/>
+		    			<div class="img_l">
+		    						<div class="mod-home-travel-item ">
+                                            <p class="mod-home-travel-img">
+                                                <a  href="#">
+                                                    <img src="https://img1.qunarzz.com/travel/poi/1809/2b/eb23c8df913ac137.jpg"></a>
+                                            </p>
+                                            <a class="mod-home-travel-item-words"  href="#">
+                                            	<p class="mod-home-travel-item-title">新西兰南岛：拼了命接近你的秋天</p>
+                                             <div class="mod-home-travel-item-memo">
+                                            <span class="mod-home-travel-item-headImg"><img src="https://qcommons.qunar.com/headshot/headshotsById/120080024.png?s&amp;ssl=true"></span>
+                                            <div class="mod-home-travel-item-Info">
+                                            <p><span class="mod-home-travel-item-nickName">黄小坏</span><i>|</i><span>2017-04-21&nbsp;出发</span></p>
+                                            <p><span>共17天</span><i>|</i><span>272张照片</span></p>
+                                            </div>
+                                            </div>
+                                            </a>
+                                    </div>
+                                 <div class="mod-home-travel-item ">
+                                            <p class="mod-home-travel-img">
+                                                <a  href="#">
+                                                    <img src="https://img1.qunarzz.com/travel/poi/1809/2b/eb23c8df913ac137.jpg"></a>
+                                            </p>
+                                            <a class="mod-home-travel-item-words"  href="#" style="">
+                                            	<p class="mod-home-travel-item-title">新西兰南岛：拼了命接近你的秋天</p>
+                                             <div class="mod-home-travel-item-memo">
+                                            <span class="mod-home-travel-item-headImg"><img src="https://qcommons.qunar.com/headshot/headshotsById/120080024.png?s&amp;ssl=true"></span>
+                                            <div class="mod-home-travel-item-Info">
+                                            <p><span class="mod-home-travel-item-nickName">黄小坏</span><i>|</i><span>2017-04-21&nbsp;出发</span></p>
+                                            <p><span>共17天</span><i>|</i><span>272张照片</span></p>
+                                            </div>
+                                            </div>
+                                            </a>
+                                    </div>
+                                    <div class="mod-home-travel-item ">
+                                            <p class="mod-home-travel-img">
+                                                <a  href="#">
+                                                    <img src="https://img1.qunarzz.com/travel/poi/1809/2b/eb23c8df913ac137.jpg"></a>
+                                            </p>
+                                            <a class="mod-home-travel-item-words"  href="#" style="">
+                                            	<p class="mod-home-travel-item-title">新西兰南岛：拼了命接近你的秋天</p>
+                                             <div class="mod-home-travel-item-memo">
+                                            <span class="mod-home-travel-item-headImg"><img src="https://qcommons.qunar.com/headshot/headshotsById/120080024.png?s&amp;ssl=true"></span>
+                                            <div class="mod-home-travel-item-Info">
+                                            <p><span class="mod-home-travel-item-nickName">黄小坏</span><i>|</i><span>2017-04-21&nbsp;出发</span></p>
+                                            <p><span>共17天</span><i>|</i><span>272张照片</span></p>
+                                            </div>
+                                            </div>
+                                            </a>
+                                    </div>
+                                    	<div class="mod-home-travel-item ">
+                                            <p class="mod-home-travel-img">
+                                                <a  href="#">
+                                                    <img src="https://img1.qunarzz.com/travel/poi/1809/2b/eb23c8df913ac137.jpg"></a>
+                                            </p>
+                                            <a class="mod-home-travel-item-words"  href="#" style="">
+                                            	<p class="mod-home-travel-item-title">新西兰南岛：拼了命接近你的秋天</p>
+                                             <div class="mod-home-travel-item-memo">
+                                            <span class="mod-home-travel-item-headImg"><img src="https://qcommons.qunar.com/headshot/headshotsById/120080024.png?s&amp;ssl=true"></span>
+                                            <div class="mod-home-travel-item-Info">
+                                            <p><span class="mod-home-travel-item-nickName">黄小坏</span><i>|</i><span>2017-04-21&nbsp;出发</span></p>
+                                            <p><span>共17天</span><i>|</i><span>272张照片</span></p>
+                                            </div>
+                                            </div>
+                                            </a>
+                                    </div>
+		    			</div>
+		    			
+		    			<div class="line-2">
+		    				<div class="book-list left">
+		    					<div class="title">热门出境骆驼书</div>
+		    					<ul>
+		    						<li class="odd">
+		    							<a target="_blank" href="#"> <em>日本花见</em> ：烂漫春光，赏尽樱吹雪
+		    							</a>
+		    						</li>
+		    						<li class="even">
+		    							<a target="_blank" href="#"> <em>素可泰</em> ：承载泰国寺庙文化的王朝古都
+		    							</a>
+		    						</li>
+		    						<li class="odd">
+		    							<a target="_blank" href="#"> <em>芭提雅</em> ：风光旖旎的东方夏威夷
+		    							</a>
+		    						</li>
+		    						<li class="even">
+		    							<a href="#"> <em>胡志明市</em> ：湄公河上风情浪漫的明珠
+		    							</a>
+		    						</li>
+		    					</ul>
+		    				</div>
+		    				<div class="book-list left">
+		    					<div class="title">热门海岛骆驼书</div>
+		    					<ul>
+		    						<li class="odd">
+		    							<a  href="#"> <em>甲米</em> ：诗情画意、宛如天堂秘境的热带半岛
+		    							</a>
+		    						</li>
+		    						<li class="even">
+		    							<a  href="#"> <em>巴厘岛</em> ：极具人文&amp;热带风情的度假天堂
+		    							</a>
+		    						</li>
+		    						<li class="odd">
+		    							<a  href="#"> <em>苏梅岛</em> ：拒绝好莱坞选景荣耀的纯天然海岛
+		    							</a>
+		    						</li>
+		    						<li class="even">
+		    							<a  href="#"> <em>毛里求斯</em> ：印度洋的珍珠，欧洲的后花园
+		    							</a>
+		    						</li>
+		    					</ul>
+		    				</div>
+		    			</div>
+		    			<br />
+		    			<br />
+		    			<br />
+			    		
+		    		<div class="mod-home-guide-head">
+		    			<div class="home-title">
+		    				<h3>
+		    		                            骆驼书
+		    		            <span class="sbtit">读骆驼书，行万里路</span>
+		    		       	</h3>
+		    		
+		    			</div>
+		    			<div class="home-tab clrfix">
+		    				<ul class="clrfix guide-title-nav">
+		    					<li>
+		    						<a class="active">专题</a>
+		    					</li>
+		    					<li>
+		    						<a href="javascript:;">亚洲</a>
+		    					</li>
+		    					<li>
+		    						<a href="#">欧洲</a>
+		    					</li>
+		    					<li>
+		    						<a href="#">北美洲</a>
+		    					</li>
+		    					<li>
+		    						<a href="#">大洋洲</a>
+		    					</li>
+		    					
+		    				</ul>
+		    				<span class="more">
+		    		                <a  href="#">更多&nbsp;&gt;</a>
+		    		        </span>
+		    			</div>
+		    		</div>
+		    		<img src="img/bg1.png" style="height:339px;"/>
+		    	<div class="line-2">
+                        <div class="book-list left">
+                            <div class="title">热门出境骆驼书</div>
+                            <ul>
+                                <li class="odd">
+                                    <a target="_blank" href="#"> <em>日本花见</em>
+                                        ：烂漫春光，赏尽樱吹雪
+                                    </a>
+                                </li>
+                                <li class="even">
+                                    <a target="_blank" href="#"> <em>素可泰</em>
+                                        ：承载泰国寺庙文化的王朝古都
+                                    </a>
+                                </li>
+                                <li class="odd">
+                                    <a target="_blank" href="#"> <em>芭提雅</em>
+                                        ：风光旖旎的东方夏威夷
+                                    </a>
+                                </li>
+                                <li class="even">
+                                    <a href="#"> <em>胡志明市</em>
+                                        ：湄公河上风情浪漫的明珠
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="book-list left">
+                            <div class="title">热门海岛骆驼书</div>
+                            <ul>
+                                <li class="odd">
+                                    <a target="_blank" href="#"> <em>甲米</em>
+                                        ：诗情画意、宛如天堂秘境的热带半岛
+                                    </a>
+                                </li>
+                                <li class="even">
+                                    <a target="_blank" href="#"> <em>巴厘岛</em>
+                                        ：极具人文&amp;热带风情的度假天堂
+                                    </a>
+                                </li>
+                                <li class="odd">
+                                    <a target="_blank" href="#"> <em>苏梅岛</em>
+                                        ：拒绝好莱坞选景荣耀的纯天然海岛
+                                    </a>
+                                </li>
+                                <li class="even">
+                                    <a target="_blank" href="#"> <em>毛里求斯</em>
+                                        ：印度洋的珍珠，欧洲的后花园
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+		    	</div>
+		    <!--li右侧信息广告栏-->
+		    	<div class="content_right">
+		    		<div class="right_gg">
+		    			<h6>公告</h6>
+		    			<div class="con">
+		    				<p>
+		    					<a href="#">出境自助游知识和安全教育说明</a>
+		    				</p>
+		    				<p>
+		    					<a href="#">反网络诈骗专栏</a>
+		    				</p>
+		    				<p>
+		    					<a href="#">去哪儿网已通过支付卡产业数据安全标准</a>
+		    				</p>
+		    			</div>
+		    			<div class="service">
+		    				<div class="custom_24">
+		    					<i>去哪儿网客服电话</i>
+		    					<b>
+		    						<span class="servers_24"></span>
+		    						提供<span class="num">24</span>
+		    						小时服务</b>
+		    				</div>
+		    				<div class="tephone">
+		    					<i>国内客服电话</i>
+		    					<b class="top_1">95117</b>
+		    				</div>
+		    				<div class="tephone">
+		    					<i>国际客服电话</i>
+		    					<b>(+8610)82872677</b>
+		    				</div>
+		    			</div>
+		    		</div>
+		    	
+		    	<div class="rg-links">
+		    		<h6>去哪儿网广告推荐</h6>
+		    	</div>
+		    	<div style="width:218px; margin:0 auto;border:11px solid #f9fbfb;border-top:0;border-bottom:0;">
+		    		<div style="text-align: center; background: rgb(249, 251, 251); width: 100%; position: relative;">
+		    			<a style="display:inline-block;*display:inline;*zoom:1;" href="#"><img src="//source.qunarzz.com/site/images/wns/20180608_qunar_fengchao_218x460_v1.jpg">
+		    			</a>
+		    		</div>
+		    	</div>
+		    	<div class="right_gg">
+		    		<h6>旅行小贴士</h6>
+		    		<div class="con">
+		    			<p>
+		    				<a href="#">去哪儿网郑重承诺"诚信经营 放心消费"</a>
+		    			</p>
+		    			<p>
+		    				<a href="#" target="_blank">服药的最佳时间</a>
+		    			</p>
+		    			<p>
+		    				<a href="#">吃药讲究姿势</a>
+		    			</p>
+		    		</div>
+		    	</div>
+	    	</div>
+	    	
+	    </div>
+		</div>
+		<br />
+		<!--相关-->
+			<img src="img/dlogo.png" alt=""style="width:100%;" />
+		<div id="footer_top">
+        	<dl>
+            <dt>酒店</dt>
+                <dd><a href="#">九寨沟口旅游客运中心附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨沟口旅游客运中心附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨沟口旅游客运中心附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨沟口旅游客运中心附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨沟口旅游客运中心附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨仙池附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨沟风景区附近的酒店预订</a> | </dd>
+                <dd><a href="#">附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">中查沟附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">九寨千古情附近的酒店预订</a> | </dd>
+                <dd><a href="#">四姑娘山附近的酒店预订</a> | </dd>
+                <dd><a href="#">四姑娘山附近的酒店预订</a> | </dd>
+       		</dl>
+        	<dl>
+            <dt>攻略</dt>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">巴厘岛旅游攻略</a> | </dd>
+                <dd><a href="#">巴厘岛旅游攻略</a> | </dd>
+                <dd><a href="#">巴厘岛旅游攻略</a> | </dd>
+                <dd><a href="#">巴厘岛旅游攻略</a> | </dd>
+                <dd><a href="#">巴厘岛旅游攻略</a> | </dd>
+                <dd><a href="#">巴厘岛旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+                <dd><a href="#">武汉旅游攻略</a> | </dd>
+        	</dl>
+		</div>
+		<!--回到头部-->
+		<div id="gotop" class="f_top">
+    			<img src="img/Top.jpg" alt=""/>
+		</div>
+		<!--动画-->
+			
+		<!--footer-->
+		<div id="footWrap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	$("#headWrap").load("header.html #header_wrap")
+	$("#footWrap").load("header.html .qn_footer")
+</script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+

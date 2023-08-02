@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>聊天窗口</title>
+	<style type="text/css">
+		*{font-size: 14px; padding:0; margin:0;}
+		.main{
+			position: relative;
+			border: 1px solid steelblue;
+			width: 430px;
+			height: 400px;
+		}
+		.msgInput{
+			display: block;
+			width: 406px;
+			height: 60px;
+			margin: 10px auto;
+			
+		}
+		.sendbtn{
+			position: absolute;
+			width: 100px;
+			height: 29px;
+			bottom: 5px;
+			right: 10px;
+		}
+		.content{
+			list-style: none;
+			width: 410px;
+			height: 280px;
+			margin: 5px auto;
+			border: 1px dotted #D1D3D6;
+			overflow-y: scroll;
+		}
+		.msgContent{
+			width:auto;
+			max-width: 250px;
+			height: auto;
+			word-break: break-all;
+			margin: 5px;
+			padding: 3px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		window.onload=function(){
+
+			var input = document.getElementById('msg_input');//查找缓存
+			document.getElementById('sendbtn').onclick=function () {
+			
+				sendMsg();
+			}
+
+
+
+			//快捷键 发送
+			document.onkeypress = function (event) {
+				var e = event || window.event;
+				var keycode = e.keyCode || e.which;
+				console.log(e)
+				if( keycode==10){ //判断同时按下ctrl 和enter
+					sendMsg()
+				}
+			}
+
+			function sendMsg() {
+				var input = document.getElementById('msg_input');//查找缓存
+				var ul = document.getElementById('content');
+
+				var newLi = document.createElement('li');
+				newLi.innerHTML = input.value;
+				newLi.className = 'msgContent right';
+				ul.appendChild(newLi);
+
+				var div = document.createElement('div');
+				div.style = 'clear:both';
+				ul.appendChild(div);
+
+				input.value = '';
+				newLi.scrollIntoView();
+			}
+
+		}
+	</script>
+	<div id="main" class="main">
+		<ul id="content" class="content">
+			<div style="clear:both"></div>
+			
+		</ul>
+		<textarea id="msg_input" class="msgInput"></textarea>
+		<button id="sendbtn" class="sendbtn">发送</button>
+	</div>
+</body>
+</html>

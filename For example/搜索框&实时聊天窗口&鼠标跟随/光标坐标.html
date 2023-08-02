@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{width:400px;height:400px;border:1px solid #cecece;position:relative;}
+		span{position:absolute;left:0;bottom:0;}
+	</style>
+</head>
+<body>
+	<div>
+		<span></span>
+	</div>
+	<script type="text/javascript">
+
+		var oDiv=document.getElementsByTagName("div")[0];
+		var oSpan=document.getElementsByTagName("span")[0];
+
+		oDiv.onmousemove=function(e){
+			var evt= e||event;
+			var x=evt.clientX;
+			var y=evt.clientY;
+			oSpan.innerHTML=x+"像素，"+y+"像素";
+		}
+		oDiv.onmouseout=function(e){
+			oSpan.innerHTML=" ";
+		}
+
+	</script>
+</body>
+</html>

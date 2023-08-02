@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>按钮返回到顶部</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        a{
+          text-decoration: none;
+          color:#000000;
+        }
+        pre{
+          width:400px;
+          /* border: 1px solid red; */
+          margin: 10px auto;
+          font-size: 18px;
+        }
+       .top{
+           position: fixed;
+           right:50px;
+           bottom:100px;
+           display: none;
+       }
+       span{
+          width:80px;
+          height: 30px;
+          text-align: center;
+          /* border: 1px solid red; */
+          position:fixed;
+          right: 20px;
+          top:600px;
+          line-height: 30px;
+          background: #82EE45;
+
+       }
+       h2{text-align: center;}
+    </style>
+
+</head>
+<body>
+<div id="gotop" class="top">
+    <span><a href="">回到顶部</a></span>
+</div>
+<h2>散文诗</h2>
+  <pre>八月，云淡风轻
+渐渐散去的味道
+风中的誓言
+当你老了
+千姿百态
+残老的样子
+泥土和水的赞歌
+雨夜情怀
+我的文字，与酒无关
+水晶球
+八月，你好
+离别后很伤，但是很美
+只要有缘
+春天，与诗为伴
+随清风荡漾，洒一地温柔
+人生漫漫，珍爱自己何惧孤寂
+细雨叩窗，轻风拂帘
+夏秋的雨
+匆匆
+一个人走的路
+做一朵闲花
+烹雪煮酒待旧友
+猪头肉
+一生很短，别睡太晚
+窗外，轻风
+岁月的花儿留下了期冀
+期待美好，方能遇见美好
+停留即刹那，转身即天涯
+但求耕耘，不问收获
+绿树成荫，无个事，一成消瘦
+对着镜子里面的人
+流年流水，留客流客
+我不愿让你一个人
+经年的月光
+情深缘浅
+回首前夕，深受感触
+夏夜的风，在不断缭绕
+人生看透，不如看淡
+你的美好，应该留给懂你的人
+你并不懂我，其实没任何关系
+心之所向，步履所往
+人活着
+我怕我，赶不上来年花开
+那该放开的手，定要学会放开
+禅入心，沐一缕佛光
+向日葵的爱情
+再见，旧时光
+梦见家安在崖上
+一生所爱与自由
+  生命是一场烟花，转瞬即逝</pre></p>
+ 
+   <script type="text/javascript">
+  /*
+   1、触发滚动条，小火箭显示
+   2、点击小火箭   滚动条回到顶部  小火箭消失
+  */
+
+  function $(id){
+      return document.getElementById(id);
+  }
+  window.onscroll=function(){
+    var sTop=document.body.scrollTop||document.documentElement.scrollTop;
+    
+    if( sTop > 0 ){
+      $("gotop").style.display = "block";
+    }else{
+       $("gotop").style.display = "none";
+    }
+
+  }
+  $("gotop").onclick = function(){
+    document.body.scrollTop=document.documentElement.scrollTop=0;
+    $("gotop").style.display = "none";
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>动态图片切换</title>
+        <meta charset="UTF-8">
+        <link href="css/style.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <!-- 游戏区域 -->
+        <div id="container">
+            <img src="images/dice_1.png" id="dice" alt="">
+        </div>
+        <div id="command">
+            <input type="button" onclick="shake()" value="摇一摇">
+        </div>
+    </body>
+</html>
+<script>
+	var flag = true;//当flag值为true时，按钮可以点击；
+     function shake(){
+     	if(flag){
+     		flag = false;//阻止按钮点击；
+     		var oImg = document.getElementById("dice");//找到图片；
+	     	oImg.src = "images/diceDynamic.gif";//换一张图片；	
+	     	var times = Math.round(Math.random()*(5000-600)+600);//得到一个随机时间；
+		     	setTimeout(function(){
+	     		var index=Math.round(Math.random()*5+1);
+	     		oImg.src = "images/dice_"+index+".png";//得到一个随机图片；
+	     		 flag = true;
+	     	},times);//在这个随机时间内获取到任意一张图片；
+     	}
+     	
+     }
+</script>

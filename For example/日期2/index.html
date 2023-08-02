@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>日期选择控件</title>
+
+<link href="date.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+
+<script type="text/javascript" src="date.js"></script> 
+
+<div style="width:220px;margin:0 auto;">
+	请选择日期：
+	<input name="member.birth" type="text" value="1111" size="14" readonly onClick="showcalendar(event,this);" onFocus="showcalendar(event, this);if(this.value=='0000-00-00')this.value=''">
+	<input name="member.birth" type="text" value="" size="14" readonly onClick="showcalendar(event,this);" onFocus="showcalendar(event, this);if(this.value=='0000-00-00')this.value=''">
+
+</div>
+
+</body>
+</html>

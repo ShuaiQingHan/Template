@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 300px;
+			border: 2px solid saddlebrown;
+			text-align: center;
+			line-height: 300px;
+			font-size: 60px;
+		}
+		input{
+			width:100px;
+			height: 35px;
+		}
+	</style>
+	<body>
+		<input type="button" id="btn" value="开始"/><br/><br/><br/>
+		<div id="box"></div>
+		<img src="image/1.jpg" alt="" id="m1"/><br/><br/><br/><br/><br/><br/><br/><br/><br/>		
+	</body>
+</html>
+<script src="../../public.js"></script>
+<script type="text/javascript">
+	var arr=[1,2,3,4,5,6,7,8,9,10,11,12];//定义一个数组；
+	var flag = true;//flag为true时，按钮状态为开始；
+	var times = null;
+	$id("btn").onclick=function(){
+		if( flag ){//当flag为true时；
+		 times = setInterval(function(){//全局变量；
+			var index = rand(0,11);//获取随机数；
+			$id("box").innerHTML=arr[index];//找到box并操作样式；
+			$id("m1").src = "image/"+index+".jpg";//找到图片并切换图片；
+			},200);
+			this.value = "停止";//当前按钮的状态为停止；
+		}else{//当flag为false时；
+			clearInterval(times);//停止整个运动；
+			this.value = "开始";//当前按钮的状态为开始；
+		}
+			flag = !flag;
+			
+	}
+</script>

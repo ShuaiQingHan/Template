@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+
+			#box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+			}
+
+			#box2{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+				left: 200px;
+				top: 200px;
+			}
+
+		</style>
+		<script src="drag.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+
+			window.onload = function(){
+				/*
+				 * 拖拽box1元素
+				 *  - 拖拽的流程
+				 * 		1.当鼠标在被拖拽元素上按下时，开始拖拽  onmousedown
+				 * 		2.当鼠标移动时被拖拽元素跟随鼠标移动 onmousemove
+				 * 		3.当鼠标松开时，被拖拽元素固定在当前位置	onmouseup
+				 */
+				//获取box1
+				var box1 = document.getElementById("box1");
+				var box2 = document.getElementById("box2");
+				drag(box1);
+				drag(box2);
+				//为box1绑定一个鼠标按下事件
+				//当鼠标在被拖拽元素上按下时，开始拖拽  onmousedown
+			};
+		</script>
+	</head>
+	<body>
+		<div id="box1"></div>
+
+		<div id="box2"></div>
+	</body>
+</html>

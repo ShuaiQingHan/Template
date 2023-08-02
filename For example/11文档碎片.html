@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*for( var i = 1 ; i <= 1000; i++ ){
+		document.body.innerHTML += "<input type='button' value='按钮'>"
+	}*/
+	/*var str = "";
+	for( var i = 1 ; i <= 1000; i++ ){
+		str += "<input type='button' value='按钮'>";
+	}
+	document.body.innerHTML = str;*/
+	
+	//创建一个文档碎片 缓存 
+	var cache = document.createDocumentFragment();
+	for( var i = 1 ; i <= 1000 ; i++ ){
+		var opt = document.createElement("input");
+		opt.value = "按钮";
+		opt.type="button";
+		cache.appendChild( opt );
+	}
+	document.body.appendChild( cache );
+</script>

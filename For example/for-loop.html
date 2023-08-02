@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+    // var i=1;
+    // var j=1;
+    // for(var i=1;i<=2;i++){
+    //     for(var j = 1; j<=3;j++){
+    //         // var sum = j;
+    //         // j = i ;
+    //         // i = sum ;
+    //         console.log(j);
+    //     }
+    //     // console.log(i);
+    // }
+
+
+    // 1、1、2、3、5、8、13、21、34、55……
+    // F(0)=1，F(1)=1, F(n)=F(n-1)+F(n-2)（n>=2，n∈N*）
+        var m = 1;
+    function fun(n){
+        var a0=0;               //此时a0=1
+        var a1=1;              // a1=2; 代入下面循环继续操作
+        for(var i=2; i<=n ; i++){ 
+        var sum=a0+a1;        //sum=1+1=2
+        a0 = a1;                        //a0=1
+        a1 = sum;               //a1=2在传入上面变量
+        m+=sum;              //   sum 每次循环传入m
+        }
+         return sum;
+    }
+         var str= fun(5);
+         document.write(str); //n>=2;
+        console.log(m);
+</script>
+</html>

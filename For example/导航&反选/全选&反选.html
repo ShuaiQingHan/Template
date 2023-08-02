@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<style type="text/css">
+				td{
+
+					text-align: center;
+				}
+				table{
+					margin-top:20px;
+				}
+			</style>
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<body>
+			 <input type="checkbox" id="checkedAllBox"/>全选/全不选
+			   <input type="button" id="checkedRevBtn" value="反　选"/>
+			   <br/>
+			<table class="table table-bordered">
+				<tr>
+					<td style="width:120px">商品一</td>
+					<td style="width:20px"><input type="checkbox" name="h"/></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>商品一</td>
+					<td><input type="checkbox" name="h" /></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>商品一</td>
+					<td><input type="checkbox" name="h" /></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>商品一</td>
+					<td><input type="checkbox" name="h" /></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>商品一</td>
+					<td><input type="checkbox" name="h" /></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>商品一</td>
+					<td><input type="checkbox" name="h" /></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+
+
+
+	</body>
+</html>
+<script type="text/javascript">
+
+	  var $checkedAllBox = $('#checkedAllBox')
+	  var $items = $(':checkbox[name=h]')
+	  
+	  
+	$checkedAllBox.click(function () {
+    $items.prop('checked', this.checked)
+		})
+		
+		 $('#checkedRevBtn').click(function () {
+    $items.each(function () {
+      this.checked = !this.checked
+    })
+    $checkedAllBox.prop('checked', $items.filter(':not(:checked)').length===0)
+  })
+
+
+
+
+
+
+
+	
+</script>

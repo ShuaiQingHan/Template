@@ -1,0 +1,686 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" " http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0109)http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/province.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" th:with="acl=&#39;bi:setting:basic:province&#39;" layout:decorator="template/main/layout"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- meta info -->
+	<style type="text/css" id="notify-bootstrap">.notifyjs-bootstrap-base {
+	font-weight: bold;
+	padding: 8px 15px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	white-space: nowrap;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: 3px 7px;
+}
+.notifyjs-bootstrap-error {
+	color: #B94A48;
+	background-color: #F2DEDE;
+	border-color: #EED3D7;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNqkVc1u00AQHq+dOD+0poIQfkIjalW0SEGqRMuRnHos3DjwAH0ArlyQeANOOSMeAA5VjyBxKBQhgSpVUKKQNGloFdw4cWw2jtfMOna6JOUArDTazXi/b3dm55socPqQhFka++aHBsI8GsopRJERNFlY88FCEk9Yiwf8RhgRyaHFQpPHCDmZG5oX2ui2yilkcTT1AcDsbYC1NMAyOi7zTX2Agx7A9luAl88BauiiQ/cJaZQfIpAlngDcvZZMrl8vFPK5+XktrWlx3/ehZ5r9+t6e+WVnp1pxnNIjgBe4/6dAysQc8dsmHwPcW9C0h3fW1hans1ltwJhy0GxK7XZbUlMp5Ww2eyan6+ft/f2FAqXGK4CvQk5HueFz7D6GOZtIrK+srupdx1GRBBqNBtzc2AiMr7nPplRdKhb1q6q6zjFhrklEFOUutoQ50xcX86ZlqaZpQrfbBdu2R6/G19zX6XSgh6RX5ubyHCM8nqSID6ICrGiZjGYYxojEsiw4PDwMSL5VKsC8Yf4VRYFzMzMaxwjlJSlCyAQ9l0CW44PBADzXhe7xMdi9HtTrdYjFYkDQL0cn4Xdq2/EAE+InCnvADTf2eah4Sx9vExQjkqXT6aAERICMewd/UAp/IeYANM2joxt+q5VI+ieq2i0Wg3l6DNzHwTERPgo1ko7XBXj3vdlsT2F+UuhIhYkp7u7CarkcrFOCtR3H5JiwbAIeImjT/YQKKBtGjRFCU5IUgFRe7fF4cCNVIPMYo3VKqxwjyNAXNepuopyqnld602qVsfRpEkkz+GFL1wPj6ySXBpJtWVa5xlhpcyhBNwpZHmtX8AGgfIExo0ZpzkWVTBGiXCSEaHh62/PoR0p/vHaczxXGnj4bSo+G78lELU80h1uogBwWLf5YlsPmgDEd4M236xjm+8nm4IuE/9u+/PH2JXZfbwz4zw1WbO+SQPpXfwG/BBgAhCNZiSb/pOQAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-success {
+	color: #468847;
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAutJREFUeNq0lctPE0Ecx38zu/RFS1EryqtgJFA08YCiMZIAQQ4eRG8eDGdPJiYeTIwHTfwPiAcvXIwXLwoXPaDxkWgQ6islKlJLSQWLUraPLTv7Gme32zoF9KSTfLO7v53vZ3d/M7/fIth+IO6INt2jjoA7bjHCJoAlzCRw59YwHYjBnfMPqAKWQYKjGkfCJqAF0xwZjipQtA3MxeSG87VhOOYegVrUCy7UZM9S6TLIdAamySTclZdYhFhRHloGYg7mgZv1Zzztvgud7V1tbQ2twYA34LJmF4p5dXF1KTufnE+SxeJtuCZNsLDCQU0+RyKTF27Unw101l8e6hns3u0PBalORVVVkcaEKBJDgV3+cGM4tKKmI+ohlIGnygKX00rSBfszz/n2uXv81wd6+rt1orsZCHRdr1Imk2F2Kob3hutSxW8thsd8AXNaln9D7CTfA6O+0UgkMuwVvEFFUbbAcrkcTA8+AtOk8E6KiQiDmMFSDqZItAzEVQviRkdDdaFgPp8HSZKAEAL5Qh7Sq2lIJBJwv2scUqkUnKoZgNhcDKhKg5aH+1IkcouCAdFGAQsuWZYhOjwFHQ96oagWgRoUov1T9kRBEODAwxM2QtEUl+Wp+Ln9VRo6BcMw4ErHRYjH4/B26AlQoQQTRdHWwcd9AH57+UAXddvDD37DmrBBV34WfqiXPl61g+vr6xA9zsGeM9gOdsNXkgpEtTwVvwOklXLKm6+/p5ezwk4B+j6droBs2CsGa/gNs6RIxazl4Tc25mpTgw/apPR1LYlNRFAzgsOxkyXYLIM1V8NMwyAkJSctD1eGVKiq5wWjSPdjmeTkiKvVW4f2YPHWl3GAVq6ymcyCTgovM3FzyRiDe2TaKcEKsLpJvNHjZgPNqEtyi6mZIm4SRFyLMUsONSSdkPeFtY1n0mczoY3BHTLhwPRy9/lzcziCw9ACI+yql0VLzcGAZbYSM5CCSZg1/9oc/nn7+i8N9p/8An4JMADxhH+xHfuiKwAAAABJRU5ErkJggg==);
+}
+.notifyjs-bootstrap-info {
+	color: #3A87AD;
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYFAhkSsdes/QAAA8dJREFUOMvVlGtMW2UYx//POaWHXg6lLaW0ypAtw1UCgbniNOLcVOLmAjHZolOYlxmTGXVZdAnRfXQm+7SoU4mXaOaiZsEpC9FkiQs6Z6bdCnNYruM6KNBw6YWewzl9z+sHImEWv+vz7XmT95f/+3/+7wP814v+efDOV3/SoX3lHAA+6ODeUFfMfjOWMADgdk+eEKz0pF7aQdMAcOKLLjrcVMVX3xdWN29/GhYP7SvnP0cWfS8caSkfHZsPE9Fgnt02JNutQ0QYHB2dDz9/pKX8QjjuO9xUxd/66HdxTeCHZ3rojQObGQBcuNjfplkD3b19Y/6MrimSaKgSMmpGU5WevmE/swa6Oy73tQHA0Rdr2Mmv/6A1n9w9suQ7097Z9lM4FlTgTDrzZTu4StXVfpiI48rVcUDM5cmEksrFnHxfpTtU/3BFQzCQF/2bYVoNbH7zmItbSoMj40JSzmMyX5qDvriA7QdrIIpA+3cdsMpu0nXI8cV0MtKXCPZev+gCEM1S2NHPvWfP/hL+7FSr3+0p5RBEyhEN5JCKYr8XnASMT0xBNyzQGQeI8fjsGD39RMPk7se2bd5ZtTyoFYXftF6y37gx7NeUtJJOTFlAHDZLDuILU3j3+H5oOrD3yWbIztugaAzgnBKJuBLpGfQrS8wO4FZgV+c1IxaLgWVU0tMLEETCos4xMzEIv9cJXQcyagIwigDGwJgOAtHAwAhisQUjy0ORGERiELgG4iakkzo4MYAxcM5hAMi1WWG1yYCJIcMUaBkVRLdGeSU2995TLWzcUAzONJ7J6FBVBYIggMzmFbvdBV44Corg8vjhzC+EJEl8U1kJtgYrhCzgc/vvTwXKSib1paRFVRVORDAJAsw5FuTaJEhWM2SHB3mOAlhkNxwuLzeJsGwqWzf5TFNdKgtY5qHp6ZFf67Y/sAVadCaVY5YACDDb3Oi4NIjLnWMw2QthCBIsVhsUTU9tvXsjeq9+X1d75/KEs4LNOfcdf/+HthMnvwxOD0wmHaXr7ZItn2wuH2SnBzbZAbPJwpPx+VQuzcm7dgRCB57a1uBzUDRL4bfnI0RE0eaXd9W89mpjqHZnUI5Hh2l2dkZZUhOqpi2qSmpOmZ64Tuu9qlz/SEXo6MEHa3wOip46F1n7633eekV8ds8Wxjn37Wl63VVa+ej5oeEZ/82ZBETJjpJ1Rbij2D3Z/1trXUvLsblCK0XfOx0SX2kMsn9dX+d+7Kf6h8o4AIykuffjT8L20LU+w4AZd5VvEPY+XpWqLV327HR7DzXuDnD8r+ovkBehJ8i+y8YAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-warn {
+	color: #C09853;
+	background-color: #FCF8E3;
+	border-color: #FBEED5;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABJlBMVEXr6eb/2oD/wi7/xjr/0mP/ykf/tQD/vBj/3o7/uQ//vyL/twebhgD/4pzX1K3z8e349vK6tHCilCWbiQymn0jGworr6dXQza3HxcKkn1vWvV/5uRfk4dXZ1bD18+/52YebiAmyr5S9mhCzrWq5t6ufjRH54aLs0oS+qD751XqPhAybhwXsujG3sm+Zk0PTwG6Shg+PhhObhwOPgQL4zV2nlyrf27uLfgCPhRHu7OmLgAafkyiWkD3l49ibiAfTs0C+lgCniwD4sgDJxqOilzDWowWFfAH08uebig6qpFHBvH/aw26FfQTQzsvy8OyEfz20r3jAvaKbhgG9q0nc2LbZxXanoUu/u5WSggCtp1anpJKdmFz/zlX/1nGJiYmuq5Dx7+sAAADoPUZSAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfdBgUBGhh4aah5AAAAlklEQVQY02NgoBIIE8EUcwn1FkIXM1Tj5dDUQhPU502Mi7XXQxGz5uVIjGOJUUUW81HnYEyMi2HVcUOICQZzMMYmxrEyMylJwgUt5BljWRLjmJm4pI1hYp5SQLGYxDgmLnZOVxuooClIDKgXKMbN5ggV1ACLJcaBxNgcoiGCBiZwdWxOETBDrTyEFey0jYJ4eHjMGWgEAIpRFRCUt08qAAAAAElFTkSuQmCC);
+}
+</style><style type="text/css" id="notify-metro">.notifyjs-metro-error {
+	color: #fff !important;
+	background-color: #cc222a;
+	border-color: #EED3D7;
+	width: 160px;
+}
+.notifyjs-metro-success {
+	color: #fff !important;
+	background-color: #2cba27;
+	border-color: #D6E9C6;
+	width: 160px;
+}
+.notifyjs-metro-info {
+	color: #fafafa !important;
+	background-color: #1E90FF;
+	border: 1px solid #1E90FF;
+	width: 160px;
+}
+.notifyjs-metro-warning {
+	background-color: #FAFA47;
+	border: 1px solid #EEEE45;
+	width: 160px;
+}
+.notifyjs-metro-black {
+	color: #fafafa !important;
+	background-color: #333;
+	border: 1px solid #000;
+	width: 160px;
+}
+.notifyjs-metro-white {
+	background-color: #f1f1f1;
+	border: 1px solid #ddd;
+	width: 160px;
+}
+</style><style type="text/css" id="notify-remind">.notifyjs-remind-error {
+	color: #fff !important;
+	background-color: #cc222a;
+	border-color: #EED3D7;
+	width: 160px;
+}
+.notifyjs-remind-success {
+	color: #fff !important;
+	background-color: #2cba27;
+	border-color: #D6E9C6;
+	width: 160px;
+}
+.notifyjs-remind-info {
+	color: #fafafa !important;
+	background-color: #1E90FF;
+	border: 1px solid #1E90FF;
+	width: 160px;
+}
+.notifyjs-remind-warning {
+	background-color: #FAFA47;
+	border: 1px solid #EEEE45;
+	width: 160px;
+}
+.notifyjs-remind-black {
+	color: #fafafa !important;
+	background-color: #333;
+	border: 1px solid #000;
+	width: 160px;
+}
+.notifyjs-remind-white {
+	background-color: #f1f1f1;
+	border: 1px solid #ddd;
+	width: 160px;
+}
+</style><link href="./复医天健智慧医院后勤管理平台 - 云医管_files/WdatePicker.css" rel="stylesheet" type="text/css"><style type="text/css" id="core-notify">.notifyjs-corner {
+	position: fixed;
+	margin: 5px;
+	z-index: 1050;
+}
+
+.notifyjs-corner .notifyjs-wrapper,
+.notifyjs-corner .notifyjs-container {
+	position: relative;
+	display: block;
+	height: inherit;
+	width: inherit;
+	margin: 3px;
+}
+
+.notifyjs-wrapper {
+	z-index: 1;
+	position: absolute;
+	display: inline-block;
+	height: 0;
+	width: 0;
+}
+
+.notifyjs-container {
+	display: none;
+	z-index: 1;
+	position: absolute;
+}
+
+.notifyjs-hidable {
+	cursor: pointer;
+}
+
+[data-notify-text],[data-notify-html] {
+	position: relative;
+}
+
+.notifyjs-arrow {
+	position: absolute;
+	z-index: 2;
+	width: 0;
+	height: 0;
+}</style><style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head><body class="skin-blue sidebar-mini" style=""><th:block th:remove="all">
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<meta name="description" content="">
+		<meta name="author" content="fumed E-commerce Ltd.">
+	</th:block>
+	<title>复医天健智慧医院后勤管理平台 - 云医管</title>
+	<link rel="stylesheet" type="text/css" th:href="|${_STYLES}/pages/treeview/treeviewAdd.css|" href="./复医天健智慧医院后勤管理平台 - 云医管_files/treeviewAdd.css">
+	<th:block th:remove="all">
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap.min.css">
+		<!-- table -->
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-editable.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-table.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-table-fixed-columns.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-table-reorder-rows.css">
+
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/font-awesome.min.css">
+		<!-- Theme style -->
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/AdminLTE.css">
+		<!-- AdminLTE Skins. Choose a skin from the css/skins
+   folder instead of downloading all of them to reduce the load. -->
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/_all-skins.min.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/notify-metro.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrapValidator.min.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/morris.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/ionicons.min.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-select.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-treeview.min.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/_all.css">
+
+
+		<!-- daterange picker -->
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/daterangepicker-bs3.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/fileinput.min.css" media="all">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/maskStyle.css" media="all">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap3-wysihtml5.min.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/common.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery.contextMenu.min.css">
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/main.css">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+<script src="http://10.0.0.246/resources/plugins/html5shiv/3.7.3/html5shiv.min.js?version=000000"></script>
+<script src="http://10.0.0.246/resources/plugins/respond/1.4.2/respond.min.js?version=000000"></script>
+<![endif]-->
+		<!-- jQuery -->
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery.mockjax.min.js" type="text/javascript"></script>
+
+		<!-- Bootstrap 3.3.6 -->
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap.min.js" type="text/javascript"></script>
+
+		<!-- table -->
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-table.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-table-zh-CN.min.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery.tablednd.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-table-reorder-rows.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-table-fixed-columns.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-table-export.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-table-filter-control.js"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/WdatePicker.js" type="text/javascript" defer="defer"></script>
+
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/tableExport.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery.timers.js" type="text/javascript"></script>
+
+		<!-- iCheck -->
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/icheck.min.js" type="text/javascript"></script>
+		<!-- sortable -->
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrapValidator.min.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/zh_CN.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-confirmation.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-treeview.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-selecttree.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/moment.min.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/daterangepicker.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/notify.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/notify-metro.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery.bootstrap.min.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery.cookie.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/imgPreview_split.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/common.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jQuery.common.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/fileinput.js" type="text/javascript"></script>
+		<!-- <script src="http://10.0.0.246/resources/plugins/bootstrap-fileinput/4.4.0/js/locales/zh.js?v=1.0.1" type="text/javascript"></script> -->
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/loadmask.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery.knob.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery.sparkline.min.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery.slimscroll.min.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/morris.min.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/raphael.2.1.0.min.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/bootstrap-select.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery.contextMenu.min.js" type="text/javascript"></script>
+
+		<script language="javascript" src="./复医天健智慧医院后勤管理平台 - 云医管_files/print.js"></script>
+
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/aes.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/pbkdf2.js" type="text/javascript"></script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/AesUtil.js" type="text/javascript"></script>
+
+
+		<!-- AdminLTE App -->
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/app.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			system = {
+				contextPath: ""
+				, resourcesPath: "http://10.0.0.246/resources"
+			}
+		</script>
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/main.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/main(1).css">
+	</th:block>
+	<script>
+			$(function(){
+				$("#right-page").load("province_right.html")
+			})
+	</script>
+
+
+
+	<div class="wrapper">
+		<header class="main-header">
+			<!-- Logo -->
+			<a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/province.html" class="logo">
+				<!-- mini logo for sidebar mini 50x50 pixels -->
+				<span class="logo-mini">
+					<img src="./复医天健智慧医院后勤管理平台 - 云医管_files/logo.png">
+				</span>
+				<!-- logo for regular state and mobile devices -->
+				<span class="logo-lg">医院后勤管理云平台</span>
+			</a>
+			<!-- Header Navbar: style can be found in header.less -->
+			<nav class="navbar navbar-dist-top">
+				<!-- Sidebar toggle button-->
+				<a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/province.html#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+					<span class="sr-only">Toggle navigation</span>
+				</a>
+
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<!-- User Account: style can be found in dropdown.less -->
+						<li class="dropdown user user-menu">
+							<a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/province.html#" class="dropdown-toggle" data-toggle="dropdown">
+								<!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+								<span class="hidden-xs">
+									系统管理员
+									<i class="fa fa-angle-down"></i>
+								</span>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a data-toggle="modal" href="http://127.0.0.1:5504/admin/member/update/pwd.do" data-target=".distModal">
+										修改密码
+									</a>
+								</li>
+								<li>
+									<a href="http://127.0.0.1:5504/logout">注销</a>
+								</li>
+							</ul>
+						</li>
+						<!-- Control Sidebar Toggle Button -->
+						<!--<li>
+						<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+						</li>-->
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!-- Left side column. contains the logo and sidebar -->
+		<aside class="main-sidebar">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar" style="height: auto;">
+				<!-- sidebar menu: : style can be found in sidebar.less -->
+				<ul class="sidebar-menu">
+					<li class="treeview active">
+						<a href="javascript:void(0)">
+							<i class="fa fa-street-view"></i>
+							<span>大屏数据设置</span>
+							<i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu">
+
+							<li class="treeview active">
+								<a href="javascript:void(0)">
+									<i class="fa"></i>
+									<span>项目数据配置</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu menu-open">
+									<li class="active">
+										<a href="http://127.0.0.1:5504/qc/default/pages/CleaningControl/QualityControlOverview/QualityControlOverview.html">
+											<i class="fa"></i>
+											<span>基础配置</span>
+											<i class="fa fa-angle-left pull-right"></i>
+										</a>
+										<ul class="treeview-menu menu-open">
+											<li class="active">
+												<a href="http://127.0.0.1:5504/qc/default/pages/CleaningControl/QualityControlOverview/QualityControlOverview.html">
+													<i class="fa"></i>省市基础配置</a>
+											</li>
+
+									
+									<li class="">
+										<a href="http://127.0.0.1:5504/qc/default/pages/CleaningControl/QualityControlOverview_hos/QualityControlOverview_hos.html">
+											<i class="fa"></i>医院基础配置</a>
+									</li>
+
+								</ul>
+							</li>
+							<li class="treeview">
+								<a href="javascript:void(0)">
+									<i class="fa"></i>
+									<span>修正配置</span>
+									<i class="fa fa-angle-left pull-right"></i>
+								</a>
+								<ul class="treeview-menu menu-open">
+									<li class="">
+										<a href="http://127.0.0.1:5504/qc/default/pages/SatisfactionManagement/SatisfactionManagementOverview/SatisfactionManagementOverview.html">
+											<i class="fa"></i>省市修正数据</a>
+									</li>
+									<li class="">
+										<a href="http://127.0.0.1:5504/qc/default/pages/SatisfactionManagement/SatisfactionManagementOverview_hos/SatisfactionManagementOverview_hos.html">
+											<i class="fa"></i>医院修正数据</a>
+									</li>
+								</ul>
+							</li>
+
+						</ul>
+
+					</li>
+					<li class="treeview">
+						<a href="javascript:void(0)">
+							<i class="fa"></i>
+							<span>华山西院数据配置</span>
+							<i class="fa fa-angle-left pull-right"></i>
+						</a>
+						<ul class="treeview-menu menu-open">
+							<li class="">
+								<a href="http://127.0.0.1:5504/qc/default/pages/CleaningControl/QualityControlOverview/QualityControlOverview.html">
+									<i class="fa"></i>
+									<span>基础配置</span>
+									<!--<i class="fa fa-angle-left pull-right"></i>-->
+								</a>
+
+							</li>
+							<li class="treeview">
+								<a href="javascript:void(0)">
+									<i class="fa"></i>
+									<span>修正配置</span>
+									<!--<i class="fa fa-angle-left pull-right"></i>-->
+								</a>
+
+							</li>
+						</ul>
+			</li></ul></li></ul></section>
+			<!-- /.sidebar -->
+		</aside>
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper" style="height: 100%; min-height: 398px;" layout:fragment="content">
+			<!-- Main content -->
+			<section class="content-header">
+				<h1>省市大数据设置</h1>
+				<ol class="breadcrumb">
+					<li>
+						<a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/province.html#"><i class="fa fa-street-view"></i>大屏数据设置</a>
+					</li>
+					<li class="">基础配置</li>
+					<li class="active">省市大数据设置</li>
+				</ol>
+			</section>
+			<!-- Start right content -->
+			<div class="content-page">
+				<!-- ============================================================== -->
+				<!-- Start Content here -->
+				<!-- ============================================================== -->
+				<div class="content">
+					<!--主要内容开始部分 START-->
+					<div class="row">
+						<div class="col-md-12  portlets">
+							<div class="widget-newall">
+								<div class="widget widget-content padding">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="table-responsive">
+												<div class="col-md-2" style="width: 230px;padding: 0;">
+													<div class="layout-tree">
+														<div class="tree-title">省市区域管理
+															<div class="icons_j">
+																<!--操作下拉树-->
+																<!--<span id="new_select" class="spans_j"><img th:src="|${_IMGS}/icon_tianjia.png|" src="../../../../../dist/image/icon_tianjia.png"/><label>操作</label></span>-->
+															</div>
+														</div>
+														<!--下拉树-->
+														<div class="tree-container" style="padding-top: 0;">
+															<div id="tree-container"></div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-md-10" style="width: calc(100% - 230px); ">
+													<form th:attr="action=@{/setting/basic/province/save}" data-toggle="validator" class="form-horizontal form-table bv-form" role="form" novalidate="novalidate" method="post" enctype="multipart/form-data" id="addForm"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+														<div id="right-page"><!-- <link href="https://cdn.bootcss.com/bootstrap-fileinput/5.0.6/css/fileinput-rtl.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/bootstrap-fileinput/5.0.6/css/fileinput.min.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/bootstrap-fileinput/5.0.6/js/fileinput.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap-fileinput/5.0.6/js/locales/zh.min.js"></script> -->
+
+<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/jquery-1.9.1.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="./复医天健智慧医院后勤管理平台 - 云医管_files/fileinput.min.css" media="all">
+<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/fileinput.js" type="text/javascript"></script>
+
+<style type="text/css">
+	.btn-file {
+		width: 95px !important;
+	}
+
+	.col-sm-0 {
+		width: 6% !important;
+	}
+
+	.input_lv {
+		width: 52px;
+		height: 29px;
+		margin-top: 3px;
+	}
+
+	.label_lv {
+		/* display: inline-block !important; */
+		float: left !important;
+		width: 5% !important;
+		padding-top: 0 !important;
+		text-align: left !important;
+	}
+
+	.label_j {
+		font-size: 22px;
+		font-weight: 900;
+	}
+</style>
+<h1 class="content-h1">基本信息</h1>
+
+<input type="hidden" name="id" th:value="${entity.id}">
+<input type="hidden" name="areaCode" th:value="${entity.areaCode}">
+<div class="form-group">
+	<label class="col-sm-1 control-label" for="fm_hospitalName"><span class="text-red-1">*</span>标题：</label>
+	<div class="col-sm-4">
+		<input type="text" name="title" th:value="${entity.title}" id="fm_hospitalName" class="form-control" placeholder="请输入标题" autocomplete="off" required="" data-bv-field="title">
+	<small class="help-block" data-bv-validator="notEmpty" data-bv-for="title" data-bv-result="NOT_VALIDATED" style="display: none;">请填写必填项目</small></div>
+	<label class="col-sm-1 control-label" for="fm_title"><span class="text-red-1">*</span>副标题：</label>
+	<div class="col-sm-4">
+		<input type="text" name="subTitle" th:value="${entity.subTitle}" id="fm_title" class="form-control" placeholder="请输入副标题" autocomplete="off" required="" data-bv-field="subTitle">
+	<small class="help-block" data-bv-validator="notEmpty" data-bv-for="subTitle" data-bv-result="NOT_VALIDATED" style="display: none;">请填写必填项目</small></div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-1 control-label" for="fm_image">logo：</label>
+	<div class="col-sm-9">
+		<div class="file-input file-input-new"><div class="file-preview ">
+    <div class="close fileinput-remove">×</div>
+    <div class="file-drop-disabled">
+    <div class="file-preview-thumbnails">
+    </div>
+    <div class="clearfix"></div>    <div class="file-preview-status text-center text-success"></div>
+    <div class="kv-fileinput-error file-error-message" style="display: none;"></div>
+    </div>
+</div>
+<div class="kv-upload-progress hide"><div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+        0%
+     </div>
+</div></div>
+<div class="input-group file-caption-main">
+   <div tabindex="500" class="form-control file-caption  kv-fileinput-caption">
+   <div class="file-caption-name"></div>
+</div>
+
+   <div class="input-group-btn">
+       <button type="button" tabindex="500" title="Clear selected files" class="btn btn-default fileinput-remove fileinput-remove-button"><i class="glyphicon glyphicon-trash"></i>  <span class="hidden-xs">Remove</span></button>
+       <button type="button" tabindex="500" title="Abort ongoing upload" class="btn btn-default hide fileinput-cancel fileinput-cancel-button"><i class="glyphicon glyphicon-ban-circle"></i>  <span class="hidden-xs">Cancel</span></button>
+       <button type="submit" tabindex="500" title="Upload selected files" class="btn btn-default fileinput-upload fileinput-upload-button"><i class="glyphicon glyphicon-upload"></i>  <span class="hidden-xs">Upload</span></button>
+       <div tabindex="500" class="btn btn-primary btn-file"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;  <span class="hidden-xs">Browse …</span><input id="fm_image" name="image" data-language="zh" type="file" class="file"></div>
+   </div>
+</div></div>
+		<input type="hidden" name="logoUploadId" th:value="${entity.logoUploadId}">
+	</div>
+	<span class="col-sm-5"><img th:src="${imageUrl}" src="./复医天健智慧医院后勤管理平台 - 云医管_files/1171267214167244800.png" style="margin:10px 0 0 140px;">
+		<!--class="img-circle"--></span>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<script>
+	$("#addForm").bootstrapValidator().on('success.form.bv', function (e) {
+		e.preventDefault();
+		$form = $(e.target);
+		if (e.isDefaultPrevented()) {
+			var formData = new FormData($form[0]);
+			$form.async({
+				url: $form.attr("action")
+				, type: $form.attr("method")
+				, data: formData
+				, showMask: true
+				, processData: false
+				, contentType: false
+				, success: function (data) {
+					if (data.status == 200) {
+						$.messager.notifySuccess("操作成功", data.results || data.message);
+						$('[data-toggle="table"]').bootstrapTable('refresh');
+					} else {
+						$.messager.notifyError("操作失败", data.results || data.message)
+					}
+				}
+				, error: function (event, jqXHR, ajaxSettings, thrownError) {
+					if (event.status == 0) {
+						$.messager.notifyError("操作失败", data.results || data.message);
+					}
+				}, complete: function (event, xhr, options) {
+					$form.bootstrapValidator('disableSubmitButtons', false);
+				}
+			})
+		}
+	});
+</script></div>
+														<h1 class="content-h1">荣誉榜设置
+																<a th:attr="href=@{/setting/basic/province/add}" data-toggle="modal" data-target=".staticModal" href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/provinceAdd.html" class="btn btn-primary btn-flat tbl-btn-add" style="margin-right:10px;float:right;">
+																	<i class="glyphicon glyphicon-plus-sign"></i> 新建
+																</a>
+															</h1>
+															<div>
+															<div class="clearfix"></div>
+														<div class="bootstrap-table"><div class="fixed-table-toolbar"><div class="bars pull-left"></div></div><div class="fixed-table-container" style="padding-bottom: 0px;"><div class="fixed-table-header" style="display: none;"><table></table></div><div class="fixed-table-body"><div class="fixed-table-loading" style="top: 35px; display: none;">正在努力地加载数据中，请稍候……</div><table data-toggle="table" data-toolbar="#toolbar" data-show-refresh="false" data-show-columns="false" data-pagination="false" data-filter-control="false" data-search-on-enter-key="false" data-show-export="false" data-export-types="[&#39;excel&#39;]" data-server-export-url="/tp/setting/servicePoint/export.do" th:attr="data-url=@{/setting/basic/province/refresh.json}" data-method="get" data-url="../../../../../dist/data/transType.json" class="table table-hover table-striped">
+																<thead><tr><th style="" data-field="hospitalName" tabindex="0"><div class="th-inner ">医院</div><div class="fht-cell"></div></th><th style="" data-field="name" tabindex="0"><div class="th-inner ">荣誉名称 </div><div class="fht-cell"></div></th><th style="" data-field="provinceCheck" tabindex="0"><div class="th-inner ">是否选定</div><div class="fht-cell"></div></th><th style="width: 200px; " data-field="123" tabindex="0"><div class="th-inner ">操作</div><div class="fht-cell"></div></th></tr></thead>
+															<tbody><tr data-index="0"><td style=""></td><td style=""></td><td style="">未选定</td><td style="width: 200px; "><div style="height:20px;text-align: center;"><div class="btn-group btn-group-xs"><a href="javascript:void(0)" class="btn btn-default btn-start" style="margin-left:25px;">选定</a><a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/img_deatil.html" class="btn btn-default" data-toggle="modal" data-target=".staticModal" style="margin-left:10px;">查看</a></div></div></td></tr><tr data-index="1"><td style=""></td><td style=""></td><td style="">未选定</td><td style="width: 200px; "><div style="height:20px;text-align: center;"><div class="btn-group btn-group-xs"><a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/province.html#" class="btn btn-default btn-stop">取消选定</a><a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/img_deatil.html" class="btn btn-default" data-toggle="modal" data-target=".staticModal" style="margin-left:10px;">查看</a></div></div></td></tr><tr data-index="2"><td style=""></td><td style=""></td><td style="">未选定</td><td style="width: 200px; "><div style="height:20px;text-align: center;"><div class="btn-group btn-group-xs"><a href="javascript:void(0)" class="btn btn-default btn-start" style="margin-left:25px;">选定</a><a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/img_deatil.html" class="btn btn-default" data-toggle="modal" data-target=".staticModal" style="margin-left:10px;">查看</a></div></div></td></tr><tr data-index="3"><td style=""></td><td style=""></td><td style="">未选定</td><td style="width: 200px; "><div style="height:20px;text-align: center;"><div class="btn-group btn-group-xs"><a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/province.html#" class="btn btn-default btn-stop">取消选定</a><a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/img_deatil.html" class="btn btn-default" data-toggle="modal" data-target=".staticModal" style="margin-left:10px;">查看</a></div></div></td></tr><tr data-index="4"><td style=""></td><td style=""></td><td style="">未选定</td><td style="width: 200px; "><div style="height:20px;text-align: center;"><div class="btn-group btn-group-xs"><a href="javascript:void(0)" class="btn btn-default btn-start" style="margin-left:25px;">选定</a><a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/img_deatil.html" class="btn btn-default" data-toggle="modal" data-target=".staticModal" style="margin-left:10px;">查看</a></div></div></td></tr><tr data-index="5"><td style=""></td><td style=""></td><td style="">未选定</td><td style="width: 200px; "><div style="height:20px;text-align: center;"><div class="btn-group btn-group-xs"><a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/province.html#" class="btn btn-default btn-stop">取消选定</a><a href="http://127.0.0.1:5504/web/resources/cloud/bi/default/page/settings/projectSetting/base/province/img_deatil.html" class="btn btn-default" data-toggle="modal" data-target=".staticModal" style="margin-left:10px;">查看</a></div></div></td></tr></tbody></table></div><div class="fixed-table-footer" style="display: none;"><table><tbody><tr></tr></tbody></table></div><div class="fixed-table-pagination" style="display: none;"></div></div></div></div>
+														<div class="row" style="text-align: center; padding: 20px 0px;">
+																<button type="submit" id="saveScreenSetting" class="btn btn-primary btn-xxl">保存</button>
+														</div>
+													</form>
+												</div>
+
+												
+
+											</div>
+										 </div>
+										<!-- </form> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	<!-- /.content-wrapper -->
+	
+	<div class="modal fade staticModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="true" data-backdrop="static">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content"></div>
+		</div>
+	</div>
+	
+	<!-- 前端调试加载页面 -->
+	<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/zh.js" type="text/javascript"></script>
+	<th:block layout:fragment="scripts">
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/mock_trans_personl.js" type="text/javascript" charset="utf-8"></script>
+		<script th:script="@{pages/settings/province/province.js}" src="./复医天健智慧医院后勤管理平台 - 云医管_files/province.js"></script>
+
+		<script src="./复医天健智慧医院后勤管理平台 - 云医管_files/main(2).js" type="text/javascript"></script>
+	</th:block>
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<div id="kvFileinputModal" class="file-zoom-dialog modal fade" tabindex="-1" aria-labelledby="kvFileinputModalLabel"><div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="kv-zoom-actions pull-right"><button type="button" class="btn btn-default btn-header-toggle btn-toggleheader" title="Toggle header" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="glyphicon glyphicon-resize-vertical"></i></button><button type="button" class="btn btn-default btn-fullscreen" title="Toggle full screen" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="glyphicon glyphicon-fullscreen"></i></button><button type="button" class="btn btn-default btn-borderless" title="Toggle borderless mode" data-toggle="button" aria-pressed="false" autocomplete="off"><i class="glyphicon glyphicon-resize-full"></i></button><button type="button" class="btn btn-default btn-close" title="Close detailed preview" data-dismiss="modal" aria-hidden="true"><i class="glyphicon glyphicon-remove"></i></button></div>
+      <h3 class="modal-title">Detailed Preview <small><span class="kv-zoom-title"></span></small></h3>
+    </div>
+    <div class="modal-body">
+      <div class="floating-buttons"></div>
+      <div class="kv-zoom-body file-zoom-content krajee-default"></div>
+<button type="button" class="btn btn-navigate btn-prev" title="View previous file"><i class="glyphicon glyphicon-triangle-left"></i></button> <button type="button" class="btn btn-navigate btn-next" title="View next file"><i class="glyphicon glyphicon-triangle-right"></i></button>
+    </div>
+  </div>
+</div>
+</div></body></html>

@@ -1,0 +1,32 @@
+.tree-title{
+	position: relative;
+}
+.icons_j{
+	width: 100%;
+	height: 28px;
+	position: absolute;
+	top: 6px;
+	right: 0;
+}
+.icons_j span{
+	display: block;
+	float: right;
+	margin: 5px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.icons_j span img{
+	float: left;
+	width: 14px;
+	height: 14px;	
+}
+.icons_j span label{
+	float: right;
+	display: block;
+	height: 18px;
+	font-weight: normal;
+	line-height: 16px;
+	margin-bottom: 0;
+	margin-left: 5px;
+	cursor: pointer;
+}

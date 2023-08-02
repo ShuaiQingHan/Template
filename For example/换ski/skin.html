@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网页换肤</title>
+	<link  id="link" href="css/css1.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<script >
+	window.onload = function(){
+		var btns = document.getElementsByTagName("input");
+		for(var i=0; i<btns.length-1; i++){
+			btns[i].onclick = function(){
+				var csslink = document.getElementById("link");
+				//被点击的那个按钮
+				csslink.href = this.getAttribute("cn")+".css";
+			}
+		}
+	}
+	
+</script>
+<body>
+
+<dl id="message">
+	<form>
+		<dt>
+			<strong>换肤提交框：</strong>
+			<input id="btn1" cn="css/css1" type="button" value="Ski1" />
+			<input id="btn2" cn="css/css2" type="button" value="Ski2" />
+		</dt>
+		<dd>姓名：<input class="text" type="text" /></dd>
+		<dd>密码：<input class="text" type="password" /></dd>
+		<dd>留言：<textarea></textarea></dd>
+		<dd class="center">
+			<input class="btn" type="submit" value="提交" /></dd>
+	</form>
+</dl>
+
+	
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="input-group">
+    <input type="text" id="mobile" class="form-control" placeholder="请输入手机号" autocomplete="off" />
+    <div class="input-group-addon icon-clear"></div>
+</div>
+	<script type="text/javascript">
+		//绑定监听手机号文本框内容按钮事件
+		$('#mobile').keyup(function() {
+		    var clearBtn = $(this).parent().find('.icon-clear');
+		    if($(this).val() == '') { clearBtn.hide(); } 
+		    else { clearBtn.css('display', 'table-cell'); }
+		});
+		//手机号输入框失去焦点，去除清除按钮;获取焦点时，若有值则显示清除按钮
+		$('#mobile').blur(function() {
+		    $('#mobile').parent().find('.icon-clear').hide();
+		}).focus(function(){
+		    if($(this).val() != ''){
+		        $(this).parent().find('.icon-clear').css('display', 'table-cell');
+		    }
+		});
+		//清除文本框内容事件
+		$('.icon-clear').click(function() {
+		    $(this).parent().find('input').val('');
+		    $(this).hide();
+		});
+	</script>
+</body>
+</html>

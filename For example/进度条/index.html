@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>\飞机跑道进度条动画特效 </title>
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+	<div class="progress">
+		<div class="progress-bar" style=" background:#005394;">
+			<span></span>
+		</div>
+	</div>
+
+	<div class="progress">
+		<div class="progress-bar" style=" background:#d9534f;">
+			<span></span>
+		</div>
+	</div>
+
+	<div class="progress">
+		<div class="progress-bar" style=" background:#f0ad4e;">
+			<span></span>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var aBar = document.getElementsByClassName("progress-bar");
+	function progressing(obj,width,interval){
+		var oSpan = obj.getElementsByTagName("span")[0];
+		var initWidth = 0;//初始宽度
+		var timer  = setInterval(function(){
+			initWidth++;
+			// progress-bar  宽度  百分比
+			obj.style.width = initWidth+"%";
+			//文字显示
+			oSpan.innerHTML = initWidth + "%";
+			if(initWidth == width){
+				clearInterval(timer);
+			}
+		},interval);
+	}
+
+	progressing(aBar[0],55,10);
+	progressing(aBar[1],100,1000);
+	progressing(aBar[2],40,100);
+	
+</script>
+</body>
+</html>

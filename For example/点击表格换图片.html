@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+		<title>点击表格切换图片 </title>	
+		
+    </head>
+    <style>
+        .td-class{
+            width:10px;
+            height: 10px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            //1.给按钮添加点击事件var tab = document.getElementById('tab');
+            var tdlist = document.getElementsByTagName('td');
+            //console.log(tdlist)
+            for(var i=0;i<tdlist.length;i++){
+                
+                var td = tdlist[i];//拿到一个按钮
+                td.myindex = i;//标记一下 自己的位置 是第几个（）自定义属性
+//                var dog = new Object();
+//                dog.name ='aaa';
+//                dog.myindex = 2;
+                td.onclick = function () {
+                    //1.点击谁，让其人都变白，让谁变颜色，
+
+                    //全变白
+                    for(var j=0;j<tdlist.length;j++){
+                        tdlist[j].style.background ='';
+                        //this.className = 'noactive'
+                    }
+                    //点的按钮变蓝
+                    this.style.background = 'blue';
+                    //this.className = 'active'
+
+
+                    //2.点击按钮的时候，让图片变换
+                    var img = document.getElementById('showImg');
+
+
+					//便签里的自定义属性 
+//                     var index = this.getAttribute('index');
+                    //this.myindex 
+//                    img.src = '00'+index+'.jpg'
+
+	
+                    var tmp  = this.myindex;
+                    img.src = 'img/'+(this.myindex+1)+'.jpg'
+
+					alert(i);
+					
+
+
+
+
+                }
+                
+            }
+            console.log(td);
+            console.log(i)//4
+
+        }
+
+    </script>
+
+
+	<body>
+        <img id="showImg" src="img/1.jpg" />
+        <table id="tab" border="1">
+            <tr>
+                <td index=1 class="td-class" style="background:blue"></td>
+                <td index=2 class="td-class"></td>
+                <td index=3 class="td-class"></td>
+                <td index=4 class="td-class"></td>
+            </tr>
+        </table>
+        
+	</body>
+</html>

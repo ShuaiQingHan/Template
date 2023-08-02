@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>摇色子</title>
+    <style type="text/css">
+        #wrap{
+            margin:30px auto;
+            width:200px;
+            height:200px;
+            /*border:1px solid red ;*/
+        }
+        #imgs{
+            width:200px;
+            height:200px;
+        }
+        #commend{
+            width:60px;
+            height:30px;
+            margin:10px auto;
+        }
+        #btn{
+            text-align: center;
+            line-height: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <img src="img/dice_1.png" id="imgs">
+    </div>
+    <div id="commend">
+        <input type="button" onclick="shake()" name="" id="btn" value="摇一摇">
+    </div>
+    <script type="text/javascript">
+             var flag=true;
+            function shake(){
+                if(flag){
+                     flag=false;  //阻止按钮被点击
+                    var oImg=document.querySelector("#imgs");
+                    oImg.src="img/diceDynamic.gif";  //btn按下显示显示gif动图；
+                    var time=Math.round(Math.random()*(5000-600)+600);
+                    setTimeout(function(){
+                    var index=Math.round(Math.random()*5+1);  //通过随机数获取随机获取1-6的随机数值
+                    oImg.src="img/dice_"+index+".png";
+                    flag=true;
+                    },time)
+
+            }
+        }
+
+    </script>
+</body>
+</html>

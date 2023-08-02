@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <style type="text/css">
+            body {
+                font-size: 15px;
+            }
+
+            fieldset {
+                width: 450px;
+                margin: auto auto;
+                border: 1px solid #ccc;
+            }
+
+            legend {
+                margin-left: 180px;
+            }
+
+            p {
+                margin: 20px auto;
+            }
+
+            /*input框 */
+            .txt {
+                color: blue;
+                border: 1px solid orange;
+                width: 150px;
+                padding-left:5px;
+            }
+
+            span {
+                color: red;
+                font-size: 13px;
+            }
+
+            #box1 > p > input {
+                margin-left: 100px;
+            }
+        </style>
+</head>
+<body>
+    <div id="box">
+        <form onsubmit="return check()" action="register_success.html">
+            <fieldset>
+                <legend>信息注册表</legend>
+                <p>
+                    <label>&nbsp;&nbsp;姓&nbsp;&nbsp;名：&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="txtname" class="txt" onblur="Name()" />
+                    <span id="span_name">由2~-6个汉字组成</span>
+                </p>
+                <p>
+                    <label>&nbsp;&nbsp;密&nbsp;&nbsp;码：&nbsp;&nbsp;&nbsp;</label>
+                    <input type="password" id="txtpwd" class="txt" onblur="Password()" />
+                    <span id="span_pwd">请输入6~8个字符</span>
+                </p>
+                <p>
+                    <label>确认密码：</label>
+                    <input type="password" id="txtpwd2" class="txt" onblur="Password2()" />
+                    <span id="span_pwd2">再次确认密码</span>
+                </p>
+
+                <p>
+                    <label>&nbsp;&nbsp;性&nbsp;&nbsp;别：&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="txtsex" class="txt" onblur="Sex()" />
+                    <span id="span_sex">选男或女</span>
+                </p>
+
+                <p>
+                    <label>&nbsp;&nbsp;年&nbsp;&nbsp;龄：&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="txtage" class="txt" onblur="Age()" />
+                    <span id="span_age">由大于9小于100的数字组成</span>
+                </p>
+
+                <p>
+                    <label>身份证号：</label>
+                    <input type="text" id="txtnum" class="txt" onblur="Num()" />
+                    <span id="span_num">由18位数字组成</span>
+                </p>
+
+                <p>
+                    <label>&nbsp;&nbsp;学籍号：&nbsp;&nbsp;</label>
+                    <input type="text" id="txtstu" class="txt" onblur="Stu()" />
+                    <span id="span_stu">由12位数字组成</span>
+                </p>
+
+                <p>
+                    <label>&nbsp;&nbsp;血&nbsp;&nbsp;&nbsp;型：&nbsp;&nbsp;</label>
+                    <input type="text" id="txtxue" class="txt" onblur="Xuexing()" />
+                    <span id="span_xue">填A、B、AB或O型血</span>
+                </p>
+
+                <p>
+                    <label>&nbsp;&nbsp;地&nbsp;&nbsp;址：&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="txtarea" class="txt" onblur="Area()" />
+                    <span id="span_area">不少于8个汉字</span>
+                </p>
+                <p>
+                    <label>&nbsp;&nbsp;邮&nbsp;&nbsp;箱：&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="txtemail" class="txt" onblur="Email()" />
+                    <span id="span_email">如jack@163.com</span>
+                </p>
+                <hr />
+                <div id="box1">
+                    <p id="sub">
+                        <input type="submit" value="提交" />
+                        <input type="button" value="取消" />
+                    </p>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function Name() {
+            //验证姓名
+            var name = document.getElementById("txtname").value; //获取你所填写的信息
+            var nameReg = /^[\u4e00-\u9fa5]{2,6}$/;  //定义约束,要求输入2到6个中文
+            if (!nameReg.test(name)) {   //判断
+                var t = span_name.innerHTML = "请输入2~6个汉字!"; //输入不合法，则显示提示信息
+                return false;
+            }
+            else {
+                span_name.innerHTML = "格式正确"; //验证通过后提示
+                return true;
+            }
+        }
+        function Password() {
+            //密码
+            var pwd = document.getElementById("txtpwd").value;
+            var reg = /^[\d\w]{6,12}$/;
+            if (!reg.test(pwd)) {
+                span_pwd.innerHTML = "请输入6~12以内数字、字母或组合密码";
+            }
+            else {
+                span_pwd.innerHTML = "格式正确";
+            }
+        }
+
+        function Password2() {
+            //确认密码
+            var pwd = document.getElementById("txtpwd").value;
+            var pwd2 = document.getElementById("txtpwd2").value;
+            if (pwd != pwd2) {
+                span_pwd2.innerHTML = "两次输入不一致";
+            }
+            else {
+                span_pwd2.innerHTML = "格式正确";
+            }
+        }
+
+        function Sex() {
+            //验证性别
+            var sex = document.getElementById("txtsex").value;
+            var sexReg = /^男$|^女$/;
+            if (!sexReg.test(sex)) {
+                span_sex.innerHTML = "请输入男或女!";
+                return false;
+            }
+            else {
+                span_sex.innerHTML = "格式正确";
+                return true;
+            }
+        }
+
+        function Age() {
+            //验证年龄
+            var age = document.getElementById("txtage").value;
+            var ageReg = /(^[1-9][0-9]?$)|^100$/;
+            if (!ageReg.test(age)) {
+                span_age.innerHTML = "请输入1~100的数字!";
+                return false;
+            }
+            else {
+                span_age.innerHTML = "格式正确";
+                return true;
+            }
+        }
+
+        function Num() {
+            //验证身份证号（15位数或者是18位数最后一位是大写字母X）
+            var num = document.getElementById("txtnum").value;
+            var numReg = /(^\d{15}$)|(^\d{17}([0-9]|X)$)/;
+            if (!numReg.test(num)) {
+                span_num.innerHTML = "请输入15或18位的身份证号!";
+                return false;
+            }
+            else {
+                span_num.innerHTML = "格式正确";
+                return true;
+            }
+        }
+
+        function Stu() {
+            //验证学号
+            var stu = document.getElementById("txtstu").value;
+            var stuReg = /^\d{12}$/;
+            if (!stuReg.test(stu)) {
+                span_stu.innerHTML = "请输入12位的数字!";
+                return false;
+            }
+            else {
+                span_stu.innerHTML = "格式正确";
+                return true;
+            }
+        }
+
+        function Xuexing() {
+            //验证血型
+            var xue = document.getElementById("txtxue").value;
+            var xueReg = /^A$|^B$|^AB$|^O$/;
+            //var xueReg = /^AB$|^[A-Z]$/;
+
+            if (!xueReg.test(xue)) {
+                span_xue.innerHTML = "请输入A,B,AB或O型血!";
+                return false;
+            }
+            else {
+                span_xue.innerHTML = "格式正确";
+                return true;
+            }
+        }
+
+        function Area() {
+            //验证地址
+            var area = document.getElementById("txtarea").value;
+            var areaReg = /^[\u4e00-\u9fa5]{8,}$/;
+            if (!areaReg.test(area)) {
+                span_area.innerHTML = "请输入不少于8个汉字!";
+                return false;
+            }
+            else {
+                span_area.innerHTML = "格式正确";
+                return true;
+            }
+        }
+        function Email() {
+            //邮箱验证
+            var email = document.getElementById("txtemail").value;
+            var reg1 = /^[\w\d]{1,9}@[\w\d]{1,9}\.[\w]{2,3}$/;
+            if (!reg1.test(email)) {
+                span_email.innerHTML = "错误!如:jack@163.com";
+            }
+            else {
+                span_email.innerHTML = "格式正确";
+            }
+        }
+    </script>
+</body>
+</html>

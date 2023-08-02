@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,ul,li{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				list-style: none;
+			}
+			img{
+				display: block;
+				border: none;
+			}
+			#scrollBanner{
+				position: relative;
+				width: 900px;
+				height: 300px;
+				overflow: hidden;
+			}
+			#imgList{
+				width: 900px;
+				height: 300px;
+				overflow: hidden;
+			}
+			#imgList ul{
+				position: absolute;
+			}
+			#imgList li{
+				float: left;
+			}
+			#imgList img{
+				width: 900px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--轮播区域-->
+		<div id="scrollBanner">
+			<div id="imgList">
+				<ul>
+					<li><img src="img/1.jpg"></li>
+					<li><img src="img/2.jpg"></li>
+					<li><img src="img/3.jpg"></li>
+					<li><img src="img/1.jpg"></li>
+				</ul>
+			</div>
+		</div>
+		<script src="startMove.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oImgList = document.getElementById("imgList");
+			var oUl = oImgList.children[0];
+			var aLi = oUl.children;
+			//每一次移动的距离
+			var perWidth = aLi[0].offsetWidth;
+			oUl.style.width = aLi.length * perWidth + "px";
+			
+			var i = 0;
+			var timer = setInterval(function(){
+				i++;
+				
+				if(i == aLi.length){ //
+					oUl.style.left = 0;
+					i = 1;
+				}
+				
+				startMove(oUl,{left:-perWidth*i});
+				
+			},3000)
+			
+		</script>
+	</body>
+</html>

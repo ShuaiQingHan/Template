@@ -1,0 +1,147 @@
+﻿body {
+    font-family: 'Raleway';
+}
+
+.jumbotron {
+    padding-top: 80px;
+    background: #3a3a3a;
+}
+
+.jumbotron h1 {
+    color: #f0f0f0;
+}
+
+.jumbotron a {
+    line-height: 2;
+}
+
+section h2, section h3 {
+    font-weight: 700;
+}
+
+.page-header h2 {
+    color: #a5a5a5;
+}
+
+section .comment-reply-title {
+    margin-top: 0;
+}
+
+.navbar-scroll li.active {
+    border-left: solid 2px #563d7c;
+}
+
+.navbar-scroll li.active a {
+    color: #563d7c;
+    font-weight: 700;
+}
+
+.navbar-scroll li a:hover {
+    background: none;
+    color: #563d7c
+}
+
+@media (min-width: 768px) {
+    .jumbotron h1 {
+        font-weight: 700;
+        font-size: 48px;
+    }
+
+    .jumbotron p {
+        font-size: 16px;
+    }
+
+    .navbar-scroll {
+        /*width: 260px;*/
+        top: 40px;
+        margin-top: 40px;
+    }
+}
+
+a:focus {
+    outline: 0;
+}
+
+.single-space {
+    padding: 30px 0;
+    display:  block;
+}
+
+
+.btn {
+    line-height: 1;
+}
+
+.divider {
+    clear: both;
+    display: block;
+}
+
+    .divider.double {
+        height: 5px;
+        border-top: solid 1px #eee;
+        border-bottom: solid 1px #eee;
+    }
+
+    .divider.line {
+        border-top: solid 1px #eee;
+    }
+
+    .divider.gradient {
+        border: 0;
+        height: 1px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: -webkit-linear-gradient(left, rgba(128,128,128,0), rgba(128,128,128,0.75), rgba(128,128,128,0));
+        background-image: -moz-linear-gradient(left, rgba(128,128,128,0), rgba(128,128,128,0.75), rgba(128,128,128,0));
+        background-image: -ms-linear-gradient(left, rgba(128,128,128,0), rgba(128,128,128,0.75), rgba(128,128,128,0));
+        background-image: -o-linear-gradient(left, rgba(128,128,128,0), rgba(128,128,128,0.75), rgba(128,128,128,0));
+    }
+
+/*
+ * Callouts
+ *
+ * Not quite alerts, but custom and helpful notes for folks reading the docs.
+ * Requires a base and modifier class.
+ */
+
+/* Common styles for all types */
+.bs-callout {
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 3px solid #eee;
+}
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code {
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+/* Variations */
+.bs-callout-danger {
+  background-color: #fdf7f7;
+  border-color: #d9534f;
+}
+.bs-callout-danger h4 {
+  color: #d9534f;
+}
+.bs-callout-warning {
+  background-color: #fcf8f2;
+  border-color: #f0ad4e;
+}
+.bs-callout-warning h4 {
+  color: #f0ad4e;
+}
+.bs-callout-info {
+  background-color: #f4f8fa;
+  border-color: #5bc0de;
+}
+.bs-callout-info h4 {
+  color: #5bc0de;
+}

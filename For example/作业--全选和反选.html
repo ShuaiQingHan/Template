@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" name="qx"/> 全选  
+		<input type="checkbox" name="fx"/> 反选
+		<input type="checkbox" name="h"/>
+		<input type="checkbox" name="h"/>
+		<input type="checkbox" name="h"/>
+		<input type="checkbox" name="h"/>
+		<input type="checkbox" name="h"/>
+		<input type="checkbox" name="h"/>
+		<input type="checkbox" name="h"/>
+	</body>
+</html>
+<script>
+	// 让操作的复选框的checked值和当前点击的checked值保持一致
+	var qx = document.getElementsByName("qx")[0];
+	var fx = document.getElementsByName("fx")[0];
+	var cks = document.getElementsByName("h");
+	qx.onclick = function(){
+		for( var i = 0 ; i < cks.length ; i++ ){
+			cks[i].checked = this.checked;
+		}
+	}
+	fx.onclick = function(){
+		for( var i = 0 ; i < cks.length ; i++ ){
+			if( cks[i].checked ){
+				cks[i].checked = false;
+			}else{
+				cks[i].checked = true;
+			}
+		}
+	}
+</script>

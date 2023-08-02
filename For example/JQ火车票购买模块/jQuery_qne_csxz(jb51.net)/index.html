@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery仿去哪儿城市选择代码</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/hhDrop.js"></script>
+<script>
+  $(function(){
+    $('#hhDrop00').hhDrop({});
+    $('#hhDrop01').hhDrop({});
+  })
+</script>
+</head>
+
+<body>
+<div class="lineSearch">
+  <ul>
+      <li class="thRelative" id="hhDrop00">
+        <div class="boxSearch">
+          <span class="key_word">
+            <b class="size_14">北京</b>
+            出发城市
+          </span>
+          <em class="ico thLeft ico_shBlue"></em>
+          <a class="thRight ico btn_search" href="javascript:void(0)"></a>
+        </div>
+        <div class="search_form_suggest" style="display:none;">
+          <h3><a class="ico btn_close thRight" item="close">关闭</a>热门出发城市</h3>
+          <dl class="search_hotList">
+            <dd class="clr_after">
+              <a href="#">北京</a>
+              <a href="#">上海</a>
+              <a href="#">广州</a>
+              <a href="#">成都</a>
+              <a href="#">杭州</a>
+              <a href="#">南京</a>
+              <a href="#">深圳</a>
+              <a href="#">济南</a>
+              <a href="#">石家庄</a>
+              <a href="#">武汉</a>
+              <a href="#">郑州</a>
+              <a href="#">重庆</a>
+              <a href="#">福州</a>
+              <a href="#">西安</a>
+              <a href="#">长沙</a>
+              <a href="#">沈阳</a>
+              <a href="#">天津</a>
+              <a href="#">哈尔滨</a>
+              <a href="#">苏州</a>
+              <a href="#">南宁</a>
+            </dd>
+          </dl>
+
+          <div class="clear"></div>
+          <div class="select_city_box" item="dep-search">
+            <span>输入出发城市</span>
+            <input type="text" class="input_city" item="key">
+            <button class="btn" type="button" item="commit"></button>
+            <div class="search_city_result" item="result" style="display:;">
+              <a href="javascript:void();">广州</a> 没有匹配城市
+            </div>
+          </div>
+
+          <div class="thLeft thPadT5 tab_select">
+            <dl class="clrfix">
+              <dt>A-G</dt>
+              <dd class="clr_after">
+                <a href="#">北京</a>
+                <a href="#">长沙</a>
+                <a href="#">成都</a>
+                <a href="#">重庆</a>
+                <a href="#">福州</a>
+                <a href="#">广州</a>
+                <a href="#">贵阳</a>
+              </dd>
+            </dl>
+            <dl class="clrfix">
+              <dt>H-L</dt>
+              <dd class="clr_after">
+                <a href="#">哈尔滨</a>
+                <a href="#">杭州</a>
+                <a href="#">合肥</a>
+                <a href="#">济南</a>
+                <a href="#">昆明</a>
+              </dd>
+            </dl>
+            <dl class="clrfix">
+              <dt>M-T</dt>
+              <dd class="clr_after">
+                <a href="#">南昌</a>
+                <a href="#">南京</a>
+                <a href="#">南宁</a>
+                <a href="#">宁波</a>
+                <a href="#">青岛</a>
+                <a href="#">三亚</a>
+                <a href="#">上海</a>
+                <a href="#">沈阳</a>
+                <a href="#">深圳</a>
+                <a href="#">石家庄</a>
+                <a href="#">苏州</a>
+                <a href="#">太原</a>
+                <a href="#">天津</a>
+              </dd>
+            </dl>
+            <dl class="clrfix">
+              <dt>W-Z</dt>
+              <dd class="clr_after">
+                <a href="#">武汉</a>
+                <a href="#">厦门</a>
+                <a href="#">西安</a>
+                <a href="#">郑州</a>
+                <a href="#">中山</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </li>
+
+      <li class="thRelative" id="hhDrop01">
+        <div class="boxSearch">
+          <span class="key_word">
+            <b class="size_14">广州</b>
+            到达城市
+          </span>
+          <em class="ico thLeft ico_shBlue"></em>
+          <a class="thRight ico btn_search" href="javascript:void(0)"></a>
+        </div>
+        <div class="search_form_suggest" style="display:none;">
+          <h3><a class="ico btn_close thRight" item="close">关闭</a>热门出发城市</h3>
+          <dl class="search_hotList">
+            <dd class="clr_after">
+              <a href="#">北京</a>
+              <a href="#">上海</a>
+              <a href="#">广州</a>
+              <a href="#">成都</a>
+              <a href="#">杭州</a>
+              <a href="#">南京</a>
+              <a href="#">深圳</a>
+              <a href="#">济南</a>
+              <a href="#">石家庄</a>
+              <a href="#">武汉</a>
+              <a href="#">郑州</a>
+              <a href="#">重庆</a>
+              <a href="#">福州</a>
+              <a href="#">西安</a>
+              <a href="#">长沙</a>
+              <a href="#">沈阳</a>
+              <a href="#">天津</a>
+              <a href="#">哈尔滨</a>
+              <a href="#">苏州</a>
+              <a href="#">南宁</a>
+            </dd>
+          </dl>
+
+          <div class="clear"></div>
+          <div class="select_city_box" item="dep-search">
+            <span>输入出发城市</span>
+            <input type="text" class="input_city" item="key">
+            <button class="btn" type="button" item="commit"></button>
+            <div class="search_city_result" item="result" style="display:;"><a href="javascript:void(0);">北京</a> 没有匹配城市</div>
+          </div>
+
+          <div class="thLeft thPadT5 tab_select">
+            <dl class="clrfix">
+              <dt>A-G</dt>
+              <dd class="clr_after">
+                <a href="#">北京</a>
+                <a href="#">长沙</a>
+                <a href="#">成都</a>
+                <a href="#">重庆</a>
+                <a href="#">福州</a>
+                <a href="#">广州</a>
+                <a href="#">贵阳</a>
+              </dd>
+            </dl>
+            <dl class="clrfix">
+              <dt>H-L</dt>
+              <dd class="clr_after">
+                <a href="#">哈尔滨</a>
+                <a href="#">杭州</a>
+                <a href="#">合肥</a>
+                <a href="#">济南</a>
+                <a href="#">昆明</a>
+              </dd>
+            </dl>
+            <dl class="clrfix">
+              <dt>M-T</dt>
+              <dd class="clr_after">
+                <a href="#">南昌</a>
+                <a href="#">南京</a>
+                <a href="#">南宁</a>
+                <a href="#">宁波</a>
+                <a href="#">青岛</a>
+                <a href="#">三亚</a>
+                <a href="#">上海</a>
+                <a href="#">沈阳</a>
+                <a href="#">深圳</a>
+                <a href="#">石家庄</a>
+                <a href="#">苏州</a>
+                <a href="#">太原</a>
+                <a href="#">天津</a>
+              </dd>
+            </dl>
+            <dl class="clrfix">
+              <dt>W-Z</dt>
+              <dd class="clr_after">
+                <a href="#">武汉</a>
+                <a href="#">厦门</a>
+                <a href="#">西安</a>
+                <a href="#">郑州</a>
+                <a href="#">中山</a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="thRelative lineSearchbg">
+          <em class="thLeft ico ico_serGray"></em>
+          <input class="thLeft" name="textfield2" type="text" id="arriveSearchText" value="请输入目的地、主题或关键词" />
+          <a class="ico btn_close thLeft" item="close" style="margin:8px 8px 0 0;" id="btn_delete" >删除</a>
+          <a class="ico btn_search" item="commit" href="javascript:void(0)">搜&nbsp;&nbsp;索</a>
+        </div>
+      </li>
+  </ul>
+</div>
+
+</body>
+</html>

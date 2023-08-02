@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+	</head>
+	<style>
+		html,body{
+			width: 100%;
+			height: 100%;
+			padding: 0px;
+			margin: 0px;
+		}
+		.cover{
+			position: fixed;
+			width:100%;
+			height: 100%;
+			background: #B6BBC0;
+			padding: 0px;
+			margin: 0px;
+			display: none;
+		}
+		.layer{
+			text-align:center;
+			position: absolute;
+			left: 0; top: 0; right: 0; bottom: 0;
+			margin: auto;	
+			width:500px;
+			height: 300px;
+			background: #4DF594;
+		}
+		.title{
+			text-align:center;
+			height: 30px;
+			background:#D7F665;
+			cursor: move;
+		}
+		.closeBtn{
+			position: absolute;
+			bottom: 20px;
+		}
+		#btn{
+			position: absolute;
+			
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			
+			
+			
+			var title = document.querySelector('.title');
+			var _layer = document.querySelector(".layer");
+
+			console.log(title)
+			
+			
+			var btn = document.getElementById('btn')
+			btn.onclick = function(){
+				
+				document.querySelector(".cover").style.display="block";
+
+			}
+			
+			title.onmousedown = function(event){
+
+
+
+				var disX = event.clientX - _layer.offsetLeft;
+				var disY = event.clientY - _layer.offsetTop
+
+
+				
+				document.onmousemove = function(ev){
+					_layer.style.margin = "0px";//
+
+					_layer.style.left = ev.clientX - disX+"px";
+					_layer.style.top = ev.clientY - disY+"px";
+
+				}
+				document.onmouseup = function(){
+					document.onmousemove = null;
+
+
+
+				}
+			}
+			var closebtn = document.querySelector(".closeBtn");
+			closebtn.onclick = function(){
+				document.querySelector(".cover").style.display="none";
+
+
+			}
+		}
+	</script>
+	<body>
+		
+		<input type="button" name="btn" id="btn" value="弹出对话框" />
+		
+		<div class="cover">
+			<div class="layer">
+				<div class="title">可拖拽窗口</div>
+				<button class="closeBtn">关闭</button>
+
+			</div>			
+		</div>
+
+	</body>
+</html>

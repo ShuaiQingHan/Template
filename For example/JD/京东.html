@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="gb2312">
+		<title></title>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/index.js" type="text/javascript" charset="gb2312"></script>
+		
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.lists {
+				position: relative;
+				margin: 50px;
+				width: 213px;
+				box-sizing: border-box;
+				padding: 16px 0 16px 0;
+				background: #6e6568;
+				list-style: none;
+			}
+			
+			.list {
+				width: 200px;
+				line-height: 28px;
+				color: white;
+				font-size: 14px;
+				padding-left: 12px;
+			}
+			
+			.list .menu:hover {
+				color: #c81623;
+			}
+			
+			.list .fgx {
+				margin: 0 4px;
+			}
+			
+			.list:hover {
+				background: #999395;
+			}
+			
+			.list:hover .box {
+				display: block;
+			}
+			
+			.list .box {
+				display: none;
+				width: 1000px;
+				box-sizing: border-box;
+				position: absolute;
+				top: 0;
+				right: -1000px;
+				background: #fff;
+				padding: 20px 0 10px 20px;
+			}
+			
+			.box p:nth-child(n+2) {
+				padding: 6px 0;
+			}
+			
+			.box p:nth-child(n+2) span {
+				display: inline-block;
+				margin: 4px 0;
+			}
+			
+			.box .tips {
+				display: inline-block;
+				background: #999395;
+				font-size: 12px;
+				height: 24px;
+				line-height: 24px;
+				margin-right: 10px;
+				padding: 0 10px;
+			}
+			
+			.box span:hover {
+				color: red
+			}
+			
+			.box .tips:hover {
+				background: #5c5251;
+				color: #fff;
+			}
+			
+			.box a {
+				display: inline-block;
+				margin-left: 5px;
+				font-size: 12px;
+			}
+			
+			.box .title {
+				vertical-align: top;
+				display: inline-block;
+				width: 70px;
+				text-align: right;
+				font-size: 12px;
+				line-height: 16px;
+				color: #666;
+				font-weight: bold;
+			}
+			
+			.title a {
+				text-align: right;
+			}
+			
+			.tags {
+				vertical-align: top;
+				display: inline-block;
+				color: #666;
+				font-size: 12px;
+				width: 700px;
+				line-height: 16px;
+				margin-left: 15px;
+			}
+			
+			.tag1 {
+				padding: 0 10px;
+				border-left: 1px solid #e0e0e0;
+				font-weight: 700;
+				color: #c81623;
+				height: 14px;
+				line-height: 14px;
+				border: 1px dotted #db7078;
+			}
+			
+			.tag {
+				padding: 0 10px;
+				border-left: 1px solid #e0e0e0;
+			}
+			
+			.imgBox {
+				box-sizing: border-box;
+				width: 198px;
+				height: 424px;
+				position: absolute;
+				top: 20px;
+				right: 0;
+				padding: 0 14px 0 15px;
+			}
+			
+			.sImg {
+				display: inline-block;
+				float: left;
+				width: 83px;
+				height: 35px;
+				margin-right: 1px;
+				margin-top: 1px;
+			}
+			
+			.bImg {
+				width: 168px;
+				height: 134px;
+				margin-top: 1px;
+				display: block;
+				float: left;
+			}
+			
+			.imgBox img:nth-of-type(9) {
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul class="lists">
+			<div id="">
+				<span>所有分类</span>
+			</div>
+		</ul>
+	</body>
+
+
+</html>

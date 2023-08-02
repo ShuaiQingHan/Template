@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="根据鼠标轨迹移动">
+		<p>点击按钮激活功能</p>
+		<img src="img/1.gif">
+		<script type="text/javascript">
+			var oInput = document.getElementsByTagName("input")[0];
+			var oP = document.getElementsByTagName("p")[0];
+			var oImg = document.getElementsByTagName("img")[0];
+			
+			oInput.onmousedown = function(e){
+				var evt = e || event;
+				oInput.value = "根据鼠标轨迹移动(已激活)";
+				oP.innerText = "在页面中按下并移动鼠标，释放时，小人会按照鼠标移动轨迹运动";	
+				evt.stopPropagation();
+				
+				document.onmousedown = function(e){
+					var arr = [];
+					var evt = e || event;
+					var x = evt.clientX;
+					var y = evt.clientY;
+					//{x:x,y:y}
+					arr.push({posX:x,posY:y});
+					
+					document.onmousemove = function(e){
+						var evt = e || event;
+						arr.push({posX:evt.clientX,posY:evt.clientY});
+						return false;
+					}
+					
+					document.onmouseup = function(){
+						//console.log(arr);
+						
+						/*for(var i = 0; i <　arr.length; i++){
+							console.log(arr[i].posX,arr[i].posY);
+							oImg.style.left = arr[i].posX + "px";
+							oImg.style.top = arr[i].posY + "px";
+						}
+						*/
+						 var timer = setInterval(function(){
+						 	oImg.style.left = arr[0].posX + "px";
+						 	oImg.style.top = arr[0].posY + "px";
+						 	arr.shift();
+						 	if(arr.length == 0){
+						 		clearInterval(timer);
+						 	}
+						 },20)
+						
+						document.onmouseup = null;
+						document.onmousemove = null;
+					}
+				}
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>

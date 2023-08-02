@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+			<script type="text/javascript">
+			//
+			var hasNum = false;
+			var hasEn =  false;
+			var hasSign = false;
+			
+			var str = '123aaZ';
+			for(var i=0;i<str.length;i++){
+				var c = str[i];
+				
+				if(c >= '0' && c <= '9'){
+					hasNum = true;
+				}else if(c >= 'a' && c <= 'z' ){
+					hasEn = true;
+				}else if(c >= 'A' && c <= 'Z'){
+					hasEn = true;
+				}else{
+					hasSign = true;
+				}
+				
+			}
+				
+			if(hasNum && hasEn && hasSign){
+				document.write('强')
+			}else if(hasNum && !hasEn && hasSign == false){
+				console.log('弱')
+			}else if(hasNum == false && hasEn == true && hasSign == false){
+				console.log('弱')
+			}else{
+				console.log('中')
+			}
+		</script>
+</body>
+</html>

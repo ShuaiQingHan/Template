@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#div1{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			cursor: move;
+		}
+		#div2{
+			width: 200px;
+			height: 200px;
+			background: orange;
+			margin: 300px;
+		}
+	</style>
+	<body>
+		<div id="div1"></div>
+		<div id="div2"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var odiv1  =  document.getElementById("div1");
+	var odiv2  =  document.getElementById("div2");
+	odiv1.onmousedown = function(e){
+		var e = e || event;
+		var disx = e.pageX -  odiv1.offsetLeft;
+		var disy = e.pageY -  odiv1.offsetTop;
+		document.onmousemove = function(e){
+			var e = e || event;
+			odiv1.style.left = e.pageX - disx + "px";
+			odiv1.style.top = e.pageY - disy + "px";
+			
+			if( pz( odiv1 , odiv2 ) ){
+				odiv2.style.background = "greenyellow";
+			}else{
+				odiv2.style.background = "orange";
+			}
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+		}
+	}
+	
+	function pz(obj1,obj2){
+		var L1 = obj1.offsetLeft;
+		var R1 = obj1.offsetWidth + obj1.offsetLeft;
+		var T1 = obj1.offsetTop;
+		var B1 = obj1.offsetHeight + obj1.offsetTop;
+		
+		var L2 = obj2.offsetLeft;
+		var R2 = obj2.offsetWidth + obj2.offsetLeft;
+		var T2 = obj2.offsetTop;
+		var B2 = obj2.offsetHeight + obj2.offsetTop;
+		//如果碰不上   返回false  碰上了就返回true同时改变颜色
+		
+		
+		if( R1 < L2 || L1 > R2 || B1 < T2 || T1 > B2){
+			return false;
+		}else{
+			return true; //碰上了
+		}
+	}
+</script>

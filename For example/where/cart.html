@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>cart</title>
+		 <link href="img/logo.jpg" rel="shortcut icon" type="image/x-icon"> 
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/list.css"/>
+		<link rel="stylesheet" type="text/css" href="css/cart.css"/>
+		<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>	
+		<script src="js/cookie1.js"></script>
+	</head>
+	<body>
+			<div id="topnav">
+			<div class="topWrap">
+				<p>
+					<span>欢迎来到去哪网</span>
+					<a href="login.html">请登录</a>
+					<a href="register.html">免费注册</a>
+				</p>
+				<ul>
+					<li><a href="cart.html" id="cartHref">购物车<span id="cartNum">0</span>件</a></li>
+					<li><a href="">消息</a> |</li>
+					<li><a href="">查看订单</a> |</li>
+					<li><a href="">积分商城</a> |</li>
+					<li><a href="">联系客服</a></li>
+				</ul>
+			</div>
+	</div>
+	    <!--header-->
+	    <div id="headWrap"></div>
+    
+
+		<a class="wrap_btn" href="list.html"><input type="button" name="" id="btn" value="返回继续购物" /></a>
+		<!--购物车列表容器-->
+		<div class="shoplist">
+		
+			
+		</div>
+		<br />	
+		<div id="sum" class="clearfix">
+			共<span class="count2"></span>件商品，合计<span class="money2"></span>元
+			<label class="fl">
+				<input id="selectAll" type="checkbox"/>&nbsp;全选
+			</label>
+			<br />
+			<br />
+			<input type="button" name="" class="btn2" value="结算" />
+		</div>
+		<!--footer-->
+    	<div id="footWrap"></div>
+		<script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
+<script type="text/javascript">
+	    $("#headWrap").load("header.html #header_wrap")
+   		$("#footWrap").load("header.html .qn_footer");
+</script>
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+		}
+		#ball{
+			width: 30px;
+			height: 30px;
+			background: skyblue;
+			position: absolute;
+			left: 0;
+			top: 300px;
+			border-radius:50% ;
+		}
+	</style>
+	<body>
+		<input type="button" value="飞起来" id="btn" />
+		<div id="ball"></div>
+	</body>
+</html>
+<script>
+	//反弹 ： 速度反向
+	var oBtn = document.getElementById("btn");
+	var oDiv = document.getElementById("ball");
+	var speedX = 7;
+	var speedY = -18;//初始方向如果是负数 向上运动      正数  向下运动
+	var timer = null;
+	oBtn.onclick = function(){
+		timer = setInterval(function(){
+			oDiv.style.left = oDiv.offsetLeft + speedX + "px";
+			oDiv.style.top = oDiv.offsetTop + speedY++ + "px";//speedY++  重力加速度原理
+			
+			//向上运动到某个边缘处 向下运动
+			/*if( oDiv.offsetTop < 0  ){
+				oDiv.style.top = 0;
+			}*/
+			
+			//当小球落地后 反弹  
+			if( oDiv.offsetTop > window.innerHeight - oDiv.offsetHeight ){
+				oDiv.style.top = window.innerHeight - oDiv.offsetHeight + "px";
+				speedY *= -0.6; //反弹   小球落地后 会有能量损失  不会弹回原来的高度  speedY *= -0.8
+				
+				//小球落地后 横向速度也有能量损失
+				speedX--;
+				if( speedX < 0 ){
+					speedX = 0;
+					clearInterval(timer);
+				}
+			}
+		},30)
+	}
+</script>

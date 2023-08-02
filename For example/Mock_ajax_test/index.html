@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="http://10.0.0.246/resources/plugins/jQuery/jquery-1.9.1.min.js?version=000012" type="text/javascript"></script>
+	<script src="http://mockjs.com/dist/mock.js"></script>
+	<script src="http://10.0.0.246/resources/plugins/jquery-mockjax/2.2.1/dist/jquery.mockjax.min.js?version=000012" type="text/javascript"></script>
+</head>
+
+<body>
+	<div id="con">
+		<input type="text" name="">
+		<input type="text" name="">
+		<input type="button" name=""value="+" id="clon">
+	</div>
+	<div id="connect1"style="display: none;">
+		<div id="content">
+			<input type="text" name="">
+			<input type="text" name="">
+			<input type="button" name=""value="+" id="clon">
+			<input type="button" name="" value="-" id="del">
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	//
+	$('#clon').click(function(){
+		console.log('测试')
+		$('#content').clone(true).appendTo('body');
+	})
+	$('.del').click(function(){
+		console.log('del')
+		$('#content').remove();
+	})
+	 Mock.mock('http://api.com', {
+        "user|20-100": [{
+            'name': '@cname',   //中文名称
+            'age|1-100': 100,   //100以内随机整数
+            'birthday': '@date("yyyy-MM-dd")',  //日期
+            'date':'@date("yyyy-mm-dd")',
+            'city': '@city(true)'   //中国城市
+        }]
+    });
+	 // 原生ajax
+	// function myajax(url) {
+   //          if (window.XMLHttpRequest) {
+   //              ajax = new XMLHttpRequest();
+   //          } else if (window.ActiveXObject) {
+   //              try {
+   //                  ajax = new ActiveXObject("Msxml2.XMLHTTP");
+   //              } catch (e) {
+   //                  try {
+   //                      ajax = new ActiveXObject("Microsoft.XMLHTTP");
+   //                  } catch (e) {}
+   //              }
+   //          }
+   //          if (!ajax) {
+   //              window.alert("不能创建XMLHttpRequest对象实例.");
+   //              return false;
+   //          }
+   //          ajax.open("GET", url, true);
+   //          ajax.send(null);
+   //          ajax.onreadystatechange = function(data) {
+   //              if (ajax.readyState == 4 && ajax.status == 200) {
+   //                  console.log(ajax.responseText);  //获得字符串
+   //                  console.log(JSON.parse(ajax.responseText))
+   //                  var json=JSON.parse(ajax.responseText);  
+   //                  for(var item of json.user){
+
+			// 			// console.log(item.name);
+			// 			$("body").append('<p id="div">'+item.name+'</p>');
+						
+   //                  }
+   //              }
+   //          }
+   //          var oText = document.getElementById('text')
+   //  		alert(oText.innerHTML)
+   //      }
+
+   //  myajax('http://api.com');
+   //  
+   //  
+    $.get('http://api.com').done(function(data) {
+    	var a={name:01}
+    	var b={name:02}
+    	var c={name:03}
+    	var ar1=[];
+    	ar1.push(a,b,c);
+
+    	// var ar1=[{name:01},{name:02},{name:03},{name:04}]
+    	console.log(ar1)
+    	//  arr1.push(data);
+    	// arr.push()
+    	var data=JSON.parse(data)
+    	console.log(data)
+    	console.log(JSON.stringify(ar1))
+    	for(var i in data.user){
+		     // console.log(data.user[i].name);
+		    // $('body').append(`<p>${data.user[i].name},${data.user[i].age}</p>`)
+		    $('body').append('<p>'+data.user[i].name+','+data.user[i].age+','+data.user[i].birthday+'</p>')
+
+		 }
+	})
+	$().append()
+	$.get('http://api.com').done(function(data){
+
+	})
+
+
+    // $.ajax({
+    // 	url:'http://api.com',
+    // 	dataType:'json'
+    // }).done(function(data){
+    // 	console.log(data);
+    // 	console.log(data.user)
+    // 	for(var item of data.user){
+    // 		console.log(item)
+    // 		$('body').append('<p>'+item.name+','+item.age+'<p>')
+    // 	}
+    // })
+	 // jquery的ajax
+// 	 $.ajax({
+//         url: 'http://api.com',
+//         dataType: 'json'
+//     }).done(function(data,status,xhr) {
+// 		 // console.log(arr1)
+// 		 for (var item of data.user){
+// 		 	$('body').append(`<p>${item.name}</p>`)
+// 		 	// console.log(item.name,item.age,item.birthday);
+
+// 		 }
+//         console.log(JSON.stringify(data,null,4))
+// })
+</script>
+</html>

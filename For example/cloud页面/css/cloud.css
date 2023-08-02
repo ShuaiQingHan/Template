@@ -1,0 +1,215 @@
+
+ * {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+li{
+	list-style: none;
+}
+.ub {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: box;
+}
+.zhezhao{
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0 ,0 , 0.5);	
+}
+
+.cloud_j{
+	width: 800px;
+	height: 600px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 99;
+	background-color: white;
+}
+.top_j{
+	width: 100%;
+}
+.top_j h3{
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #c8d4dc;
+}
+
+.con_j{
+	width: 96%;
+	margin: auto;
+	margin-top: 10px;
+	border-left: 2px solid #189CF0;
+}
+.con_j p{
+	margin-left: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.foot_j{
+	width: 96%;
+	margin: auto;
+	margin-top: 10px;
+}
+.foot_j_j{
+	margin-bottom: 10px;
+}
+.foot_j_j>span,.data_j>span{
+	width: 100px;
+	line-height: 30px;
+	text-align: right;
+}
+.foot_j_j>span>b{
+	color: red;
+}
+
+.selecs_j{
+	width: 300px;
+	outline: none;
+}
+
+.select_j{
+	width: calc(100% - 115px);
+}
+.select_j>span{
+	margin-right: 10px;
+	line-height: 30px;
+}
+
+.data_j>input{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 3px;
+}
+
+.louyu_j{
+	width: calc(100% - 115px);
+	border: 1px solid gainsboro;
+	box-sizing: border-box;
+	padding: 10px;
+}
+.louyu1_j>p{
+	width: 100%;
+	margin-top: 3px;
+	border-bottom: 1px solid gainsboro;
+}
+.louyu2_j{
+	margin-top: 10px;
+}
+.louyu2_j>span{
+	margin-right: 15px;
+	line-height: 30px;
+}
+
+
+
+.bumen_j{
+	width: 150px;
+	height: 260px;
+	border: 1px solid gainsboro;
+	overflow-y: auto;
+}
+
+.bumen_j li{
+	box-sizing: border-box;
+	padding: 0 4px;
+	line-height: 30px;
+	cursor: pointer;
+}
+.bumen_j li:hover{
+	background-color: gainsboro;
+}
+
+
+
+.cont1_j{
+	width: 400px;
+	margin-bottom: 10px;
+}
+.cont1_j .gly_j{
+	margin-left: 10px;
+	width: 150px;
+	height: 260px;
+	border: 1px solid gainsboro;
+	overflow-y: auto;
+}
+.cont1_j .gly_j li{
+	box-sizing: border-box;
+	padding: 0 4px;
+	line-height: 30px;
+	cursor: pointer;
+}
+.cont1_j .gly_j li:hover{
+	background-color: gainsboro;
+}
+.cont1_j .selec_j{
+	margin-left: 10px;
+	padding: 0 14px;
+	width: 20px;
+	height: 250px;
+	padding-top: 50px;
+}
+.cont1_j .selec_j img{
+	display: block;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+
+
+
+.gainsboro{
+	background-color: #EEEEEE;
+}
+
+.marginleft15{
+	margin-left: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

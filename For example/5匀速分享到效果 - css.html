@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width:100px;
+			height: 200px;
+			background: red;
+			position: relative;
+			top:300px;
+			left:-100px;
+		}
+		span{
+			width:30px;
+			height: 80px;
+			position: absolute;
+			left: 100px;
+			top:60px;
+			border:1px solid black;
+			text-align: center;
+			line-height: 25px;
+		}
+	</style>
+	<body>
+		<div><span>分享到</span></div>
+	</body>
+</html>
+<script>
+	 /*
+	      练习 ：      页面上有一个div  鼠标移入  改变div的宽度到300px  离开恢复宽度
+	      	 分享到效果
+	  */
+	var oDiv=document.querySelector("div");
+	 oDiv.onmouseover=function(){
+	 	startMove(0);
+	 }
+	 oDiv.onmouseout=function(){
+	 	startMove(-100);
+	 }
+	 var timer = null;
+	 function startMove(target){
+	 	clearInterval(timer);
+	 	timer=setInterval(function(){
+	 		var speed= target-oDiv.offsetLeft>0?5:-5;
+	 		if(oDiv.offsetLeft==target){
+	 			clearInterval(timer);
+	 		}else{
+	 			oDiv.style.left=oDiv.offsetLeft+speed+"px";
+	 		}
+	 	},30)
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+//	var oDiv = document.querySelector("div");
+//	oDiv.onmouseover = function(){
+//		startMove(0);
+//	}
+//	oDiv.onmouseout = function(){
+//		startMove(-100);
+//	}
+//	var timer = null;
+//	function startMove(target){
+//		clearInterval(timer);
+//		timer = setInterval(function(){
+//			var speed = target - oDiv.offsetLeft > 0 ? 5 : -5;
+//			if( oDiv.offsetLeft == target ){
+//				clearInterval( timer );
+//			}else{
+//				oDiv.style.left = oDiv.offsetLeft + speed + "px";
+//			}
+//		},30)
+//	}
+</script>

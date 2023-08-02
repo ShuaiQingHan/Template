@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/need/laydate.css"/>
+		<link rel="stylesheet" type="text/css" href="css/default/laydate.css"/>
+		<link rel="stylesheet" type="text/css" href="css/cloud.css"/>
+	</head>
+	<body>
+		<div class="zhezhao"></div>
+		<div class="cloud_j">
+			<div class="top_j">
+				<h3>新增服务商</h3>
+				<span></span>
+			</div>
+			<div class="con_j">
+				<p>基本信息</p>
+			</div>
+			<div class="foot_j">
+				<div class="ub foot_j_j">
+					<span>单位名称<b>*</b></span>
+					<select name="" class="selecs_j marginleft15">
+						<option value="请选择" disabled selected style="display:none;" >请选择</option>
+						<option value="1" >1</option>
+						<option value="2" >2</option>
+					</select>
+				</div>
+				<div class="ub foot_j_j">
+					<span>服务类型<b>*</b></span>
+					<div class="select_j marginleft15">
+						<span><input type="checkbox" name="" id="" value="" />勤卫</span>
+						<span><input type="checkbox" name="" id="" value="" />安保</span>
+						<span><input type="checkbox" name="" id="" value="" />工程</span>
+						<span><input type="checkbox" name="" id="" value="" />运送</span>
+						<span><input type="checkbox" name="" id="" value="" />餐饮</span>
+					</div>
+				</div>
+				
+				<div class="ub foot_j_j">					
+					<div class="ub data_j">
+						<span>开始日期:</span>
+						<input id="input1_j" class="laydate-icon marginleft15" type="text" name="" id="" value="" placeholder="开始日期"/>
+					</div>
+					<div class="ub data_j">
+						<span>结束日期:</span>
+						<input id="input2_j" class="laydate-icon marginleft15" type="text" name="" id="" value="" placeholder="结束日期"/>
+					</div>
+				</div>
+				
+				<div class="ub foot_j_j">
+					<span>服务楼宇<b>*</b></span>
+					<div class="louyu_j marginleft15">
+						<div class="louyu1_j">
+							<span><input type="checkbox" name="" id="" value="" />全院</span>
+							<p></p>
+						</div>
+						<div class="ub louyu2_j">
+							<span><input type="checkbox" name="" id="" value="" />1号门诊楼</span>
+							<span><input type="checkbox" name="" id="" value="" />2号门诊楼</span>
+							<span><input type="checkbox" name="" id="" value="" />3号门诊楼</span>
+							<span><input type="checkbox" name="" id="" value="" />4号门诊楼</span>
+							<span><input type="checkbox" name="" id="" value="" />5号门诊楼</span>
+							<span><input type="checkbox" name="" id="" value="" />6号门诊楼</span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="ub foot_j_j">
+					<span>服务员工<b>*</b></span>
+					<div class="ub marginleft15">
+						<div class="bumen_j">
+							<ul>
+								<li>护理部</li>
+								<li>护理部</li>
+								<li>护理部</li>
+								<li>护理部</li>
+								<li>护理部</li>
+							</ul>
+						</div>
+						
+						<div class="ub cont1_j">
+							<div class="gly_j gly1_j">
+								<ul>
+									<li>102023:张三</li>
+									<li>102023:张三</li>
+									<li>102023:张三</li>
+								</ul>						
+							</div>
+							<div class="selec_j glyselec_j">	
+								<img onclick="aa1()" src="img/rightall.png"/>
+								<img onclick="bb1()" src="img/right.png"/>						
+								<img onclick="cc1()" src="img/left.png"/>
+								<img onclick="dd1()" src="img/leftall.png"/>
+							</div>
+							<div class="gly_j gly2_j">
+								<ul>
+									<li>102023:张三</li>
+									<li>102023:张三</li>
+									<li>102023:张三</li>
+								</ul>						
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/laydate.dev.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cloud.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#laydate_box").remove()
+			laydate({
+				elem: '#input1_j'
+			});
+			laydate({
+				elem: '#input2_j'
+			});
+		})
+		$(document).on("click",".louyu1_j>span>input",function() {
+			if (this.checked) {
+				$(".louyu2_j input").prop("checked",true)
+			} else{			
+				$(".louyu2_j input").prop("checked",false)
+			}			
+		})		
+		$(document).on("click",".louyu2_j input",function() {
+			var index=0;
+			if (this.checked) {
+				$($(".louyu2_j input")).each(function() {
+					if (this.checked) {
+						index++
+					}
+				})
+				if (index<$(".louyu2_j input").length) {
+					$(".louyu1_j input").prop("checked",false)
+				}else{
+					$(".louyu1_j input").prop("checked",true)
+				}
+			} else{			
+				$(".louyu1_j input").prop("checked",false)
+			}			
+		})
+		$(document).on()		
+		$(document).off("click",".bumen_j li").on("click",".bumen_j li",function(){
+			$(".bumen_j li").removeClass("gainsboro")
+			$(this).addClass("gainsboro")
+		})
+		$()
+				
+		
+		$(document).off("click",".bumen_j li").on("click",".bumen_j li",function() {
+			$(".bumen_j li").removeClass("gainsboro")
+			$(this).addClass("gainsboro")
+		})
+		
+		$(document).off("click",".gly1_j ul li").on("click",".gly1_j ul li",function() {
+			$(".gly1_j ul li").removeClass("gainsboro")
+			$(this).addClass("gainsboro")
+			$(".gly1_j ul li").removeAttr("iiid")
+			$(this).attr("iiid","1")
+		})
+		$(document).off("click","gly1_j li").on("click", selector, data, handler)
+		$(document).off("click",".gly2_j ul li").on("click",".gly2_j ul li",function() {
+			$(".gly2_j ul li").removeClass("gainsboro")
+			$(this).addClass("gainsboro")
+			$(".gly2_j ul li").removeAttr("iiid")
+			$(this).attr("iiid","1")
+		})
+		function aa1(){
+			var $two_li = $(".gly1_j ul li");    //  获取<ul>节点中<li>元素节点			
+			var $div1=$(".gly2_j ul");
+			$div1.append($two_li)
+		}
+		function bb1(){		
+			var $two_li
+			$(".gly1_j ul li").each(function() {
+				if ($(this).attr("iiid")==1) {
+					$(this).removeAttr("iiid")
+					$(this).removeClass("gainsboro")
+					$two_li=$(this)
+				}
+			})		
+			var $div1=$(".gly2_j ul");
+			if ($two_li) {
+				$div1.append($two_li)
+			} else{
+				alert("请选择一项")
+			}
+		}
+		
+		function cc1(){		
+			var $two_li
+			$(".gly2_j ul li").each(function() {
+				if ($(this).attr("iiid")==1) {
+					$(this).removeAttr("iiid")
+					$(this).removeClass("gainsboro")
+					$two_li=$(this)
+				}
+			})		
+			var $div1=$(".gly1_j ul");
+			if ($two_li) {
+				$div1.append($two_li)
+			} else{
+				alert("请选择一项")
+			}
+			
+		}
+		function dd1(){
+			var $two_li = $(".gly2_j ul li");    //  获取<ul>节点中<li>元素节点			
+			var $div1=$(".gly1_j ul");
+			$div1.append($two_li)
+		}
+		
+		
+		
+	</script>
+</html>

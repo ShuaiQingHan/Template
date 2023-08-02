@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>淘宝</title>
+		<style type="text/css">
+			body,ul,li{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+			input{
+				width: 600px;
+				height: 30px;
+				text-indent: 20px;
+				line-height: 30px;
+				display: block;
+				margin: 50px auto 0;
+				outline: none;
+				border-radius: 15px;
+				border: 1px solid orangered;
+			}
+			#list{
+				display: none;
+				margin-top: -1px;
+				border: 1px solid #cecece;
+				width: 600px;
+				margin: 0 auto;
+				position: relative;
+				/* white-space: pre; */
+			}
+			.nav2{
+				display: none;
+				box-sizing: border-box;
+				padding: 20px;
+			}
+			.nav2 li{
+				width:70px;
+				height: 25px;
+				line-height: 25px;
+				float: left;
+				background: white;
+				border: 1px solid black;
+				text-align: center;
+				
+			}
+			#list .cl{
+				background: orangered;
+			}
+			
+			#list>li{
+				list-style: none;
+				line-height: 30px;
+				font-size: 14px;
+			}
+			a{
+				text-decoration: none;
+				color: black;
+			}
+			#list>li:hover{
+				background: #efefef;
+			}
+			.sp{
+				float: left;
+				width:100%;
+				height: 20px;
+				/* background: red; */
+			}
+			#list>li:hover .nav2{
+				display: block;
+				position: absolute;
+				right: 0;
+				top: 0;
+				background: #dedede;
+				width: 300px;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="search" value="" />
+		<ul id="list">
+			<!-- <li>
+				<a href="">aa</a>
+				<ul class="nav2">
+					<li><a href="">bbb</a></li>
+					<li><a href="">bbb</a></li>
+					<li><a href="">bbb</a></li>
+					<li><a href="">bbb</a></li>
+					<li><a href="">bbb</a></li>
+					<li><a href="">bbb</a></li>
+				</ul>
+			</li>
+			<li>a</li>
+			<li>a</li> -->
+			
+		</ul>
+		<script type="text/javascript">
+			var otext=document.getElementById("search");
+			var olist=document.getElementById("list");
+			otext.oninput=function(){
+				var oScript=document.createElement("script");
+				oScript.src="https://suggest.taobao.com/sug?code=utf-8&q="+otext.value+"&_ksTS=1535027599808_317&"+
+				"callback=data&k=1&area=c2c&bucketid=14";
+				document.body.appendChild(oScript);
+				olist.style.display="block";
+				if(otext.value==""){
+					olist.style.display="none";
+				}
+			}
+			
+			function data(data){
+				
+				var str="";
+				olist.innerHTML="";
+				for(var i=0;i<data.result.length;i++){
+					// console.log(data.result[i]);
+					str+=`<li><a href=''>${data.result[i][0]}</a></li>`;
+				}
+				olist.innerHTML=str;
+				
+				
+				var ali=olist.children;
+				if(data.magic){
+					var marr=data.magic;
+					
+						
+						
+						
+					for(var j=0;j<marr.length;j++){
+						var index=marr[j].index;
+						var data1=marr[j].data;
+						
+						var nav2=document.createElement("ul");
+						nav2.className="nav2";
+						var content=ali[index-1].innerHTML;
+						nav2.innerHTML="<p>"+content+"<p>";
+						
+						for(var k=0;k<data1.length;k++){
+							var data2=data1[k];
+							for(var l=0;l<data2.length;l++){
+								var tit=data2[l].title;
+								var li2=document.createElement('li');
+								li2.innerHTML=tit;
+								if(data2[l].type){
+									li2.className="cl";
+								}
+								nav2.appendChild(li2);
+							}
+							if(k<data1.length-1){
+								var space=document.createElement("div");
+								space.className="sp";
+								nav2.appendChild(space);
+							}
+							
+						}
+						ali[index-1].appendChild(nav2);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

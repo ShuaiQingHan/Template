@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			#wrap{
+				position: relative;
+			}
+			#wrap div{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				font-size: 50px;
+				border-radius: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--九宫格区域-->
+		<div id="wrap">
+			
+		</div>
+		<script type="text/javascript">
+			var oWrap = document.getElementById("wrap");
+			//生成3行3列的九宫格时
+			var mt = ml = 10;
+			for(var i = 0; i < 3; i++){ //控制行
+				for(var j = 0; j < 3; j++){//控制列
+					var oDiv = document.createElement("div");
+					oWrap.appendChild(oDiv);
+					oDiv.style.top = i*(oDiv.offsetHeight+mt) + "px";
+					oDiv.style.left = j*(oDiv.offsetWidth+ml) + "px";
+					//给每一个div添加随机颜色 rgb
+					oDiv.style.background = "rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")";
+				}
+			}
+			
+			//给每一个div添加一个字符
+			var arr = ["A","B","C","D","E","F","G","H","I"];
+			var aItems = oWrap.children;
+			for(var i = 0; i < arr.length; i++){
+				aItems[i].innerHTML = arr[i];	
+			}
+			
+			//拖拽实现
+			
+			for(var i = 0; i < aItems.length; i++){
+				aItems[i].onmousedown = function(e){
+					var evt = e || event;
+					var _left = evt.offsetX;
+					var _top = evt.offsetY;
+					var curNode = this;
+					
+					var cloneNode = curNode.cloneNode();
+					oWrap.replaceChild(cloneNode,curNode);
+					
+					oWrap.appendChild(curNode);
+					cloneNode.style.border = "1px dashed #000";
+					
+					curNode.style.zIndex = 1;
+					
+					
+					document.onmousemove = function(e){
+						var evt = e || event;
+						var x = evt.clientX - _left;
+						var y = evt.clientY - _top;
+						
+						curNode.style.left = x + "px";
+						curNode.style.top = y + "px";
+						
+						return false;
+						
+					}
+					
+					document.onmouseup = function(){
+						
+						//取拖拽对象距离其他div的一个距离
+						//console.log(aItems.length);
+						
+						var disArr = [];
+						var newArr = [];
+						for(var i = 0; i < aItems.length-1;i++){
+							var disX = curNode.offsetLeft - aItems[i].offsetLeft;
+							var disY = curNode.offsetTop - aItems[i].offsetTop;
+							
+							var distance = Math.sqrt(Math.pow(disX,2)+Math.pow(disY,2));
+							disArr.push(distance);
+							newArr.push(distance);
+						}
+						
+						disArr.sort(function(a,b){
+							return a-b;
+						})
+						
+						var minVal = disArr[0];
+						
+						var minIndex = newArr.indexOf(minVal);
+						
+						//交换位置
+						
+						curNode.style.left = aItems[minIndex].style.left;
+						curNode.style.top = aItems[minIndex].style.top;
+						aItems[minIndex].style.left = cloneNode.style.left;
+						aItems[minIndex].style.top = cloneNode.style.top;
+						
+						oWrap.removeChild(cloneNode);
+						
+						document.onmousemove = null;
+						document.onmouseup = null;
+					}
+					
+					
+				}
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

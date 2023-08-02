@@ -1,0 +1,32 @@
+[
+	{
+		"imgurl":"img/lista.jpg",
+		"price":"¥38.90",
+		"title":"哈利·波特与被诅咒的孩子", 
+		"who":"商家a"
+	},  
+	{
+		"imgurl":"img/lista.jpg",
+		"price":"¥66.50",
+		"title":"临界·",
+		"who":"商家b"
+	},
+	{
+		"imgurl":"img/lista.jpg",
+		"price":"¥38.90",
+		"title":"哈利·波特与被诅咒的孩子",
+		"who":"商家c"
+	},
+	{
+		"imgurl":"img/lista.jpg",
+		"price":"¥38.90",
+		"title":"哈利·波特与被诅咒的孩子",
+		"who":"商家d"
+	},
+	{
+		"imgurl":"img/lista.jpg",
+		"price":"¥38.90",
+		"title":"哈利·波特与被诅咒的孩子",
+		"who":"商家e"
+	}
+]

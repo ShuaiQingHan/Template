@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>瀑布流demo</title>
+<style type="text/css">
+	*{margin:0;padding:0;}
+	a,img{border:none;}
+
+.container{position:relative;top:0;left:0;}
+.imgShow{
+	position:absolute;
+	top:0px;left:0px;
+	border:solid 1px #ccc;
+	padding:10px;width:225px;
+
+}
+</style>
+</head>
+<body >
+<div class="container">
+	<div class="imgShow"><img src="img2/2.jpg"/></div>
+	<div class="imgShow"><img src="img2/3.jpg"/></div>
+	<div class="imgShow"><img src="img2/4.jpg"/></div>
+	<div class="imgShow"><img src="img2/5.jpg"/></div>
+	<div class="imgShow"><img src="img2/6.jpg"/></div>
+	<div class="imgShow"><img src="img2/7.jpg"/></div>
+	<div class="imgShow"><img src="img2/8.jpg"/></div>
+	<div class="imgShow"><img src="img2/9.jpg"/></div>
+	<div class="imgShow"><img src="img2/1.jpg"/></div>
+	<div class="imgShow"><img src="img2/1.jpg"/></div>
+	<div class="imgShow"><img src="img2/2.jpg"/></div>
+	<div class="imgShow"><img src="img2/3.jpg"/></div>
+	<div class="imgShow"><img src="img2/4.jpg"/></div>
+	<div class="imgShow"><img src="img2/2.jpg"/></div>
+
+</div>
+<script type="text/javascript">
+document.getElementsByClassName = function(className, tag, elm) {
+	var testClass = new RegExp("(^|\s)" + className + "(\s|$)");
+	var tag = tag || "*";
+	var elm = elm || document;
+	var elements = (tag == "*" && elm.all)? elm.all : elm.getElementsByTagName(tag);
+	var returnElements = [];
+	var current;
+	var length = elements.length;
+	for(var i=0; i<length; i++){
+		current = elements[i];
+		if(testClass.test(current.className)){
+			returnElements.push(current);
+		}
+	}
+	return returnElements;
+}
+
+var margin = 10;
+var boxes = document.getElementsByClassName('imgShow');
+var con = document.getElementsByClassName('container');
+var text = document.getElementsByTagName('h4');
+var boxWidth = boxes[0].offsetWidth+margin;
+function show () {
+	var columnHeight=[];
+	var bodyWidth = document.body.offsetWidth;
+	var n = parseInt(bodyWidth/boxWidth);
+	var columnNum = n==0?1:n;
+	var bodyLeft = bodyWidth>=boxWidth?bodyWidth-columnNum*boxWidth:0;
+	con[0].style.left = parseInt(bodyLeft/2)-margin/2+'px';
+	for (var i = 0,l=boxes.length; i <l ; i++) {
+		if (i<columnNum) {
+			columnHeight[i]=boxes[i].offsetHeight+margin;
+			boxes[i].style.top = 0;
+			boxes[i].style.left = i*boxWidth+margin+'px';
+		} else{
+			var innsertColumn = min(columnHeight),
+				imgHeight = boxes[i].offsetHeight+margin;
+			boxes[i].style.top = columnHeight[innsertColumn]+'px';
+			boxes[i].style.left = innsertColumn*boxWidth+margin+'px';
+			columnHeight[innsertColumn] +=imgHeight;
+		}
+
+	}
+}
+function min (heightAarry) {
+	var minColumn = 0;
+	var minHeight = heightAarry[minColumn];
+	for (var i = 1,len=heightAarry.length; i < len; i++) {
+		var temp = heightAarry[i];
+		if (temp < minHeight) {
+			minColumn = i;
+			minHeight = temp;
+		};
+	};
+	return minColumn;
+}
+window.onload = function(){show();};
+window.onresize = function(){show();};
+
+</script>
+</body>
+</html>
+

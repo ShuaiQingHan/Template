@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模态窗口</title>
+	<style>
+		li{
+			list-style: none;
+			width: 800px;
+			border:1px solid #666;
+			margin:20px auto;
+			background: #ccc;
+		}
+		#btn{
+			position: fixed;
+			top:20px;
+			right: 100px;
+		}
+		#box{
+			width: 400px;
+			height: 260px;
+			border:1px solid #ccc;
+			position: absolute;
+			background: #fff;
+			z-index: 9999;
+			display: none;
+		}
+		#pox{
+			height: 30px;
+			background: #4ab;
+			text-align: center;
+			line-height: 30px;
+			color:#fff;
+			position: relative;
+		}
+		#xox{
+			width: 340px;
+			height: 150px;
+			border:1px solid #f77;
+			margin:10px 29px;
+			resize: none;
+		}
+		span{
+			position: absolute;
+			right: 15px;
+			font-size: 24px;
+			cursor: pointer;
+		}
+		#btn1{
+			margin-left: 80px;
+			margin-bottom: 10px;
+		}
+		#btn2{
+			margin-left: 140px;
+		}
+		#zz{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: #000;
+			opacity: 0.3;
+			z-index: 9998;
+			top:0;
+			left:0;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul id="ul">
+		<li>这是一个模态化窗口</li>
+	</ul>
+	<div id="box">
+		<div id="pox">发布微博<span id="span">X</span></div>
+		请输入您要发布的文字
+		<textarea id="xox"></textarea>
+		<input type="button" id="btn1" value='确定'>
+		<input type="button" id="btn2" value='取消'>
+	</div>
+	<input type="button" id="btn" value='点击发布'>
+	<div id="zz"></div>
+	<script>
+		btn.onclick=function(){
+			box.style.display='block'
+			var clientWidth=document.documentElement.clientWidth
+			var clientHeight=document.documentElement.clientHeight
+			box.style.left=(clientWidth-400)/2+'px'
+			box.style.top=(clientHeight-260)/2+'px'
+			zz.style.display='block'
+		}
+		pox.onmousedown=function(e){
+			var evt=e||event
+			var _left=evt.offsetX
+			var _top=evt.offsetY
+			var _target=evt.target||evt.srcElement
+			if(_target.nodeName.toLowerCase()=='span'){
+				box.style.display='none'
+				zz.style.display='none'
+			}
+			document.onmousemove=function(e){
+				var evt=e||event
+				var l=evt.clientX-_left
+				var t=evt.clientY-_top
+				var clientWidth=document.documentElement.clientWidth
+				var clientHeight=document.documentElement.clientHeight
+				if(l<0){
+					l=0
+				}else if(l>clientWidth-box.offsetWidth){
+					l=clientWidth-box.offsetWidth
+				}
+				if(t<0){
+					t=0
+				}else if(t>clientHeight-box.offsetHeight){
+					t=clientHeight-box.offsetHeight
+				}
+				console.log(clientWidth)
+				box.style.left=l+'px'
+				box.style.top=t+'px'
+			}
+			document.onmouseup=function(){
+				document.onmousemove=null;
+			}
+			return false;
+		}
+		btn1.onclick=function(){
+			if(xox.value){
+				var oLi=document.createElement('li')
+				var a=xox.value.substring(0,150)
+				oLi.innerHTML=a
+				ul.insertBefore(oLi,ul.children[0])
+			}
+			xox.value=''
+			zz.style.display='none'
+			box.style.display='none'
+		}
+		btn2.onclick=function(){
+			box.style.display='none'
+			zz.style.display='none'
+		}
+
+	</script>
+</body>
+</html>

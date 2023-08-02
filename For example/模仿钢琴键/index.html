@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>
+                <span class="keyA">A</span>
+                <p class="keyA"></p>
+            </li>
+            <li>
+                <span class="keyS">S</span>
+                <p class="keyS"></p>
+            </li>
+            <li>
+                <span class="keyD">D</span>
+                <p class="keyD"></p>
+            </li>
+            <li>
+                <span class="keyJ">J</span>
+                <p class="keyJ"></p>
+            </li>
+            <li>
+                <span class="keyK">K</span>
+                <p class="keyK"></p>
+            </li>
+            <li>
+                <span class="keyL">L</span>
+                <p class="keyL"></p>
+            </li>
+
+        </ul>
+    </div>
+    <script type="text/javascript" src="sport.js"></script>
+    <script type="text/javascript">
+        var objP=document.getElementsByTagName("p");
+        var objSpan=document.getElementsByTagName("span");
+        document.onkeydown=function(evt){
+            var e=evt||event;
+            for(var i=0;i<objSpan.length;i++){
+                if(String.fromCharCode(e.keyCode)==objSpan[i].innerHTML){
+                    startMove(objP[i],{"height":600})
+                    startMove(objSpan[i],{"opacity":100})
+                }
+            }
+        }
+       document.onkeyup=function(evt){
+            var e =evt||event;
+            for(var i=0;i<objP.length;i++){
+                if(String.fromCharCode(e.keyCode)==objSpan[i].innerHTML){
+                    startMove(objP[i],{"height":0})
+                    startMove(objSpan[i],{"opacity":50})
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#box{
+			width:350px;
+			height:350px;
+			border:1px solid #000;
+			margin:100px;
+			position:relative;
+		}
+		#big{
+			width:400px;
+			height:400px;
+			border:1px solid #000;
+			position:absolute;
+			top : 0;
+			left : 360px;
+			overflow:hidden;
+			display:none;
+		}
+		#mask{
+			width:175px;
+			height:175px;
+			background:pink;
+			opacity:0.3;
+			position:absolute;
+			top:0;
+			left:0;
+			cursor:move;
+			display:none
+		}
+		#small{
+			position:relative;
+		}
+		#bigImg{
+			position:absolute;
+			left:0;
+			top:0;
+		}
+	</style>
+	<body>
+		<div id="box">
+			<div id="small">
+				<img src="001.jpg" alt="" id="smallImg"/>
+				<div id="mask"></div>
+			</div>
+			<div id="big">
+				<img src="0001.jpg" alt="" id="bigImg"/>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="../public.js"></script>
+<script>
+	/*
+	 思路：
+	 	1、鼠标移入到小图区域  显示mask和big   离开时 隐藏
+	 	2、鼠标在小图区域上移动  改变mask的left和top   控制bigImg的left和top
+	 */
+	$id("small").onmouseover=function(e){
+		var e = e || event;
+		$id("mask").style.display="block";
+		$id("big").style.display="block";
+		
+	}
+	$id("small").onmouseout=function(e){
+		var e = e || event;
+		$id("mask").style.display="none";
+		$id("big").style.display="none";
+	}
+	$id("small").onmousemove=function(e){
+		var e = e || event;
+		var x = e.pageX-$id("mask").offsetWidth/2-$id("box").offsetLeft; 
+		//x=向左偏移量
+		//offsetWidth是自身的绝对宽度；
+		//offsetLeft是相对父元素或body的左侧宽度；
+		var y = e.pageY-$id("mask").offsetHeight/2-$id("box").offsetTop;
+		//y=向上偏移量
+		var maxL = $id("box").offsetWidth-$id("mask").offsetWidth;
+		var maxT = $id("box").offsetHeight-$id("mask").offsetHeight;
+		
+		if(x < 0){
+			x=0;
+		}else if(x>maxL){
+			x=maxL;
+		};
+		if(y < 0){
+			y=0;
+		}else if(y>maxT){
+			y=maxT;
+		};
+		//大图的left/mask的left = 大图宽度-大图显示区宽度 / 小图的宽度 - mask宽度 = 大图宽度/小图宽度 = big宽度/mask宽度
+		var bigImgLeft = x*($id("bigImg").offsetWidth-$id("big").offsetWidth)/($id("smallImg").offsetWidth-$id("mask").offsetWidth);
+		var bigImgTop = y*($id("bigImg").offsetHeight-$id("big").offsetHeight)/($id("smallImg").offsetHeight-$id("mask").offsetHeight)
+		
+		$id("mask").style.left=x+"px";
+		$id("mask").style.top=y+"px";
+		
+		$id("bigImg").style.left=-bigImgLeft+"px";
+		$id("bigImg").style.top=-bigImgTop+"px";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	
+//	$id("small").onmouseover = function(){
+//		$id("mask").style.display = "block";
+//		$id("big").style.display = "block";
+//	}
+//	$id("small").onmouseout = function(){
+//		$id("mask").style.display = "none";
+//		$id("big").style.display = "none";
+//	}
+//	$id("small").onmousemove = function(e){
+//		var e = e || event;
+//		//console.log( $id("box").offsetLeft , $id("small").offsetLeft );
+//		var x = e.pageX - $id("mask").offsetWidth/2 - $id("box").offsetLeft;
+//		var y = e.pageY - $id("mask").offsetHeight/2 - $id("box").offsetTop;
+//		var maxL = $id("box").offsetWidth - $id("mask").offsetWidth;
+//		var maxT = $id("box").offsetHeight - $id("mask").offsetHeight;
+//		//边界处理
+//		x = x < 0 ? 0 : ( x > maxL ? maxL : x );
+//		y = y < 0 ? 0 : ( y > maxT ? maxT : y );
+		//比例关系：
+		//大图的left/mask的left = 大图宽度-大图显示区宽度 / 小图的宽度 - mask宽度 = 大图宽度/小图宽度 = big宽度/mask宽度
+		
+		//小图宽度/大图宽度 = mask宽度/big宽度   350/800 = 175 / 400   实现等比放大
+//		var bigImgLeft = x*($id("bigImg").offsetWidth-$id("big").offsetWidth)/($id("smallImg").offsetWidth-$id("mask").offsetWidth);
+//		var bigImgTop = y*($id("bigImg").offsetHeight-$id("big").offsetHeight)/($id("smallImg").offsetHeight-$id("mask").offsetHeight);
+//		
+//		$id("mask").style.left = x + "px";
+//		$id("mask").style.top = y + "px";
+//		//改变大图的left 值 和  top值
+//		$id("bigImg").style.left = -bigImgLeft + "px";		
+//		$id("bigImg").style.top = -bigImgTop + "px";		
+//	}
+</script>

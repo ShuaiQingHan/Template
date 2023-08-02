@@ -1,0 +1,678 @@
+{
+  "status": 200,
+  "message": "success",
+  "results": [
+    {
+      "month": "0",
+      "total": "79",
+      "plan": "43",
+      "spotCheck": "21",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "1",
+      "total": "65",
+      "plan": "35",
+      "spotCheck": "29",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "2",
+      "total": "51",
+      "plan": "32",
+      "spotCheck": "16",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "3",
+      "total": "69",
+      "plan": "23",
+      "spotCheck": "28",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "4",
+      "total": "86",
+      "plan": "37",
+      "spotCheck": "29",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "5",
+      "total": "61",
+      "plan": "32",
+      "spotCheck": "12",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "6",
+      "total": "97",
+      "plan": "22",
+      "spotCheck": "10",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "7",
+      "total": "95",
+      "plan": "44",
+      "spotCheck": "14",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "8",
+      "total": "51",
+      "plan": "34",
+      "spotCheck": "16",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "9",
+      "total": "96",
+      "plan": "38",
+      "spotCheck": "16",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "10",
+      "total": "67",
+      "plan": "35",
+      "spotCheck": "21",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "11",
+      "total": "81",
+      "plan": "43",
+      "spotCheck": "11",
+      "detail": [
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "1",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "2",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        },
+        {
+          "level": "1",
+          "countOfDanger": "2",
+          "countOfReform": "3",
+          "rateOfReform": "50",
+          "detail": [
+            {
+              "name": "2019.5.03污水处理间物品是否上锁不合格",
+              "value": "未整改"
+            },
+            {
+              "name": "2019.08.30配电箱电表显示是否正常不合格",
+              "value": "已整改"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

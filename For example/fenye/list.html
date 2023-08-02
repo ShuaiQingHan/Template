@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="main.css" />
+		<style>
+			.header{
+				height: 40px;
+				width: 900px;
+				margin: 0 auto 50px;
+			}
+			#box{
+				width: 400px;
+				height: 30px;
+				border: 1px solid black;
+				float: left;
+				margin-left:500px;
+				cursor:pointer;
+			}
+			#box li{
+				float: left;
+				list-style: none;
+				display: inline-block;
+				padding: 0 5px;
+				margin-right: 10px;
+			}
+			#box li.active{
+				color: red;
+				background-color: blue;
+			}
+			#box ul{
+				/*float: left;*/
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>		 		 
+		<ul class="shoplist clearfix" id="main">
+			<!--<li>
+				<img src="img/1.jpg" alt="" />
+				<p>小米1</p>
+				<p>999</p>
+				<button>购买</button>
+			</li>-->
+		</ul>	
+		<div id="box">
+			<span id="s_left">首页</span>
+			<span id="left">上一页</span>
+			<ul id="u">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+			<span id="right">下一页</span>
+			<span id="w_right">尾页</span>
+		</div>
+	</body>
+</html>
+<script src="ajax.js"></script>
+<script type="text/javascript">
+	var oUl = document.getElementById("main");
+	var pageUl = document.getElementById("u");
+	var oSpanLeft = document.getElementById("left");
+	var oSpanRight = document.getElementById("right");
+	var oSpans_Left = document.getElementById("s_left");
+	var oSpanw_Right = document.getElementById("w_right");
+	var index = 1;//页码  默认显示第一页  
+	var pageNum = 4; //每页的数据量
+	getData();
+	//页面加载后将数据渲染到页面上
+	function getData(){
+		ajaxGet("data.json",function(msg){
+//			alert( msg );
+			var arr = JSON.parse(msg);
+			var str = "";
+			for( var i = (index-1)*pageNum ; i < index*pageNum ; i++ ){
+				//解决最后一页bug  加一个判断，当i<arr.length 可以读取数据
+				if( i < arr.length ){
+					str += `<li>
+								<img src="img/${arr[i].src}" alt="" />
+								<p>${arr[i].name}</p>
+								<p>${arr[i].price}</p>
+								<button>购买</button>
+							</li>`;
+				}
+			}
+			oUl.innerHTML = str;
+			
+			//处理 页面中页码数量
+			//计算总页数 
+			pageTotle = Math.ceil( arr.length/pageNum );
+			var page = "";
+			for( var j = 1 ; j <= pageTotle ; j++ ){
+				page += `<li>${j}</li>`;
+			}
+			pageUl.innerHTML = page;
+			//当前页码index对应的页码的li高亮显示
+			pageUl.children[index-1].className = "active";
+		})
+		
+	}
+
+	
+	//操作页码显示对应页的数据   委托
+	pageUl.onclick = function(e){
+		var e = e || event;
+		var target = e.target || e.srcElement;
+		if( target.nodeName == "LI" ){
+			//获取当前页码的index  
+			index = parseInt( target.innerHTML );
+			getData();
+		}
+	}
+	//首页
+	oSpans_Left.onclick=function(){
+//		var e = e || event;
+//		var target = e.target || e.srcElement;
+//		if(index==1){
+//			index=1;
+//		}
+		getData(index=1);
+	}
+	
+	//尾页
+	oSpanw_Right.onclick=function(){
+		getData(index = pageTotle);
+	}
+	/*oSpans_Left.onclick = function(){
+			if( index == 1 ){
+			index = 1;
+		}
+		getData();
+	}*/
+	//尾页
+//	oSpanRight.onclick = function(){
+//		
+//		index = 3;
+//	
+//		getData();
+//	}
+	
+	
+	//上一页 index--
+	oSpanLeft.onclick = function(){
+		if( index == 1 ){
+			index = 1;
+		}else{
+			index--;
+		}
+		getData();
+	}
+	//下一页  index++
+	oSpanRight.onclick = function(){
+		if( index == pageTotle ){
+			index = pageTotle;
+		}else{
+			index++;
+		}
+		getData();
+	}
+	/*
+	index   (index-1)*4    index*4
+	 1  	 0   			4
+	 2  	 4   			8
+	 3  	 8   			12
+	 4  	 12  			16
+	 5  	 16  			20
+	 最后一页bug ： 最大下标是 16       下标为17时就开始报错
+	 */
+</script>

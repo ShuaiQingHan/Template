@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>事件系统</title>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+   
+    <style>
+        html,
+        body,
+        #container {
+          width: 100%;
+          height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<div class="info">
+    <h4 id="text"></h4>
+    <p>当前中心点：<span id="map-center">121.498586,31.239637</span></p>
+</div>
+<div class="input-card" style="width:16rem">
+    <h4>地图移动事件</h4>
+    <div>
+      <div class="input-item">
+        <button id="moveOn" class="btn" style="margin-right:1rem;">绑定事件</button>
+        <button id="moveOff" class="btn">解绑事件</button>
+      </div>
+    </div>
+</div>
+<div id="tip"></div>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.10&key=您申请的key值"></script>
+<script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+<script type="text/javascript">
+    //初始化地图对象，加载地图
+    var map = new AMap.Map("container", {
+        resizeEnable: true,
+        center:[121.473701,31.230416]
+    });
+    var radius = 1000
+	var circle = new AMap.Circle({
+        center: map.getCenter(),
+        radius: radius, //半径
+        borderWeight: 0,
+        strokeColor: "#1791fc", 
+        strokeOpacity: 1,
+        strokeWeight: 0,
+        strokeOpacity: 0.2,
+        fillOpacity: 0.4,
+        strokeStyle: 'solid',
+        strokeDasharray: [10, 10], 
+        // 线样式还支持 'dashed'
+        fillColor: '#1791fc',
+        zIndex: 50,
+    }) 
+	map.add(circle);
+	map.setFitView([ circle ])
+	
+	
+	var marker = new AMap.Marker({
+	    icon: "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+	    position: map.getCenter(),
+	    zIndex: 51
+	});
+	map.add(marker);
+
+    var logMapinfo = function (){
+        var zoom = map.getZoom(); //获取当前地图级别
+        var center = map.getCenter(); //获取当前地图级别
+        document.querySelector("#map-center").innerText = center.toString();
+        radius = radius +1
+		circle.setCenter(center); //更新圆标记位置
+    	circle.setRadius(radius); //更新圆标记位置    
+    	
+    	marker.setPosition(center); //更新圆标记位置
+    	
+    };
+
+
+    //绑定按钮事件，改变地图层级与中心点
+    document.getElementById("moveOn").onclick = function() {
+      	map.setCenter([116.407526,39.904030]); //设置地图中心点 
+    }
+    
+    
+    
+    logMapinfo();
+
+    function mapMovestart(){
+        document.querySelector("#text").innerText = '地图移动开始';
+    }
+    function mapMove(){
+        logMapinfo();
+        document.querySelector("#text").innerText = '地图正在移动';
+    }
+    function mapMoveend(){
+        document.querySelector("#text").innerText = '地图移动结束';
+    }
+        
+    // 事件绑定
+    function moveOn(){
+        log.success("绑定事件!");  
+        map.on('movestart', mapMovestart);
+        map.on('mapmove', mapMove);
+        map.on('moveend', mapMoveend);
+    }
+    // 解绑事件
+//  function moveOff(){
+//      log.success("解除事件绑定!"); 
+//      map.off('movestart', mapMovestart);
+//      map.off('mapmove', mapMove);
+//      map.off('moveend', mapMoveend);
+//  }
+    moveOn()
+    // 给按钮绑定事件
+//  document.getElementById("moveOn").onclick = moveOn;
+//  document.getElementById("moveOff").onclick = moveOff;
+
+
+</script>
+</body>
+</html>

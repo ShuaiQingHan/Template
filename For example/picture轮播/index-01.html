@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片切换</title>
+	<style type="text/css">
+		*{padding:0; margin:0;}
+		#outer{
+			height: 360px;
+			width: 500px;
+			margin: 50px auto;
+			background: #BDF18D;
+			border: 1px solid #E2F23F;
+			padding: 20px;
+			text-align: center;
+			border-radius: 5%;
+
+		}
+		#outer >img{
+			margin-bottom: 10px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="outer">
+	<img src="img/1.jpg">
+	<button id="prew">上一张</button>&nbsp;
+	<button id="next">下一张</button>
+	</div>
+	<script type="text/javascript">
+		window.onload=function(){
+
+			var img=document.getElementsByTagName("img")[0];
+			var imgArr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"]
+			var index = 0;
+
+			var prew =document.getElementById("prew");
+			var next =document.getElementById("next");
+
+			prew.onclick=function(){
+				index--;
+				if(index<0){
+					index=4;
+				}
+				img.src=imgArr[index];
+			}
+			next.onclick=function(){
+
+				index++;
+				if(index>4){
+					index=0;
+				}
+				img.src=imh=imgArr[index];
+
+			}
+		}
+	</script>
+</html>

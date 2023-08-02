@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,ul,li,p{
+				margin: 0;
+				padding: 0;
+				font-size: 14px;
+			}
+			li{
+				list-style: none;
+			}
+			img{
+				display: block;
+				border: none;
+			}
+			li{
+				float: left;
+				width: 220px;
+				border: 1px solid #CECECE;
+				padding: 10px;
+				margin:10px;
+			}
+			p{
+				margin: 10px 0;
+			}
+			.clearfix{
+				clear: both;
+			}
+			.clearfix:after{
+				display: block;
+				content: "";
+				width: 0;
+				height: 0;
+				overflow: hidden;
+				clear: both;
+			}
+			#cart{
+				position: fixed;
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				right: 10px;
+				top: 10px;
+				border: 1px solid red;
+			}
+			.addBtn{
+				border: none;
+				width: 120px;
+				height: 40px;
+				background: red;
+				line-height: 40px;
+				text-align: center;
+				color: white;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="productList" class="clearfix">
+		</ul>
+		<div id="cart"><a href="cartList.html">0</a></div>
+		<script src="cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var productData = [{
+				prodId: 10001,
+				title: "送素描纸画架画板套装",
+				price: 100,
+				imgSrc: "img/1.jpg"
+			},{
+				prodId: 10002,
+				title: "送素描纸画架k写生素描画板",
+				price: 100,
+				imgSrc: "img/2.jpg"
+			},{
+				prodId: 10003,
+				title: "送素描纸4k写生素描画板",
+				price: 100,
+				imgSrc: "img/3.jpg"
+			},{
+				prodId: 10004,
+				title: "送素描纸画架画板套素描画板",
+				price: 100,
+				imgSrc: "img/2.jpg"
+			},{
+				prodId: 10005,
+				title: "送素描纸画k写生素描画板",
+				price: 100,
+				imgSrc: "img/3.jpg"
+			}];
+			
+			//遍历获取到的数据，页面中商品的数量和数据里面的数量保持一致
+			var oProdList = document.getElementById("productList");
+			for(var i = 0; i < productData.length; i++){
+				oProdList.innerHTML += "<li><img src='"+productData[i].imgSrc+"'><p>"+productData[i].title+"</p><p>"+productData[i].price+"</p><input type='button' class='addBtn' data-id='"+productData[i].prodId+"' value='加入购物车'></li>"
+			}
+			
+			//大部分网站，添加到购物车里面的商品数据是传给后台的，后台保存到数据库里的
+			
+			//同样取购物车里的数据，也是从数据库里取的
+			
+			//除了存商品ID之外，存数量
+			
+			//10001->2   10002->5  {"10001":2,"10002":5}
+			
+			var aBtns = document.getElementsByClassName("addBtn");
+			var oCartNum = document.getElementById("cart").children[0];
+			//为了避免每一次进入页面之前保存的数据会被清掉，不能直接将对象赋值为{}
+			//在进入页面时，先要判断之前购物车是否有数据（cookie中是否保存过商品）
+			if(getCookie("cart")){
+				var cartsObj = JSON.parse(getCookie("cart"));
+			}else{
+				var cartsObj = {};
+			}
+			var count = 0;
+			
+			for(var i in cartsObj){
+				count += cartsObj[i];//遍历cookie存的数据，取到属性值（每件商品的数量）进行累加
+			}
+			
+			oCartNum.innerHTML = count;
+			
+			for(var i = 0; i < aBtns.length; i++){
+				aBtns[i].onclick = function(){
+					var prodId = this.getAttribute("data-id");
+					if(cartsObj[prodId]==undefined){
+						cartsObj[prodId] = 1;
+					}else{
+						cartsObj[prodId]++;
+					}
+					count++;
+					oCartNum.innerHTML = count;
+					//console.log(cartsObj);
+					//cartsObj就是存数据   cookie存字符串
+					
+					var objToStr = JSON.stringify(cartsObj);
+					
+					setCookie("cart",objToStr,7);
+					
+				}
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				position: relative;
+				margin: 100px auto;
+				width: 300px;
+			}
+			li{
+				list-style: none;
+			}
+			ul li{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			ol li{
+				
+				width: 20px;
+				height: 20px;
+				background: yellow;
+				border-radius: 50%;
+				float: left;
+				text-align: center;
+				line-height: 20px;
+				margin-right: 3px;
+			}
+			ol{
+				position: absolute;
+				right: 32px;
+				bottom: -180px;
+				z-index: 99999;
+			}
+			.red{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<ul id="up">
+				<li style="z-index: 1;"><img src="a.jpg" alt="" /></li>
+				<li><img src="b.jpg" alt="" /></li>
+				<li><img src="c.jpg" alt="" /></li>
+				<li><img src="d.jpg" alt="" /></li>
+			</ul>
+			<ol id="down">
+				<li class="red">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ol>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+	 1、让文字和图片对应显示 通过 下标控制
+	 2、图片显示 实际上就是调整图片对应的li的z-index值 
+	 3、鼠标移入   关键获取鼠标移入文字时的下标 
+	 4、鼠标离开 重新启动定时器
+	 */
+	var index = 0;//下标
+	var zindex = 0;//空间定位值
+	var timer = null;
+	var ulist = document.getElementById("up").children;
+	var olist = document.getElementById("down").children;
+	timer = setInterval( autoPlay , 1000 );
+	function autoPlay(){
+		index++;
+		for( var i = 0 ; i < olist.length ; i++ ){
+			olist[i].className = "";
+		}
+		if( index == olist.length ){
+			index = 0;
+		}
+		olist[index].className = "red";
+		ulist[index].style.zIndex = ++zindex;
+	}
+	
+	//鼠标移入 操作对应的图片显示  文字高亮
+	for( let i = 0 ; i < olist.length ; i++ ){
+		olist[i].onmouseover = function(){
+			clearInterval(timer);
+			index = i-1;
+			autoPlay();
+		}
+		olist[i].onmouseout = function(){
+			timer = setInterval( autoPlay , 1000 );
+		}
+	}
+</script>

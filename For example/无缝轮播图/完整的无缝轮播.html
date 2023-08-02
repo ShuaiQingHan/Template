@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,ul,li{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				list-style: none;
+			}
+			img{
+				display: block;
+				border: none;
+			}
+			#scrollBanner{
+				margin:40px auto;
+				position: relative;
+				width: 900px;
+				height: 400px;
+				overflow: hidden;
+			}
+			#imgList{
+				width: 900px;
+				height: 400px;
+				overflow: hidden;
+			}
+			#imgList ul{
+				position: absolute;
+			}
+			#imgList li{
+				float: left;
+			}
+			#imgList img{
+				width: 900px;
+				height: 400px;
+			}
+			#btns div{
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				background: #000000;
+				text-align: center;
+				line-height: 50px;
+				font-size: 40px;
+				cursor: pointer;
+				opacity: .3;
+				top: 50%;
+				margin-top: -25px;
+				color: white;
+			}
+			#btns div:first-child{
+				left:10px
+			}
+			#btns div:last-child{
+				right: 10px;
+			}
+			#numList{
+				position: absolute;
+				right: 10px;
+				bottom: 10px;
+			}
+			#numList li{
+				float: left;
+				margin: 0 10px;
+				width: 20px;
+				height: 20px;
+				text-align: center;
+				line-height: 20px;
+				border-radius: 50%;
+				background: white;
+				color: red;
+				cursor: pointer;
+			}
+			#numList li.hover,#numList li:hover{
+				background: red;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<!--轮播区域-->
+		<div id="scrollBanner">
+			<div id="imgList">
+				<ul>
+					<li><img src="img/1.jpg"></li>
+					<li><img src="img/2.jpg"></li>
+					<li><img src="img/3.jpg"></li>
+					<li><img src="img/4.jpg"></li>
+					<li><img src="img/5.jpg"></li>
+					<li><img src="img/1.jpg"></li>
+				</ul>
+			</div>
+			<div id="btns">
+				<div>&lt;</div>
+				<div>&gt;</div>
+			</div>
+			<div id="numList">
+				<ul>
+					<li class="hover">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</div>
+		</div>
+		<script src="startMove.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var oBanner = document.getElementById("scrollBanner");
+			var oImgList = document.getElementById("imgList");
+			var oUl = oImgList.children[0];
+			var aLi = oUl.children;
+			var oNumList = document.getElementById("numList");
+			var aNumLi = oNumList.getElementsByTagName("li");
+			//每一次移动的距离
+			var perWidth = aLi[0].offsetWidth;
+			oUl.style.width = aLi.length * perWidth + "px";
+			
+			var i = 0;
+			var timer = setInterval(function(){
+				move();
+				
+			},3000)
+			
+			function move(){
+				i++;
+				if(i == aLi.length){ 
+					oUl.style.left = 0;
+					i = 1;
+				}
+				if(i==-1){
+					oUl.style.left = -(aLi.length-1)*perWidth + "px";
+					i = aLi.length -4;
+				}
+				
+				
+				
+				for(var j = 0; j < aNumLi.length; j++){
+					aNumLi[j].className = "";
+				}
+				if(i==aLi.length - 1){
+					aNumLi[0].className = "hover";
+				}else{
+					aNumLi[i].className = "hover";
+				}
+				
+				
+				
+				startMove(oUl,{left:-perWidth*i});
+			}
+			
+			var oBtn = document.getElementById("btns");
+			var oPrev = oBtn.children[0];
+			var oNext = oBtn.children[1];
+			
+			oNext.onclick = function(){
+				move();
+			}
+			oPrev.onclick = function(){
+				i-=4;
+				move();
+			}
+			oBanner.onmouseover = function(){
+				clearInterval(timer);
+			}
+			oBanner.onmouseout = function(){
+				timer = setInterval(function(){
+					move();
+				},3000)
+			}
+			
+			for(let k = 0; k < aNumLi.length; k++){
+				aNumLi[k].onmouseover = function(){
+					i = k-1;
+					move();
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

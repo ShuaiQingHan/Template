@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随机数取数字验证码</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function box(n){
+			n=n||4;
+			var res='';
+			for(var i=0;i<n;i++){
+				var num=parseInt(Math.random()*10);//*10表示从0-9中十个数字中提取随机数
+				res=res+num;
+				// document.write(i)
+			}
+			document.write(res);
+			return res;
+		}
+		box(4); //验证码位数
+	</script>
+</body>
+</html>

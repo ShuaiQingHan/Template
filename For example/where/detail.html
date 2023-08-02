@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>旅游详情</title>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<link href="img/logo.jpg" rel="shortcut icon" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="css/detail.css"/>
+		<script src="js/detail.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<script src="js/cookie1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.big.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+			$(document).ready(function(){  });
+			
+		</script>
+	</head>
+	<body>
+		<div id="topnav">
+			<div class="topWrap">
+				<p>
+					<span>欢迎来到去哪网</span>
+					<a href="login.html">请登录</a>
+					<a href="register.html">免费注册</a>
+				</p>
+				<ul>
+					<li>
+						<a href="cart.html" id="cartHref">购物车
+							<!--<span id="cartNum">0</span>-->
+						</a>
+					</li>
+					<li>
+						<a href="">消息</a> |</li>
+					<li>
+						<a href="">查看订单</a> |</li>
+					<li>
+						<a href="">积分商城</a> |</li>
+					<li>
+						<a href="">联系客服</a>
+					</li>
+				</ul>
+			</div>
+		
+		</div>
+		<!--header-->
+		<div id="headWrap"></div>
+		<div class="shopinfo">
+			<!--<img src="img/1.jpg" alt="" />
+			<p>小米1</p>
+			<p>333</p>-->
+			<!--<button>购买</button>-->
+		</div>
+
+		<!--footer-->
+		
+		<div id="footWrap">
+			
+		</div>
+	</body>
+</html>
+<!--加载头和页脚-->
+<script type="text/javascript">
+	$("#headWrap").load("header.html #header_wrap")
+    $("#footWrap").load("header.html .qn_footer");
+
+</script>

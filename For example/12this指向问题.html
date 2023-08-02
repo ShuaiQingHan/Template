@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>孩子多个1</li>
+			<li>孩子多个2</li>
+			<li>孩子多个3</li>
+			<li>孩子多个4</li>
+			<li>孩子多个5</li>
+		</ul>
+	</body>
+</html>
+<script src="../public.js"></script>
+<script>
+	//页面加载后   为每一个li设置不同的背景颜色   
+	// 鼠标移入到某个li上该li变色，鼠标离开时颜色恢复
+	
+	var list = document.querySelectorAll("li");
+	for( var i = 0 ; i < list.length ; i++ ){
+		list[i].style.backgroundColor = getColor();
+		
+		//为5个li添加鼠标移入和移出事件
+		list[i].onmouseover = function(){
+			//当鼠标移入时，记录当前li的背景颜色 
+			color = this.style.backgroundColor;
+			//操作当前鼠标移入的li元素
+			//this--当前对象  在事件处理程序中 指向的是事件的触发者  
+			this.style.backgroundColor = "red";
+		}
+		list[i].onmouseout = function(){
+			this.style.backgroundColor = color;	
+		}
+	}
+	/*
+	 多个同类的标签 有相同的事件时  通过循环添加事件
+	 this在事件中指向的是 事件的触发者
+	 */
+	
+	
+</script>

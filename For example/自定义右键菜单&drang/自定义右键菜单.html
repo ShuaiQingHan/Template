@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .menu{
+            display: none;
+            position: absolute;
+            /* list-style: none; */
+        }
+        .menu>li{
+            list-style-type:none;
+             border: 1px solid red;
+             text-align: center;
+        }
+        .menu li:hover{
+            background: #E1F099;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            var menu = document.getElementsByClassName('menu')[0];
+            document.oncontextmenu = function (e) {
+                var evt = e || event;
+
+                menu.style.display = 'block'
+                var width = document.documentElement.clientWidth || document.body.clientWidth;
+                var height = document.documentElement.clientHeight || document.body.clientHeight;
+
+                if( evt.pageX >= width - menu.offsetWidth){
+                    menu.style.left =width - menu.offsetWidth +'px';
+                }else{
+                    menu.style.left = e.pageX +'px';
+                }
+
+                if( evt.pageY >= height - menu.offsetHeight){
+                    menu.style.top =e.pageY - menu.offsetHeight +'px';
+                }else{
+                    menu.style.top = e.pageY +'px';
+                }
+
+
+
+
+                return false;
+            }
+
+            var lis = menu.getElementsByTagName('li');
+            for(var i=0;i<lis.length;i++){
+                lis[i].index = i;
+                lis[i].onclick = function () {
+                  //  menu.style.display = 'none';
+                    console.log(this.index)
+
+                }
+            }
+
+            document.onclick = function () {
+                menu.style.display = 'none';
+
+            }
+
+
+
+
+
+
+        }
+
+    </script>
+</head>
+<body>
+
+<ul class="menu">
+    <li>查看</li>
+    <li>刷新</li>
+    <li>新建文件夹</li>
+    <li>刷新</li>
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>miniselect下拉菜单</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<script type="text/javascript">
+		window.onload = function(){
+			//下拉的按钮
+			var select = document.getElementById('select');
+			//下拉列表
+			var sublist = document.getElementById('sub')
+
+			select.onclick = function (event) {
+				var e = event || window.event;
+				//
+				sublist.style.display = 'block';
+				
+				
+				console.log('select  sbulist出现')
+
+				//阻止冒泡
+				e.stopPropagation();
+				e.cancelBubble = true;
+
+			}
+
+			//所有的li
+			var lis = sublist.getElementsByTagName('li');
+			for(var i=0;i<lis.length;i++){
+				var li = lis[i];//遍历获取li
+				li.onclick = function () {
+
+					select.innerHTML = this.innerHTML;
+					console.log('li  sbulist消失')
+
+
+				}
+
+			}
+
+			document.onclick = function () {
+				console.log('document  sbulist消失')
+				sublist.style.display = 'none';
+
+			}
+
+		}
+	</script>
+	<div id="search">
+		<div class="box">
+			<form>
+				<span id="select" class="select">请选择游戏名称</span>
+				<a href="javascript:;">搜索</a>
+			</form>
+		</div>
+		<ul id="sub" class="sub">
+			<li>地下城与勇士</li>
+			<li>魔兽世界（国服）</li>
+			<li>魔兽世界（台服）</li>
+			<li>热血江湖</li>
+			<li>大话西游II</li>
+			<li>QQ幻想世界</li>
+		</ul>
+	</div>
+</body>
+</html>
