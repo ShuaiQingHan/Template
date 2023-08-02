@@ -1,0 +1,50 @@
+@charset "gb2312";
+/* 共用css */
+* { margin: 0; padding: 0 }
+body { font: 12px "宋体", Arial, Helvetica, sans-serif; color: #666666; background: url(../images/bg.jpg) repeat-x }
+img { border: 0; display: block }
+ul, ol, li { list-style: none; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+a { outline: none; }
+a:link, a:visited { text-decoration: none; color: #666 }
+a:hover { text-decoration: none; color: #000 }
+.clear { clear: both; }
+.blank { height: 8px; overflow: hidden; width: 100%; margin: auto; clear: both }
+.f_l { float: left }
+.f_r { float: right }
+.l_box { width: 670px; }
+.r_box { width: 300px; }
+/* 头部信息 */
+header { }
+.topbox,.mbox{ width: 1000px; margin:auto; }
+.search { margin: 40px 0 0 0 }
+.logo { margin:10px 0 }
+
+.topbox{ position:relative; }
+.fav {  overflow: hidden; margin: 10px auto; position:absolute; right:0; top:0px; }
+.fav ul { width: 160px; background: #ccc; float: right; border-radius: 5px }
+.fav li { width: 80px; text-align: center; line-height: 24px; float: left }
+.fav li a { color: #fff }
+
+.timer{position:absolute; right:0; top:100px;line-height: 23px;  width:660px}
+.timer span{ float:right; margin-left:20px; width:340px}
+/*nav*/
+
+.navigation { width: 660px; margin:40px auto 0; height: 46px; line-height: 46px;background: #204EA8; float:right  }
+.menu { width: 100%;  position: relative; }
+.menu li { font-size: 14px; line-height: 46px; float: left; width: 110px; text-align: center; position: relative; }
+.menu li a:link { display: block; text-decoration: none; color: #fff; }
+.menu li a:visited { display: block; margin: 0px; color: #fff; text-decoration: none }
+.menu ul { position: relative; background: #204EA8; z-index: 300; }
+.menu li ul { display: none; width: 110px; position: absolute; TOP: 46px; left: 0; }
+.menu li ul li { font-size: 12px; height: 28px; line-height: 28px }
+.menu li ul li a:hover { background: #27a9f9 }
+.curr a { background: #f3ae00 }
+input#keyboard { height: 33px; border: #4097DA 1px solid; color: #dfdfdf; padding-left: 10px; }
+input.input_submit { background-color: #4097DA; color: #fff; border: none; padding: 10px 12px; }
+/* article */
+.mainbox { width: 1000px; overflow: hidden; margin: auto }
+/*footer*/
+footer { width: 100%; border-top: #f3ae00 15px solid; background: #0055aa }
+.copyright { width: 1000px; margin: auto; text-align: center; line-height: 50px; color: #FFF }
+.copyright a { color: #FFF }

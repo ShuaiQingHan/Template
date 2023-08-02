@@ -1,0 +1,360 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>企业网站模板</title>
+<meta name="keywords" content="企业网站模板,装修公司企业网站模板，企业静态网站页面模板" />
+<meta name="description" content="企业网站模板" />
+<link href="css/home.css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+  <div class="topnav">
+    <div class="box">
+      <p class=" left">欢迎访问企业装饰网站！这是一个企业网站模板！</p>
+      <section class=" fav right"><a href="/">收藏嘉运星</a><a href="/">天津汉沽</a></section>
+    </div>
+  </div>
+  <div class="box logo">
+    <div class="right tell">咨询热线：<span><img src="images/022.jpg"></span><b>质量保障</b><b>资金保障</b></div>
+    <a href="/"><img src="images/logo.jpg"></a> </div>
+  <div class="blank"></div>
+  <nav class="menu">
+    <ul>
+      <li class="fir"><a href="/">首页</a></li>
+      <li><a href="/">装修案例</a></li>
+      <li><a href="/">服务范围</a></li>
+      <li><a href="/">荣誉资质</a></li>
+      <li><a href="/">新闻资讯</a></li>
+      <li><a href="/">联系我们</a></li>
+      <li><a href="/">关于我们</a></li>
+      <div class="love">我爱装修一步到位</div>
+    </ul>
+  </nav>
+</header>
+<article class="box">
+  <div class="banner"> <img src="images/banner.jpg">
+    <div class="lcbutton">
+      <li><a href="/" target="_blank">网上预约<span>免费量尺</span></a></li>
+      <li><a href="/" target="_blank">上门量尺<span>设计方案</span></a></li>
+      <li><a href="/" target="_blank">门店看方案<span>签订合同</span></a></li>
+      <li><a href="/" target="_blank">产品配送<span>安装售后</span></a></li>
+      <section class="yuyue">
+        <p><a href="/" target="_blank">预约免费<b>量尺</b></a></p>
+      </section>
+    </div>
+  </div>
+  <div class="blank"></div>
+  <div class="liucheng">
+    <p>装修<br>
+      <span>流程</span></p>
+    <ul>
+      <li><i class="lc01"></i>收房阶段</li>
+      <li><i class="lc02"></i>前期准备</li>
+      <li><i class="lc03"></i>设计阶段</li>
+      <li><i class="lc04"></i>建材采购</li>
+      <li><i class="lc05"></i>硬装施工</li>
+      <li><i class="lc06"></i>验收阶段</li>
+      <li><i class="lc07"></i>软装配饰</li>
+      <li><i class="lc08"></i>完工展示</li>
+      <li><i class="lc09"></i>家居生活</li>
+    </ul>
+  </div>
+  <div class="blank"></div>
+  <div class="colortext">
+    <li class="cblue"><a href="/">嘉运星装饰</a></li>
+    <li class="cgreen"><a href="/">最信赖的装修质量</a></li>
+    <li class="cyellow"><a href="/">超大规模产业基地</a></li>
+    <li class="corange"><a href="/">老房子装修专家</a></li>
+  </div>
+  <div class="blank"></div>
+  <script>
+window.onload = function ()
+{
+	var oLi = document.getElementById("tab").getElementsByTagName("li");
+	var oUl = document.getElementById("content").getElementsByTagName("ul");
+	
+	for(var i = 0; i < oLi.length; i++)
+	{
+		oLi[i].index = i;
+		oLi[i].onmouseover = function ()
+		{
+			for(var n = 0; n < oLi.length; n++) oLi[n].className="";
+			this.className = "current";
+			for(var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
+			oUl[this.index].style.display = "block"
+		}	
+	}
+}
+</script>
+  <div class="fangan m10">
+    <h2 class=" h2base h2border"><span class="h2w corange" >整体家装解决方案</span></h2>
+    <ul id="outer">
+      <script>
+		  var tip={$:function(ele){
+  if(typeof(ele)=="object")
+    return ele;
+  else if(typeof(ele)=="string"||typeof(ele)=="number")
+    return document.getElementById(ele.toString());
+    return null;
+  },
+  mousePos:function(e){
+    var x,y;
+    var e = e||window.event;
+    return{x:e.clientX+document.body.scrollLeft+document.documentElement.scrollLeft,
+y:e.clientY+document.body.scrollTop+document.documentElement.scrollTop};
+  },
+  start:function(obj){
+    var self = this;
+    var t = self.$("mjs:tip");
+    obj.onmousemove=function(e){
+      var mouse = self.mousePos(e);
+      t.style.left = mouse.x + 10 + 'px';
+      t.style.top = mouse.y + 10 + 'px';
+      t.innerHTML = obj.getAttribute("tips");
+      t.style.display = '';
+    };
+    obj.onmouseout=function(){
+      t.style.display = 'none';
+    };
+  }
+  }
+		  </script>
+      <div id="mjs:tip" class="tip" style="position:absolute;left:0;top:0;display:none;"> </div>
+      <div class="anli2"  id="tab">
+        <setion>
+        <li class="current"></li>
+        <li><i class="al01" onmouseover="tip.start(this)" tips="<font color='#fff'>餐客厅/玄关<br>——汉沽装饰</font>"></i></li>
+        <li><i class="al02" onmouseover="tip.start(this)" tips="<font color='#fff'>厨房<br>——汉沽装饰</font>"></i></li>
+        <li><i class="al03" onmouseover="tip.start(this)" tips="<font color='#fff'>儿童房<br>——汉沽装饰</font>"></i></li>
+        <li><i class="al04" onmouseover="tip.start(this)" tips="<font color='#fff'>卧室<br>——汉沽装饰</font>"></i></li>
+        <li><i class="al05" onmouseover="tip.start(this)" tips="<font color='#fff'>卫生间<br>——汉沽装饰</font>"></i></li>
+        </section>
+      </div>
+      <div id="content">
+        <ul style="display:block;" class="p01">
+          <h1 class="torbg"><span>688</span>元/平方米</h1>
+          <div class="infos">
+            <h3>688整体家装</h3>
+            <p>含整体橱柜、卫浴洁具（坐便器、花洒、面盆、面盆龙头、浴室柜）、地砖/地板满铺、墙漆满涂、室内木门、厨卫集成吊顶、厨卫墙砖/铺贴、防水处理、地面找平、包立管.....</p>
+          </div>
+        </ul>
+        <ul class="infocontent">
+          <p class="infotitle">餐客厅/玄关</p>
+          <p>①地面满铺：DOLCEPARQUET（道奇帕克）西班牙原装三成实木复合地板或东鹏全抛釉大地砖；</p>
+          <p>②墙面满涂刷：西班牙原装进口堤丹水性涂料或丹麦原装进口福乐阁水性涂料；</p>
+          <p>③墙面顶角线：8公分右膏素线；</p>
+          <p>④全空间：西门子开关面板</p>
+          <img src="images/anli/image10.jpg">
+        </ul>
+        <ul class="infocontent">
+          <p class="infotitle">厨房</p>
+          <p>①整体厨柜不限延米：E0级环保板材柜体+插框或平面造型门板+石英石台面（可做一字型、   双排一字型、L型，吊柜数量不多于地柜的1/2；地柜含一副拉篮，3个木邦阻尼抽屉，   一副随意停，一副气压支撑杆）；</p>
+          <p>②室内木门：巴赫曼德式门（含门以及门安装、三维可调式暗藏合页、门锁、门吸）；</p>
+          <p>③墙地面：东鹏瓷砖满铺；</p>
+          <p>④顶面：卡乐威铝扣板满铺+集成照明灯；</p>
+          <p>⑤石英石过门石；</p>
+          <p>⑥标配：水槽、龙头、烟机、灶具、包立管一根；</p>
+          <p>⑦全空间：西门子开关面板。</p>
+          <img src="images/anli/image8.jpg">
+        </ul>
+        <ul class="infocontent">
+          <p class="infotitle">儿童房/书房</p>
+          <p>①地面满铺 ： DOLCEPARQUET(道奇帕克)西班牙原装进口三层实木复合地板或   东鹏全抛釉大地砖；</p>
+          <p>②墙顶面处理：墙面满涂刷西班牙原装进口堤丹水性涂料 或 丹麦原装进口福乐阁水性涂料；   8公分石膏素线；</p>
+          <p>③室内木门：巴赫曼德式门（含门以及门安装、三维可调式暗藏合页、门锁、门吸）；</p>
+          <p>④石英石窗台石：宽度在200mm以内，超出宽度另计；</p>
+          <p>⑤全空间：西门子开关面板。</p>
+          <img src="images/anli/image6.jpg">
+        </ul>
+        <ul class="infocontent">
+          <p class="infotitle">卧室</p>
+          <p>①地面满铺 ： DOLCEPARQUET(道奇帕克)西班牙原装进口三层实木复合地板或   东鹏全抛釉大地砖；</p>
+          <p>②墙顶面处理：墙面满涂刷西班牙原装进口堤丹水性涂料 或 丹麦原装进口福乐阁水性涂料；   8公分石膏素线；</p>
+          <p>③室内木门：巴赫曼德式门（含门以及门安装、三维可调式暗藏合页、门锁、门吸）；</p>
+          <p>④石英石窗台石：宽度在200mm以内，超出宽度另计；</p>
+          <p>⑤全空间：西门子开关面板。</p>
+          <img src="images/anli/image4.jpg">
+        </ul>
+        <ul class="infocontent">
+          <p class="infotitle">卫生间</p>
+          <p>①墙地面：东鹏瓷砖满铺；</p>
+          <p>②顶面：卡乐威铝扣板满铺+风暖三合一浴霸；</p>
+          <p>③室内木门：巴赫曼德式门（含门以及门安装、三维可调式暗藏合页、门锁、门吸）；</p>
+          <p>④洁具：科勒 或 TOTO 的马桶+面盆；</p>
+          <p>⑤浴室柜：E0级环保板材柜体+插框或平面造型门板+石英石台面；</p>
+          <p>⑥石英石过门石；</p>
+          <p>⑦标配：龙头花洒、地漏、洗衣机龙头、卫浴三件套、防水涂刷、包立管1根；</p>
+          <p>⑧全空间：西门子开关面板。</p>
+          <img src="images/anli/image2.jpg">
+        </ul>
+      </div>
+    </ul>
+  </div>
+  </div>
+  <div class="case m10">
+    <h2 class=" h2base h2border">
+      <div class="more"><a href="/">更多>></a></div>
+      <span class="h2w cyellow">装修案例</span></h2>
+    <ul class="caseshow">
+      <li><a href="/" target="_blank"><img src="images/case/case1.jpg"></a><span><b><a href="/">喜欢</a></b>装修案例</span></li>
+      <li><a href="/" target="_blank"><img src="images/case/case2.jpg"></a><span><b><a href="/">喜欢</a></b>装修案例</span></li>
+      <li><a href="/" target="_blank"><img src="images/case/case3.jpg"></a><span><b><a href="/">喜欢</a></b>装修案例</span></li>
+      <li><a href="/" target="_blank"><img src="images/case/case4.jpg"></a><span><b><a href="/">喜欢</a></b>装修案例</span></li>
+      <li><a href="/" target="_blank"><img src="images/case/case5.jpg"></a><span><b><a href="/">喜欢</a></b>装修案例</span></li>
+      <li><a href="/" target="_blank"><img src="images/case/case6.jpg"></a><span><b><a href="/">喜欢</a></b>装修案例</span></li>
+      <li><a href="/" target="_blank"><img src="images/case/case7.jpg"></a><span><b><a href="/">喜欢</a></b>装修案例</span></li>
+      <li><a href="/" target="_blank"><img src="images/case/case8.jpg"></a><span><b><a href="/">喜欢</a></b>装修案例</span></li>
+    </ul>
+  </div>
+  <div class="news m10">
+    <h2 class=" h2base h2border">
+      <div class="more"><a href="/">更多>></a></div>
+      <span class="h2w cgreen">家装资讯</span></h2>
+    <div class="blank"></div>
+    <div class="viedo left"> <img src="images/video.png"> </div>
+    <div id="hot_news" class="right">
+      <div id="news_top">
+        <h1><a href="/" target="_blank" title="汉沽嘉运星装饰教您如何做好装修设计方案">汉沽嘉运星装饰教您如何做好装修设计方案</a></h1>
+        <p> 装修设计要怎么做?要搞好家装，先决条件是要有设计，而且是科学的设计方案，因为家庭设计是装修的灵魂。在实际生活中，有些家庭往往因为缺乏宏观上的考虑，或者其他原因... [<a href="/" target="_blank" title="" class="newsmore">详细</a>]</p>
+      </div>
+      <div id="news_list">
+        <ul>
+          <li><span>[2015-08-31]</span><a href="/" target="_blank">小户型阳台设计全攻略 让小空间有更多可能！</a></li>
+          <li><span>[2015-08-31]</span><a href="/" target="_blank">居家装修颜色搭配大全，家居幻彩DIY </a></li>
+          <li><span>[2015-08-31]</span><a href="/" target="_blank">木工原来可以这样做，柜子吊顶工艺让嘉运星来告诉你</a></li>
+          <li><span>[2015-08-31]</span><a href="/" target="_blank">嘉运星装饰公司的现代简约风格设计案例，才看到玄关就爱上了！</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="blank"></div>
+    <div class="articles">
+      <ul>
+        <dl>
+          <dt><a href="/"><img src="images/case/case1.jpg"><i>汉沽装饰</i></a></dt>
+          <dd class="ctitle"><a href="/">汉沽嘉运星装饰公司来教您感应洁具...</a></dd>
+          <dd>现在在很多地方都用上了感应洁具，使用感应洁具的好处有很多，比如能智能节水，就可以限制用水，对环保节能更有好处。而且也有更加卫生的特点，很多人对传统洁具不满的地方就在于，使用起来容易感染细菌...</dd>
+        </dl>
+        <dl>
+          <dt><a href="/"><img src="images/case/case1.jpg"><i>汉沽装饰</i></a></dt>
+          <dd class="ctitle"><a href="/">装修时木地板安装注意事项</a></dd>
+          <dd>现在在很多地方都用上了感应洁具，使用感应洁具的好处有很多，比如能智能节水，就可以限制用水，对环保节能更有好处。而且也有更加卫生的特点，很多人对传统洁具不满的地方就在于，使用起来容易感染细菌...</dd>
+        </dl>
+      </ul>
+    </div>
+    <div class="arnews">
+      <ul>
+        <li><a href="/">小户型阳台设计全攻略 让小空间有...</a></li>
+        <li><a href="/">居家装修颜色搭配大全，家居幻彩DIY </a></li>
+        <li><a href="/">木工原来可以这样做，柜子吊顶工艺...</a></li>
+        <li><a href="/">嘉运星装饰公司的现代简约风格设...</a></li>
+      </ul>
+      <ul>
+        <li><a href="/">小户型阳台设计全攻略 让小空间有...</a></li>
+        <li><a href="/">居家装修颜色搭配大全，家居幻彩DIY </a></li>
+        <li><a href="/">木工原来可以这样做，柜子吊顶工艺...</a></li>
+        <li><a href="/">嘉运星装饰公司的现代简约风格设...</a></li>
+      </ul>
+      <ul>
+        <li><a href="/">小户型阳台设计全攻略 让小空间有...</a></li>
+        <li><a href="/">居家装修颜色搭配大全，家居幻彩DIY </a></li>
+        <li><a href="/">木工原来可以这样做，柜子吊顶工艺...</a></li>
+        <li><a href="/">嘉运星装饰公司的现代简约风格设...</a></li>
+      </ul>
+      <ul>
+        <li><a href="/">小户型阳台设计全攻略 让小空间有...</a></li>
+        <li><a href="/">居家装修颜色搭配大全，家居幻彩DIY </a></li>
+        <li><a href="/">木工原来可以这样做，柜子吊顶工艺...</a></li>
+        <li><a href="/">嘉运星装饰公司的现代简约风格设...</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="team m10">
+    <h2 class=" h2base h2border"><span class="h2w cblue">专业团队高质服务</span></h2>
+    <ul>
+      <li><i class="te01"></i>优秀的设计师团队</li>
+      <li><i class="te02"></i>优质的主材供应</li>
+      <li><i class="te03"></i>省心的物流配送</li>
+      <li><i class="te04"></i>专业的施工队伍</li>
+      <li><i class="te05"></i>负责的售后团队</li>
+    </ul>
+  </div>
+  <div class="zhucai m10">
+    <h2 class=" h2base h2border"><span class="h2w cblank">嘉运星所用主材品牌</span></h2>
+    <ul>
+      <li><img src="images/pp/l01.jpg"></li>
+      <li><img src="images/pp/l02.jpg"></li>
+      <li><img src="images/pp/l03.jpg"></li>
+      <li><img src="images/pp/l04.jpg"></li>
+      <li><img src="images/pp/l05.jpg"></li>
+      <li><img src="images/pp/l07.jpg"></li>
+      <li><img src="images/pp/l08.jpg"></li>
+      <li><img src="images/pp/l10.jpg"></li>
+      <li><img src="images/pp/l11.jpg"></li>
+      <li><img src="images/pp/l12.png"></li>
+      <li><img src="images/pp/l13.png"></li>
+      <li><img src="images/pp/l14.png"></li>
+    </ul>
+    <section> <img src="images/pp/bottomImg.jpg"> </section>
+  </div>
+</article>
+<footer>
+  <div class="end01">
+    <p><span><a href="/" target="_blank">前往咨询</a></span>装修需求请到嘉运星装饰网<i>专业的服务团队来帮您解决!</i></p>
+  </div>
+  <div class="box end02">
+    <div class="left w200">
+      <h2>关于我们</h2>
+      <ul>
+        <li><a href="/" target="_blank">联系我们</a></li>
+        <li><a href="/" target="_blank">了解产品工艺</a></li>
+        <li><a href="/" target="_blank">服务流程</a></li>
+      </ul>
+    </div>
+    <div class="left w200">
+      <h2>量房设计</h2>
+      <ul>
+        <li><a href="/" target="_blank">免费上门量尺设计</a></li>
+        <li><a href="/" target="_blank">电话预约</a></li>
+        <li><a href="/" target="_blank">在线咨询预约</a></li>
+        <li><a href="/" target="_blank">网络申请</a></li>
+      </ul>
+    </div>
+    <div class="left w200">
+      <h2>安全保障</h2>
+      <ul>
+        <li><a href="/" target="_blank">配送中心</a></li>
+        <li><a href="/" target="_blank">售后服务</a></li>
+        <li><a href="/" target="_blank">在线咨询预约</a></li>
+        <li><a href="/" target="_blank">网络申请</a></li>
+      </ul>
+    </div>
+    <div class="left">
+      <h2>友情链接</h2>
+      <ul>
+        <li><a href="/" target="_blank">天津滨海新区嘉运星装饰工程有限公司</a></li>
+      </ul>
+      <h2>联系我们</h2>
+      <ul>
+        <li><a href="/" target="_blank"><img src="images/endtell.jpg"></a></li>
+      </ul>
+    </div>
+    <div class="right"> <img src="images/wx.jpg"> </div>
+  </div>
+  <div class="end03 box">
+    <ul class="right">
+      <li><a href="/">免费设计</a></li>
+      <li><a href="/">免费报价审核</a></li>
+      <li><a href="/">免费监理验收</a></li>
+      <li><a href="/">先装修后付款</a></li>
+      <li><a href="/">支付宝特约商家</a></li>
+    </ul>
+  </div>
+  <div class="cop"> Copyright 2015 技术支持：<a href="/" target="_blank">天津智尚互联科技有限公司</a> 津ICP备15005751号-1 </div>
+</footer>
+</body>
+</html>
